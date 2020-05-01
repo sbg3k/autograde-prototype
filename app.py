@@ -118,7 +118,8 @@ def upload_test():
 def delete_test():
 	if request.method == 'POST' and request.form['password'] == app.config['PASS']:
 		for filename in os.listdir(app.config['UPLOAD_FOLDER']):
-			os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			if allowed_file(filename):
+				os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 		return "Testcases successfully deleted"
 			
 	return '''
