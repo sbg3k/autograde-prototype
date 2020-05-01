@@ -5,7 +5,8 @@ This is an API created for handling the grading of python submissions in ECX's 3
 ## Usage
 
 1. Tutors head to [https://autograder30days.herokuapp.com/test-upload/](https://autograder30days.herokuapp.com/test-upload/), enter the password and upload the specially formatted test files.(more info on the mentors groupchat)
-   A test file with name q1.py and score 8 should contain this:
+
+* A test file with name q1.py and score 8 should contain this:
 ```
 test = {
 	"name": "q1",
