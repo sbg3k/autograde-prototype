@@ -64,7 +64,8 @@ N.B: multiple code blocks are possible and can be used in cases where its all or
 3. At 12am, the tutors head to [https://autograder30days.herokuapp.com/delete/](https://autograder30days.herokuapp.com/delete/), enter the password, and delete the test cases for the previous day.
 
 
-
+## Constraints
+ * Go Crazy and break it, It helps us see the weak points in the application. 
 
 
 suggestions are welcome and should be directed to [Geektutor](mailto:sodiq.akinjobi@gmail.com)
