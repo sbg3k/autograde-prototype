@@ -66,6 +66,7 @@ N.B: multiple code blocks are possible and can be used in cases where its all or
 
 
 ## Constraints
+ * All users must submit with the exact same function name as the test file in order to avoid problems
  * Go Crazy and break it, It helps us see the weak points in the application. 
 
 
