@@ -9,17 +9,12 @@ class mark:
 		exec('from ' + filename.split('.')[0] + ' import main', globals())
 		self.main = main
 
-UPLOAD_FOLDER = './hidden-tests'
-ALLOWED_EXTENSION = 'py'
-PASS = 'lcv:>?;W5QD<,js8oKyE4q`nN"z$M.?ts4#zd3o^n+9bk%6q$1@1P+P6uD^fY0z.>'
-
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['PASS'] = PASS
+app.config.from_object(os.environ['APP_SETTINGS'])
 
 def allowed_file(filename):
 	return '.' in filename and \
-		   filename.split('.')[1].lower() == ALLOWED_EXTENSION
+		   filename.split('.')[1].lower() == os.environ['ALLOWED_EXTENSION']
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -49,10 +44,10 @@ def upload_file():
 			
 			
 				score = {}
-				tests = os.listdir('./hidden-tests')
+				tests = os.listdir(os.environ['UPLOAD_FOLDER'])
 				for i in tests:
 					if allowed_file(i):
-						score[i] = str(otter.Notebook("hidden-tests").check(i.split('.')[0]))
+						score[i] = str(otter.Notebook(os.environ['UPLOAD_FOLDER'][2:]).check(i.split('.')[0]))
 			
 			
 				files = []
@@ -62,7 +57,7 @@ def upload_file():
 			
 				scores = 0
 				for i in files:
-					with open('./hidden-tests/' + i) as f:
+					with open(os.environ['UPLOAD_FOLDER'] + '/' + i) as f:
 						a = f.read()
 						if '"points":' in a:
 							b = a.split('\n')[2]
@@ -111,15 +106,29 @@ def upload_test():
 			
 	return '''
 	<!doctype html>
-	<title>Upload new File</title>
-	<h1>Upload new File</h1>
+	<title>Upload Testcase</title>
+	<h1>Upload Testcase</h1>
 	<form method=post enctype=multipart/form-data>
 	  <input type=file name=file>
 	  <input type=password name=password>
 	  <input type=submit value=Upload>
 	</form>
 	'''
-
+@app.route('/delete/', methods=['GET', 'POST'])
+def delete_test():
+	if request.method == 'POST' and request.form['password'] == app.config['PASS']:
+		os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+		return "Testcases successfully deleted"
+			
+	return '''
+	<!doctype html>
+	<title>Delete Yesterday's Testcases</title>
+	<h1>Delete Yesterday's Testcases</h1>
+	<form method=post enctype=multipart/form-data>
+	  <input type=password name=password>
+	  <input type=submit value=Delete>
+	</form>
+	'''
 
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)
