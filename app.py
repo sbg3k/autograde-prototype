@@ -4,11 +4,6 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
 
-class mark:
-	def __init__(self, filename):
-		exec('from ' + filename.split('.')[0] + ' import main', globals())
-		self.main = main
-
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
@@ -40,9 +35,8 @@ def upload_file():
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'][:2], filename))
 			try:
-				main = mark(filename).main
-			
-			
+				exec('from ' + filename.split('.')[0] + ' import *', globals())
+				
 				score = {}
 				tests = os.listdir(os.environ['UPLOAD_FOLDER'])
 				for i in tests:
