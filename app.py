@@ -117,7 +117,8 @@ def upload_test():
 @app.route('/delete/', methods=['GET', 'POST'])
 def delete_test():
 	if request.method == 'POST' and request.form['password'] == app.config['PASS']:
-		os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+		for filename in os.listdir(app.config['UPLOAD_FOLDER']):
+			os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 		return "Testcases successfully deleted"
 			
 	return '''
