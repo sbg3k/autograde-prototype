@@ -1,0 +1,7 @@
+Werkzeug==1.0.1
+pytest==2.9.2
+otter_grader==0.4.7
+gradescope_utils==0.3.1
+Flask==1.1.2
+gunicorn==19.9.0
+six==1.11.0
