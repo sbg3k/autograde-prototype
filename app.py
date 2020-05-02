@@ -1,18 +1,19 @@
 import otter
 import time
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, json, jsonify
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
+UPLOAD_FOLDER = json.loads(os.environ['UPLOAD_FOLDER'])
 
 def allowed_file(filename):
 	return '.' in filename and \
 		   filename.split('.')[1].lower() == os.environ['ALLOWED_EXTENSION']
 
 def allowed_level(level):
-	return level in os.environ['UPLOAD_FOLDER']
+	return level in UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -37,15 +38,15 @@ def upload_file():
 		
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
-			file.save(os.path.join(os.environ['UPLOAD_FOLDER'][request.form['level']][:2], filename))
+			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 			try:
 				exec('from ' + filename.split('.')[0] + ' import *', globals())
 				
 				score = {}
-				tests = os.listdir(os.environ['UPLOAD_FOLDER'][request.form['level']])
+				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
 				for i in tests:
 					if allowed_file(i):
-						score[i] = str(otter.Notebook(os.environ['UPLOAD_FOLDER'][request.form['level']][2:]).check(i.split('.')[0]))
+						score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
 			
 			
 				files = []
@@ -55,7 +56,7 @@ def upload_file():
 			
 				scores = 0
 				for i in files:
-					with open(os.environ['UPLOAD_FOLDER'][request.form['level']] + '/' + i) as f:
+					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
 						a = f.read()
 						if '"points":' in a:
 							b = a.split('\n')[2]
@@ -64,7 +65,7 @@ def upload_file():
 							scores += int(d)
 				
 				
-				os.remove(os.path.join(os.environ['UPLOAD_FOLDER'][request.form['level']][:2], filename))
+				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 				return jsonify({"name":filename.replace(".py", ""), "score":scores})
 			except:
 				return '''Check your file, it does not follow the requirements'''
@@ -103,7 +104,7 @@ def upload_test():
 		
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
-			file.save(os.path.join(os.environ['UPLOAD_FOLDER'][request.form['level']], filename))
+			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']], filename))
 			return "Testcase {} successfully uploaded".format(filename)
 			
 	return '''
@@ -122,9 +123,9 @@ def delete_test():
 	if not allowed_level(request.form['level']):
 			return "Invalid level"
 	if request.method == 'POST' and request.form['password'] == os.environ['PASS']:
-		for filename in os.listdir(os.environ['UPLOAD_FOLDER'][request.form['level']]):
+		for filename in os.listdir(UPLOAD_FOLDER[request.form['level']]):
 			if allowed_file(filename):
-				os.remove(os.path.join(os.environ['UPLOAD_FOLDER'][request.form['level']], filename))
+				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']], filename))
 		return "Testcases successfully deleted"
 			
 	return '''
