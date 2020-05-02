@@ -65,7 +65,7 @@ def upload_file():
 							scores += int(d)
 				
 				
-				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], request.form['name']))
+				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 				return jsonify({"name":filename.replace(".py", ""), "score":scores})
 	
 	return '''
