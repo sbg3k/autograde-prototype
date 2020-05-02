@@ -28,7 +28,7 @@ def upload_file():
 			return "Invalid level"
 		
 		file = request.files['file']
-		file.filename = request.form['name'] + '.py'
+		file.filename = request.form['name'].replace(".", "") + '.py'
 		
 		# if user does not select file, browser also
 		# submit an empty part without filename
@@ -37,7 +37,7 @@ def upload_file():
 			return 'No selected file'
 		
 		if file and allowed_file(file.filename):
-			filename = secure_filename(file.filename).replace(".", "")
+			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 			if True:
 				exec('from ' + filename + ' import *', globals())
@@ -65,7 +65,7 @@ def upload_file():
 							scores += int(d)
 				
 				
-				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], request.form['name']))
 				return jsonify({"name":filename.replace(".py", ""), "score":scores})
 	
 	return '''
