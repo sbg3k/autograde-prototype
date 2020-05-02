@@ -37,10 +37,10 @@ def upload_file():
 			return 'No selected file'
 		
 		if file and allowed_file(file.filename):
-			filename = secure_filename(file.filename)
-			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], ''.join(filename.split('.')[:-1])))
+			filename = secure_filename(file.filename).replace(".", "")
+			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 			if True:
-				exec('from ' + ''.join(filename.split('.')[:-1]) + ' import *', globals())
+				exec('from ' + filename + ' import *', globals())
 				
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
