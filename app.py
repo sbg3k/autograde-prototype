@@ -66,7 +66,7 @@ def upload_file():
 				
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
-				return jsonify({"name":filename.replace(".py", ""), "score":scores})
+				return jsonify({"name":request.form['name'], "score":scores})
 	
 	return '''
 	<!doctype html>
