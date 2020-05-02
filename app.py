@@ -10,7 +10,7 @@ UPLOAD_FOLDER = json.loads(os.environ['UPLOAD_FOLDER'])
 
 def allowed_file(filename):
 	return '.' in filename and \
-		   filename.split('.')[1].lower() == os.environ['ALLOWED_EXTENSION']
+		   filename.split('.')[-1].lower() == os.environ['ALLOWED_EXTENSION']
 
 def allowed_level(level):
 	return level in UPLOAD_FOLDER
