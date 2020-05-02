@@ -39,37 +39,34 @@ def upload_file():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
-			try:
-				exec('from ' + ''.join(filename.split('.')[:-1]) + ' import *', globals())
+			exec('from ' + ''.join(filename.split('.')[:-1]) + ' import *', globals())
 				
-				score = {}
-				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
-				for i in tests:
-					if allowed_file(i):
-						score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
+			score = {}
+			tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
+			for i in tests:
+				if allowed_file(i):
+					score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
+		
+		
+			files = []
+			for i in score:
+				if 'All tests passed!' in score[i]:
+					files.append(i)
+		
+			scores = 0
+			for i in files:
+				with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
+					a = f.read()
+					if '"points":' in a:
+						b = a.split('\n')[2]
+						c = b.split(": ")[1]
+						d = c.replace(",", "")
+						scores += int(d)
 			
-			
-				files = []
-				for i in score:
-					if 'All tests passed!' in score[i]:
-						files.append(i)
-			
-				scores = 0
-				for i in files:
-					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
-						a = f.read()
-						if '"points":' in a:
-							b = a.split('\n')[2]
-							c = b.split(": ")[1]
-							d = c.replace(",", "")
-							scores += int(d)
 				
-				
-				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
-				return jsonify({"name":filename.replace(".py", ""), "score":scores})
-			except:
-				return '''Check your file, it does not follow the requirements'''
-	
+			os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+			return jsonify({"name":filename.replace(".py", ""), "score":scores})
+			
 	return '''
 	<!doctype html>
 	<title>Upload new File</title>
