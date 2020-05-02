@@ -118,9 +118,9 @@ def upload_test():
 	'''
 @app.route('/delete/', methods=['GET', 'POST'])
 def delete_test():
-	if not allowed_level(request.form['level']):
-			return "Invalid level"
 	if request.method == 'POST' and request.form['password'] == os.environ['PASS']:
+		if not allowed_level(request.form['level']):
+			return "Invalid level"
 		for filename in os.listdir(UPLOAD_FOLDER[request.form['level']]):
 			if allowed_file(filename):
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']], filename))
