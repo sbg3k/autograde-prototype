@@ -2,9 +2,11 @@ import otter
 import time
 import os
 from flask import Flask, render_template, request, json, jsonify
+from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
 UPLOAD_FOLDER = json.loads(os.environ['UPLOAD_FOLDER'])
 
