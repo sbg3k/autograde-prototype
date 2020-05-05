@@ -8,7 +8,7 @@ test = {
 				{
 					"code": r"""
 					>>> wedding_chow('rsmdmdsrffd')
-					(2,'d')
+					(2, 'd')
 					""",
 					"hidden": False,
 					"locked": False,
