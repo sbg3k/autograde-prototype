@@ -41,7 +41,7 @@ def upload_file():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
-			if True:
+			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
 				
 				score = {}
@@ -69,6 +69,9 @@ def upload_file():
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 				return jsonify({"name":request.form['name'], "score":scores})
+			except:
+				print("Oops!", sys.exc_info()[0], "occured.")
+				return "Oops!", sys.exc_info(), "occured."
 	
 	return '''
 	<!doctype html>
