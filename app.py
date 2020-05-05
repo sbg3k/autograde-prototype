@@ -44,7 +44,7 @@ def upload_file():
 			print(filename)
 			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
-				print("executing...")
+				print("executing...", wedding_chow('rsmdmdsrffd'))
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
 				for i in tests:
@@ -58,6 +58,7 @@ def upload_file():
 						files.append(i)
 			
 				scores = 0
+				print(files)
 				for i in files:
 					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
 						a = f.read()
@@ -66,6 +67,7 @@ def upload_file():
 							c = b.split(": ")[1]
 							d = c.replace(",", "")
 							scores += int(d)
+							print(d)
 				
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
