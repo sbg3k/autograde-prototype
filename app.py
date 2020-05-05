@@ -41,9 +41,10 @@ def upload_file():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+			print(filename)
 			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
-				
+				print("executing...")
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
 				for i in tests:
