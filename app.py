@@ -41,28 +41,24 @@ def upload_file():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
-			print(filename)
 			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
-				print("executing...", wedding_chow('rsmdmdsrffd'))
+				print("executing...", "[", request.form['name'], "]")
 				score = {}
-				print("score", score)
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
-				print("tests", tests)
 				for i in tests:
 					if allowed_file(i):
 						score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
 			
 			
 				files = []
-				print("score2", score)
 				for i in score:
 					if 'All tests passed!' in score[i]:
 						files.append(i)
 			
 				scores = 0
-				print(files)
 				for i in files:
+					print(i)
 					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
 						a = f.read()
 						if '"points":' in a:
@@ -74,10 +70,11 @@ def upload_file():
 				
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
 				print("Oops!", sys.exc_info()[0], "occured.")
-				return "Oops!", sys.exc_info(), "occured."
+				return "Oops! an error occured."
 	
 	return '''
 	<!doctype html>
