@@ -79,8 +79,8 @@ def upload_file():
 	<h1>Upload new File</h1>
 	<form method=post enctype=multipart/form-data>
 	  <input type=file name=file>
-	  <input type=text name=name>
-	  <input type=text name=level>
+	  <input type=text name=name placeholder="Email">
+	  <input type=text name=level placeholder="beginner or intermediate (lowercase)">
 	  <input type=submit value=Upload>
 	</form>
 	'''
@@ -116,8 +116,8 @@ def upload_test():
 	<h1>Upload Testcase</h1>
 	<form method=post enctype=multipart/form-data>
 	  <input type=file name=file>
-	  <input type=text name=level>
-	  <input type=password name=password>
+	  <input type=text name=level placeholder="beginner or intermediate">
+	  <input type=password name=password placeholder="password">
 	  <input type=submit value=Upload>
 	</form>
 	'''
@@ -136,8 +136,8 @@ def delete_test():
 	<title>Delete Yesterday's Testcases</title>
 	<h1>Delete Yesterday's Testcases</h1>
 	<form method=post enctype=multipart/form-data>
-	  <input type=text name=level>
-	  <input type=password name=password>
+	  <input type=text name=level placeholder="beginner or intermediate">
+	  <input type=password name=password placeholder="password">
 	  <input type=submit value=Delete>
 	</form>
 	'''
