@@ -7,8 +7,10 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('rSDmsfrmf'))
-					(0, 'rrsmmff')
+					>>> wedding_chow(23)
+					Traceback (most recent call last):
+  					File "<stdin>", line 1, in <module>
+					AssertionError
 					""",
 					"hidden": False,
 					"locked": False,
