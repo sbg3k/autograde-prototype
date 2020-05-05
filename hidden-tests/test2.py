@@ -7,8 +7,13 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('rSDmsfrmf')
-					(0, 'rrsmmff')
+					>>> def errorr(s):
+					...     try:
+					...         wedding_chow(s)
+					...     except AssertionError:
+					...         return 1
+					>>> errorr(['r','s','d','m','f'])==1
+					True
 					""",
 					"hidden": False,
 					"locked": False,
