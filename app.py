@@ -46,13 +46,16 @@ def upload_file():
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", wedding_chow('rsmdmdsrffd'))
 				score = {}
+				print("score", score)
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
+				print("tests", tests)
 				for i in tests:
 					if allowed_file(i):
 						score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
 			
 			
 				files = []
+				print("score2", score)
 				for i in score:
 					if 'All tests passed!' in score[i]:
 						files.append(i)
