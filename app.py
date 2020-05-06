@@ -43,7 +43,7 @@ def upload_file():
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
-				
+				print("executing...", "[", request.form['name'], "]")
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
 				for i in tests:
@@ -58,6 +58,7 @@ def upload_file():
 			
 				scores = 0
 				for i in files:
+					print(i)
 					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
 						a = f.read()
 						if '"points":' in a:
@@ -65,13 +66,15 @@ def upload_file():
 							c = b.split(": ")[1]
 							d = c.replace(",", "")
 							scores += int(d)
+							print(d)
 				
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
 				print("Oops!", sys.exc_info()[0], "occured.")
-				return "Oops!", sys.exc_info(), "occured."
+				return "Oops! an error occured."
 	
 	return '''
 	<!doctype html>

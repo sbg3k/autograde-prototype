@@ -1,21 +1,18 @@
 test = {
-	"name": "q1",
-	"points": 8,
-	"hidden": False,
+	"name": "test4",
+	"points": 3,
+	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> main(8, 12) == 4
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				}, 
-				{
-					"code": r"""
-					>>> main(21, 63) == 21
+					>>> def errorr(s):
+					...     try:
+					...         wedding_chow(s)
+					...     except AssertionError:
+					...         return 1
+					>>> errorr('RSMFD')==1
 					True
 					""",
 					"hidden": False,
@@ -29,3 +26,4 @@ test = {
 		}
 	]
 }
+

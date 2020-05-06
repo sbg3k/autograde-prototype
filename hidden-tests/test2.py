@@ -1,14 +1,19 @@
 test = {
-	"name": "q1H",
-	"points": 4,
+	"name": "test2",
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> main(5, 44) == 9
-					False
+					>>> def errorr(s):
+					...     try:
+					...         wedding_chow(s)
+					...     except AssertionError:
+					...         return 1
+					>>> errorr(['r','s','d','m','f'])==1
+					True
 					""",
 					"hidden": False,
 					"locked": False,
@@ -21,3 +26,4 @@ test = {
 		}
 	]
 }
+
