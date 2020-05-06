@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> primeSum(500) == 21536
+					>>> is_perfect_square(10203)
 					True
 					""",
 					"hidden": False,

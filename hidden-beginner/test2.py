@@ -1,5 +1,5 @@
 test = {
-	"name": "test2",
+	"name": "day2",
 	"points": 2,
 	"hidden": True,
 	"suites": [ 
@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> len(primeSum.__doc__) > 15
+					>>> is_perfect_square(500)==False
 					True
 					""",
 					"hidden": False,

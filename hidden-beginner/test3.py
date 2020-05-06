@@ -1,13 +1,13 @@
 test = {
-	"name": "test3",
-	"points": 2,
+	"name": "day3",
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> primeSum(30) == 129
+					>>> is_perfect_square(9801)
 					True
 					""",
 					"hidden": False,

@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "day1",
 	"points": 2,
 	"hidden": True,
 	"suites": [ 
@@ -7,8 +7,8 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
-					True
+					>>> is_perfect_square(1000)
+					False
 					""",
 					"hidden": False,
 					"locked": False,

@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> primeSum(1000) == 76127
+					>>> len(is_perfect_square.__doc__) > 15
 					True
 					""",
 					"hidden": False,
