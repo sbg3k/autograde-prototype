@@ -60,12 +60,19 @@ def upload_file():
 				scores = 0
 				for i in files:
 					print(i)
+					print(files)
 					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
+						print(1)
 						a = f.read()
+						print(2)
 						if '"points":' in a:
+							print(3)
 							b = a.split('\n')[2]
+							print(4)
 							c = b.split(": ")[1]
+							print(5)
 							d = c.replace(",", "")
+							print(6)
 							scores += int(d)
 							print(d)
 				
