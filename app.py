@@ -45,9 +45,10 @@ def upload_file():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
-			if True:
+			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
+				if "import" in open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)): return jsonify({"name":request.form['name'], "score":1})
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
 				for i in tests:
@@ -73,10 +74,12 @@ def upload_file():
 							print(d)
 						f.close()
 				
-				
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
+			except:
+				print("Oops!", sys.exc_info())
+				return "Oops! an error occured."
 	
 	return '''
 	<!doctype html>
