@@ -1,13 +1,13 @@
 test = {
 	"name": "test3",
-	"points": 3,
+	"points": 1,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('dsmfrrsmdfrrdsmsdrr')
+					>>> wedding_chow('dsmfrrsmdfrrdsmsdrr'))
 					(2, 'rrrrssmdd')
 					""",
 					"hidden": False,

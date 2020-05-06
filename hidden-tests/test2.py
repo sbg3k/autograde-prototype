@@ -1,14 +1,14 @@
 test = {
 	"name": "test2",
-	"points": 3,
+	"points": 1,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('rSDmsfrmf')
-					(0, 'rrsmmff')
+					>>> type(wedding_chow('rsfmdrsfdmdfrs')) is tuple
+					True
 					""",
 					"hidden": False,
 					"locked": False,
