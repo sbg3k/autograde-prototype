@@ -7,6 +7,23 @@ test = {
             "cases": [
                 {
                     "code": r"""
+                    >>> import os
+                    >>> "order" in dir(os)
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> order([1, 1, 2]) == (2, [1])
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
                     >>> import time	
                     >>> def order(arr):
                     ...     assert type(arr) in [list,tuple,set],'Not an array'
