@@ -1,13 +1,13 @@
 test = {
 	"name": "test2",
-	"points": 1,
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> type(wedding_chow('rsfmdrsfdmdfrs')) is tuple
+					>>> bits_of_gray(3)[4] == '110'
 					True
 					""",
 					"hidden": False,
@@ -21,4 +21,3 @@ test = {
 		}
 	]
 }
-

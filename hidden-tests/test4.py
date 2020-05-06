@@ -1,13 +1,13 @@
 test = {
 	"name": "test4",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('rsdmfrsdfmrsdfrsfsdmfrmfsdrfmsdfrdmsdsfrmddfrrmsdffdmmmdfrsrdfffmsdfr')[1][1:-3] == 'fffff'
+					>>> ''.join(bits_of_gray(3)) == 000001011010110111101100
 					True
 					""",
 					"hidden": False,
@@ -21,4 +21,3 @@ test = {
 		}
 	]
 }
-

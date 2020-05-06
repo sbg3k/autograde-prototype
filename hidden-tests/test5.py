@@ -1,14 +1,14 @@
 test = {
 	"name": "test5",
-	"points": 1,
+	"points": 4,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('rsmdffdmrsdmrsf')
-					(3, '')
+					>>> bits_of_gray(5)[21] == '11111'
+					True
 					""",
 					"hidden": False,
 					"locked": False,
@@ -21,4 +21,3 @@ test = {
 		}
 	]
 }
-
