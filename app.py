@@ -31,6 +31,7 @@ def upload_file():
 			return "Invalid level"
 		
 		file = request.files['file']
+		print(file)
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
 		# if user does not select file, browser also
