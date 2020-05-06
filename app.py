@@ -74,7 +74,7 @@ def upload_file():
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
-				print("Oops!", sys.exc_info()[1])
+				print("Oops!", sys.exc_info())
 				return "Oops! an error occured."
 	
 	return '''
