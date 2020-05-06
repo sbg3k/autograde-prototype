@@ -1,6 +1,7 @@
 import otter
 import time
 import os
+import sys
 from flask import Flask, render_template, request, json, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
@@ -73,7 +74,7 @@ def upload_file():
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
-				print("Oops!", sys.exc_info()[0], "occured.")
+				print("Oops!", sys.exc_info()[1])
 				return "Oops! an error occured."
 	
 	return '''
