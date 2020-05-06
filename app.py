@@ -49,8 +49,8 @@ def upload_file():
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
 				score = {}
-                                if "import" in open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)).read():
-			                return jsonify({"name":request.form['name'], "score": 1})
+				if "import" in open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)).read():
+					return jsonify({"name":request.form['name'], "score": 1})
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
 				for i in tests:
 					if allowed_file(i):
