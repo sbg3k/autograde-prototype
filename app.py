@@ -32,7 +32,7 @@ def upload_file():
 		
 		file = request.files['file']
 		print(file)
-		print(file.__doc__)
+		print(file.read())
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
 		# if user does not select file, browser also
