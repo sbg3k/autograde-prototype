@@ -33,8 +33,8 @@ def upload_file():
 		file = request.files['file']
 		print(file)
 		print(file.read().decode("utf-8"))
+		print("import" in file.read().decode("utf-8"))
 		if "import" in file.read().decode("utf-8"):
-			file.close()
 			return jsonify({"name":request.form['name'], "score": 1})
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
@@ -78,7 +78,6 @@ def upload_file():
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 				if scores == 0: scores = 1
-				file.close()
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
 				print("Oops!", sys.exc_info())
