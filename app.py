@@ -33,9 +33,7 @@ def upload_file():
 		file = request.files['file']
 		print(file)
 		print(file.read().decode("utf-8"))
-		print("import" in file.read().decode("utf-8"))
-		if "import" in file.read().decode("utf-8"):
-			return jsonify({"name":request.form['name'], "score": 1})
+		
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
 		# if user does not select file, browser also
@@ -51,6 +49,8 @@ def upload_file():
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
 				score = {}
+                                if "import" in open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)).read():
+			                return jsonify({"name":request.form['name'], "score": 1})
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
 				for i in tests:
 					if allowed_file(i):
