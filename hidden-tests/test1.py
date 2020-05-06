@@ -1,4 +1,4 @@
-tests = {
+test = {
     "name": "test1",
     "points": 2,
     "hidden": True,
