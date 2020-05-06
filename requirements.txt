@@ -18,6 +18,7 @@ Jinja2==2.11.2
 jsonschema==3.2.0
 jupyter-core==4.6.3
 MarkupSafe==1.1.1
+memory_profiler==0.57.0
 mistune==0.8.4
 nb2pdf==0.4.1
 nbconvert==5.6.1
@@ -30,6 +31,7 @@ parso==0.7.0
 pexpect==4.8.0
 pickleshare==0.7.5
 prompt-toolkit==3.0.5
+psutil==5.7.0
 ptyprocess==0.6.0
 pyee==7.0.1
 Pygments==2.6.1
