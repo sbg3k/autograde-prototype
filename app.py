@@ -32,7 +32,7 @@ def upload_file():
 		
 		file = request.files['file']
 		print(file)
-		print(file.read())
+		print(file.read().decode("utf-8"))
 		if "import" in file.read().decode("utf-8"):
 			file.close()
 			return jsonify({"name":request.form['name'], "score": 1})
