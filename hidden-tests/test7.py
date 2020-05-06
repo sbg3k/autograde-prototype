@@ -17,7 +17,9 @@ test = {
                     ...         ounje = ounje.replace(i, '', v)
                     ...     return v, ''.join(sorted(ounje, key=food.index))
                     >>> bound = memory_usage((chow,(x,)))[0]//1 +1
-                    >>> memory_usage((wedding_chow,(x,)))< bound
+                    >>> def avg(numbers):
+                    ...     return float(sum(numbers)) / max(len(numbers), 1)
+                    >>> avg(memory_usage((wedding_chow,(x,)))) < bound
                     True
                     """,
                     "hidden": False,
