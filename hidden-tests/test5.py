@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('rsmdffdmrsdmrsf'))
+					>>> wedding_chow('rsmdffdmrsdmrsf')
 					(3, '')
 					""",
 					"hidden": False,
