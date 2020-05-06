@@ -1,14 +1,14 @@
 test = {
     "name": "test9",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> wedding_chow('')[0] == len(wedding_chow('')[1])
-                    True
+                    >>> order([-1,-2,-3,-6,7,8,9])
+                    (3, [-6,7,8,9])
                     """,
                     "hidden": False,
                     "locked": False,

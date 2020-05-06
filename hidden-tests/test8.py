@@ -7,9 +7,9 @@ test = {
             "cases": [
                 {
                     "code": r"""
-					>>> wedding_chow.__doc__ != None
-					True
-					""",
+                    >>> order([1,2,3,4,5,6,7,8,9])
+                    (9, [])
+                    """,
                     "hidden": False,
                     "locked": False,
                 },

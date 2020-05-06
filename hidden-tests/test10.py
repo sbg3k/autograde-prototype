@@ -7,8 +7,8 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> wedding_chow('rrrrssssffffmmmmdddd')
-                    (4, '')
+                    >>> order([1,2,3,4,7,8,9])
+                    (4, [7, 8, 9])
                     """,
                     "hidden": False,
                     "locked": False,
