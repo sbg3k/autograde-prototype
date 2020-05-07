@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
+					>>> averageMultiple(10) == 5.75
 					True
 					""",
 					"hidden": False,
