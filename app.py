@@ -42,7 +42,7 @@ def upload_file():
 		
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
-			file.save(os.path.join(UPLOAD_FOLDER, filename))
+			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
 			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
@@ -50,7 +50,7 @@ def upload_file():
 				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
 					if allowed_file(i):
-						score[i] = str(otter.Notebook(UPLOAD_FOLDER).check(i.split('.')[0]))
+						score[i] = str(otter.Notebook(UPLOAD_FOLDER[2:]).check(i.split('.')[0]))
 			
 			
 				files = []
@@ -71,7 +71,7 @@ def upload_file():
 							print(d)
 				
 				
-				os.remove(os.path.join(UPLOAD_FOLDER, filename))
+				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
