@@ -24,7 +24,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> order.__doc__ !=None
+                    >>> order.__doc__ != None
                     True
                     """,
                     "hidden": False,
