@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> len(primeSum.__doc__) > 15
+					>>> len(averageMultiple.__doc__) > 30
 					True
 					""",
 					"hidden": False,
