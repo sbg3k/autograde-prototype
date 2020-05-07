@@ -16,7 +16,7 @@ def allowed_file(filename):
 		   filename.split('.')[-1].lower() == os.environ['ALLOWED_EXTENSION']
 
 def allowed_level(level):
-	return level in UPLOAD_FOLDER
+	UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
