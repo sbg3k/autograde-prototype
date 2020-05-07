@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> primeSum(500) == 21536
+					>>> round(averageMultiple(3007), 5) == 1504.28653
 					True
 					""",
 					"hidden": False,
