@@ -4,13 +4,6 @@ test = {
     "hidden": True,
     "suites": [
         {
-            "cases": [
-                test = {
-    "name": "q1",
-    "points": 8,
-    "hidden": False,
-    "suites": [ 
-        {
             "cases": [ 
                 {
                     "code": r"""
