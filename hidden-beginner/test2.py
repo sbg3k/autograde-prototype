@@ -1,13 +1,13 @@
 test = {
 	"name": "test2",
-	"points": 2,
+	"points": 1,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> len(primeSum.__doc__) > 15
+					>>> primeSum.__doc__ != None
 					True
 					""",
 					"hidden": False,
