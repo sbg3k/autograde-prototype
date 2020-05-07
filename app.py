@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 CORS(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
-UPLOAD_FOLDER = json.loads(os.environ['UPLOAD_FOLDER'])
+UPLOAD_FOLDER = os.environ['UPLOAD_FOLDER']
 
 def allowed_file(filename):
 	return '.' in filename and \
@@ -42,15 +42,15 @@ def upload_file():
 		
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
-			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+			file.save(os.path.join(UPLOAD_FOLDER, filename))
 			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
 				score = {}
-				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
+				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
 					if allowed_file(i):
-						score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
+						score[i] = str(otter.Notebook(UPLOAD_FOLDER).check(i.split('.')[0]))
 			
 			
 				files = []
@@ -61,7 +61,7 @@ def upload_file():
 				scores = 0
 				for i in files:
 					print(i)
-					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
+					with open(UPLOAD_FOLDER + '/' + i) as f:
 						a = f.read()
 						if '"points":' in a:
 							b = a.split('\n')[2]
@@ -71,7 +71,7 @@ def upload_file():
 							print(d)
 				
 				
-				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+				os.remove(os.path.join(UPLOAD_FOLDER, filename))
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
@@ -112,7 +112,7 @@ def upload_test():
 		
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
-			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']], filename))
+			file.save(os.path.join(UPLOAD_FOLDER, filename))
 			return "Testcase {} successfully uploaded".format(filename)
 			
 	return '''
@@ -131,9 +131,9 @@ def delete_test():
 	if request.method == 'POST' and request.form['password'] == os.environ['PASS']:
 		if not allowed_level(request.form['level']):
 			return "Invalid level"
-		for filename in os.listdir(UPLOAD_FOLDER[request.form['level']]):
+		for filename in os.listdir(UPLOAD_FOLDER):
 			if allowed_file(filename):
-				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']], filename))
+				os.remove(os.path.join(UPLOAD_FOLDER, filename))
 		return "Testcases successfully deleted"
 			
 	return '''
