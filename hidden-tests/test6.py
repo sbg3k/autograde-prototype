@@ -7,15 +7,9 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> "order" in dir()
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
-                    "code": r"""
                     >>> order([1, 1, 2]) == (2, [1])
+                    True
+                    >>> "order" in dir()
                     True
                     """,
                     "hidden": False,
