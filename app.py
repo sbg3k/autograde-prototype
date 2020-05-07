@@ -58,7 +58,7 @@ def upload_file():
 				print(tests)
 				for i in tests:
 					if allowed_file(i):
-						print(i)
+						print(i, score)
 						score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
 			
 			
