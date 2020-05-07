@@ -49,9 +49,8 @@ def upload_file():
 				print("executing...", "[", request.form['name'], "]")
 				with open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)) as f:
 					data = f.read().replace('\n', '')
-					print(data)
-					print("import" in data)
-					if "import" in f.read():
+					print(f.read())
+					if "import" in data:
 						return jsonify({"name":request.form['name'], "score":1})
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
