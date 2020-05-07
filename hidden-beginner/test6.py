@@ -7,6 +7,8 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
+					>>> "averageMultiple" in dir()
+					True
 					>>> round(averageMultiple(198), 5) == 98.57143
 					True
 					""",
