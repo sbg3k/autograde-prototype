@@ -32,6 +32,7 @@ def upload_file():
 		
 		file = request.files['file']
 		print(file)
+		print(file.read())
 		
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
@@ -49,7 +50,6 @@ def upload_file():
 				print("executing...", "[", request.form['name'], "]")
 				with open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)) as f:
 					data = f.read().replace('\n', '')
-					print(f.read())
 					if "import" in data:
 						return jsonify({"name":request.form['name'], "score":1})
 				score = {}
