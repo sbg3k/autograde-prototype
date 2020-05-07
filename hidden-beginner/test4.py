@@ -1,13 +1,13 @@
 test = {
 	"name": "test4",
-	"points": 3,
+	"points": 2,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> primeSum(100) == 1060
+					>>> round(averageMultiple(1007), 5) == 503.57143
 					True
 					""",
 					"hidden": False,
