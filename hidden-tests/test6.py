@@ -7,7 +7,6 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> import os
                     >>> "order" in dir()
                     True
                     """,
