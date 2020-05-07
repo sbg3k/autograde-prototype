@@ -7,6 +7,8 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
+					>>> "averageMultiple" in dir()
+					True
 					>>> len(averageMultiple.__doc__) > 30
 					True
 					""",
