@@ -49,6 +49,8 @@ def upload_file():
 			
 				files = []
 				for i in score:
+					print(i)
+					print(score[i])
 					if 'All tests passed!' in score[i]:
 						files.append(i)
 			
