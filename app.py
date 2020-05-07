@@ -14,9 +14,7 @@ UPLOAD_FOLDER = os.environ['UPLOAD_FOLDER']
 def allowed_file(filename):
 	return '.' in filename and \
 		   filename.split('.')[-1].lower() == os.environ['ALLOWED_EXTENSION']
-
-def allowed_level(level):
-	UPLOAD_FOLDER
+	
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -25,10 +23,6 @@ def upload_file():
 		
 		if 'file' not in request.files:
 			return "Incomplete Request"
-		
-		# confirms if the level is Beginner or Intermediate
-		if not allowed_level(request.form['level']):
-			return "Invalid level"
 		
 		file = request.files['file']
 		print(file)
@@ -87,63 +81,6 @@ def upload_file():
 	  <input type=text name=name placeholder="Email">
 	  <input type=text name=level placeholder="beginner or intermediate (lowercase)">
 	  <input type=submit value=Upload>
-	</form>
-	'''
-
-@app.route('/test-upload/', methods=['GET', 'POST'])
-def upload_test():
-	if request.method == 'POST' and request.form['password'] == os.environ['PASS']:
-		# check if the post request has the file part
-		
-		if 'file' not in request.files:
-			flash('No file part')
-			return redirect(request.url)
-		
-		if not allowed_level(request.form['level']):
-			return "Invalid level"
-		
-		file = request.files['file']
-		
-		# if user does not select file, browser also
-		# submit an empty part without filename
-		
-		if file.filename == '':
-			return redirect(request.url)
-		
-		if file and allowed_file(file.filename):
-			filename = secure_filename(file.filename)
-			file.save(os.path.join(UPLOAD_FOLDER, filename))
-			return "Testcase {} successfully uploaded".format(filename)
-			
-	return '''
-	<!doctype html>
-	<title>Upload Testcase</title>
-	<h1>Upload Testcase</h1>
-	<form method=post enctype=multipart/form-data>
-	  <input type=file name=file>
-	  <input type=text name=level placeholder="beginner or intermediate">
-	  <input type=password name=password placeholder="password">
-	  <input type=submit value=Upload>
-	</form>
-	'''
-@app.route('/delete/', methods=['GET', 'POST'])
-def delete_test():
-	if request.method == 'POST' and request.form['password'] == os.environ['PASS']:
-		if not allowed_level(request.form['level']):
-			return "Invalid level"
-		for filename in os.listdir(UPLOAD_FOLDER):
-			if allowed_file(filename):
-				os.remove(os.path.join(UPLOAD_FOLDER, filename))
-		return "Testcases successfully deleted"
-			
-	return '''
-	<!doctype html>
-	<title>Delete Yesterday's Testcases</title>
-	<h1>Delete Yesterday's Testcases</h1>
-	<form method=post enctype=multipart/form-data>
-	  <input type=text name=level placeholder="beginner or intermediate">
-	  <input type=password name=password placeholder="password">
-	  <input type=submit value=Delete>
 	</form>
 	'''
 
