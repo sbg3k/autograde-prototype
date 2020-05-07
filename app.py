@@ -47,6 +47,7 @@ def upload_file():
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 			if True:
 				exec('from ' + filename[:-3] + ' import *', globals())
+				print(filename, order([1, 1]))
 				print("executing...", "[", request.form['name'], "]")
 				with open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)) as f:
 					data = f.read().replace('\n', '')
