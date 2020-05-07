@@ -53,6 +53,7 @@ def upload_file():
 						return jsonify({"name":request.form['name'], "score":1})
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
+				print(tests)
 				for i in tests:
 					if allowed_file(i):
 						print(i)
