@@ -46,10 +46,8 @@ def upload_file():
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
 			if True:
-				loc = {}
-				exec('from ' + filename[:-3] + ' import *', globals(), loc)
+				exec('from ' + filename[:-3] + ' import *', globals())
 				print(filename)
-				print(loc['order']([1, 1]))
 				print("executing...", "[", request.form['name'], "]")
 				with open(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename)) as f:
 					data = f.read().replace('\n', '')
