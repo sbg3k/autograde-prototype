@@ -8,7 +8,7 @@ test = {
                 {
                     "code": r"""
                     >>> import os
-                    >>> "order" in dir(os)
+                    >>> "order" in dir()
                     True
                     """,
                     "hidden": False,
