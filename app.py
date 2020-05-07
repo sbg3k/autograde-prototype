@@ -34,15 +34,15 @@ def upload_file():
 		
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
-			file.save(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
 			try:
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
 				score = {}
-				tests = os.listdir(UPLOAD_FOLDER[request.form['level']])
+				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
 					if allowed_file(i):
-						score[i] = str(otter.Notebook(UPLOAD_FOLDER[request.form['level']][2:]).check(i.split('.')[0]))
+						score[i] = str(otter.Notebook(UPLOAD_FOLDER[2:]).check(i.split('.')[0]))
 			
 			
 				files = []
@@ -53,7 +53,7 @@ def upload_file():
 				scores = 0
 				for i in files:
 					print(i)
-					with open(UPLOAD_FOLDER[request.form['level']] + '/' + i) as f:
+					with open(UPLOAD_FOLDER + '/' + i) as f:
 						a = f.read()
 						if '"points":' in a:
 							b = a.split('\n')[2]
@@ -63,7 +63,7 @@ def upload_file():
 							print(d)
 				
 				
-				os.remove(os.path.join(UPLOAD_FOLDER[request.form['level']][:2], filename))
+				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
