@@ -7,8 +7,22 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> wedding_chow('rsmdffdmrsdmrsf')
-					(3, '')
+					>>> "order" in dir()
+					True
+					>>> order([1, 4, 2]) == (2, [4])
+					True
+					>>> def errorr(s):
+					...	 try:
+					...		 x=order(s)
+					...	 except AssertionError:
+					...		 return True
+					...	 except:
+					...		 return False
+					...	 else:
+					...		 return x
+					...
+					>>> errorr([100,1.0,2,3,21,22,23,200,31,32,33,4])
+					True
 					""",
 					"hidden": False,
 					"locked": False,
@@ -21,4 +35,3 @@ test = {
 		}
 	]
 }
-
