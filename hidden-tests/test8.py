@@ -1,37 +1,27 @@
 test = {
-	"name": "test8",
-	"points": 1,
-	"hidden": True,
-	"suites": [ 
-		{
-			"cases": [ 
-				{
-					"code": r"""
-					>>> "order" in dir()
-					True
-					>>> order([1, 4, 2]) == (2, [4])
-					True
-					>>> def errorr(s):
-					...	 try:
-					...		 x=order(s)
-					...	 except AssertionError:
-					...		 return True
-					...	 except:
-					...		 return False
-					...	 else:
-					...		 return x
-					...
-					>>> errorr([100,'a',2,3,21,22,23,200,31,32,33,4])
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				}, 
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+    "name": "test8",
+    "points": 2,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
+                    "code": r"""
+                    >>> "my_cars" in dir()
+                    True
+                    >>> my_cars([2,4,6,8])==12
+                    True
+                    >>> my_cars([97, 94, 5, 51, 45, 53, 70, 6, 15, 20, 80, 64, 2, 71, 51, 63, 3, 19, 33, 73])==539
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }
