@@ -7,9 +7,9 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "averageMultiple" in dir()
+					>>> "fastSum" in dir()
 					True
-					>>> len(averageMultiple.__doc__) > 30
+					>>> fastSum(1_000_000_000) == 500000000500000000
 					True
 					""",
 					"hidden": False,
