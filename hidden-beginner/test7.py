@@ -18,7 +18,7 @@ test = {
 					...         return False
 					...     return True
 					... 
-					>>> run_with_limited_time(fastSum, (8_192_892_819_891_112_282_728_282), {}, 0.040)
+					>>> run_with_limited_time(fastSum, (8_192_892_819_891_112_282_728_282), {}, 5)
 					True
 					""",
 					"hidden": False,
