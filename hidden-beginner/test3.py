@@ -9,7 +9,7 @@ test = {
 					"code": r"""
 					>>> "fastSum" in dir()
 					True
-					>>> fastSum.doc != None
+					>>> fastSum.__doc__ != None
 					True
 					""",
 					"hidden": False,
