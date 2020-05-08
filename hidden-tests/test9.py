@@ -1,5 +1,5 @@
 test = {
-	"name": "test2",
+	"name": "test9",
 	"points": 1,
 	"hidden": True,
 	"suites": [
@@ -9,8 +9,17 @@ test = {
 					"code": r"""
 					>>> "to_base" in dir()
 					True
+					>>> def errorr(n,b):
+					...	 try:
+					...		 x=to_base(n,b)
+					...	 except AssertionError:
+					...		 return True
+					...	 except:
+					...		 return False
+					...	 else:
+					...		 return x
 					>>> import inspect
-					>>> to_base(665,8)=='1231' and 'bin(' not in inspect.getsource(to_base)
+					>>> errorr((32,),(6,)) and '//' not in inspect.getsource(to_base)
 					True
 					""",
 					"hidden": False,

@@ -1,37 +1,26 @@
-test = {
-    "name": "test1",
-    "points": 2,
-    "hidden": True,
-    "suites": [
-        {
-            "cases": [
-                {
-                    "code": r"""
-                    >>> "my_cars" in dir()
-                    True
-                    >>> my_cars([2,4,6,8])==12
-                    True
-                    >>> def errorr(s):
-                    ...     try:
-                    ...         x=my_cars(s)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr(())==0
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-            ],
-            "scored": False,
-            "setup": "",
-            "teardown": "",
-            "type": "doctest"
-        }
-    ]
+test = {
+	"name": "test1",
+	"points": 1,
+	"hidden": True,
+	"suites": [
+		{
+			"cases": [
+				{
+					"code": r"""
+					>>> "to_base" in dir()
+					True
+					>>> import inspect
+					>>> to_base(665,8)=='1231' and 'hex(' not in inspect.getsource(to_base)
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+			],
+			"scored": False,
+			"setup": "",
+			"teardown": "",
+			"type": "doctest"
+		}
+	]
 }

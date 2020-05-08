@@ -1,6 +1,6 @@
 test = {
-	"name": "test2",
-	"points": 1,
+	"name": "test4",
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
@@ -10,7 +10,7 @@ test = {
 					>>> "to_base" in dir()
 					True
 					>>> import inspect
-					>>> to_base(665,8)=='1231' and 'bin(' not in inspect.getsource(to_base)
+					>>> to_base(64,2)=='1000000' and '//' not in inspect.getsource(to_base)
 					True
 					""",
 					"hidden": False,
