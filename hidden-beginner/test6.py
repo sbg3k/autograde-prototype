@@ -1,15 +1,15 @@
 test = {
 	"name": "test6",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "averageMultiple" in dir()
+					>>> "fastSum" in dir()
 					True
-					>>> round(averageMultiple(198), 5) == 98.57143
+					>>> fastSum(999_999_999_999_999)==499999999999999500000000000000
 					True
 					""",
 					"hidden": False,

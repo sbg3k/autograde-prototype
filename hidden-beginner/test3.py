@@ -1,15 +1,15 @@
 test = {
 	"name": "test3",
-	"points": 2,
+	"points": 1,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "averageMultiple" in dir()
+					>>> "fastSum" in dir()
 					True
-					>>> round(averageMultiple(100), 5) == 50.39130
+					>>> averageMultiple.doc != None
 					True
 					""",
 					"hidden": False,
