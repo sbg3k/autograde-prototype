@@ -1,14 +1,14 @@
 test = {
-	"name": "q2",
-	"points": 8,
+	"name": "test7",
+	"points": 3,
 	"hidden": False,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
+					>>> assert "fastSum" in dir(), "haha"
 					>>> from multiprocessing import Process
-					>>> from time import sleep
 					>>> def run_with_limited_time(func, args, kwargs, time):
 					...     p = Process(target=func, args=args, kwargs=kwargs)
 					...     p.start()
@@ -18,7 +18,7 @@ test = {
 					...         return False
 					...     return True
 					... 
-					>>> run_with_limited_time(main, (123433400, 25002342456), {}, 1.0) and main(123433400, 25002342456) == 8
+					>>> run_with_limited_time(fastSum, (8_192_892_819_891_112_282_728_282), {}, 0.040)
 					True
 					""",
 					"hidden": False,
