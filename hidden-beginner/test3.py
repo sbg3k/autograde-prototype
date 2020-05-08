@@ -9,7 +9,7 @@ test = {
 					"code": r"""
 					>>> "fastSum" in dir()
 					True
-					>>> averageMultiple.doc != None
+					>>> fastSum.doc != None
 					True
 					""",
 					"hidden": False,
