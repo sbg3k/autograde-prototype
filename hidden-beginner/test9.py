@@ -19,7 +19,7 @@ test = {
 					...         return False
 					...     return fibSum(1_000_000)
 					... 
-					>>> run_with_limited_time(fibSum, (1_000_000,), {}, 0.79)
+					>>> run_with_limited_time(fibSum, (2_000_000,), {}, 1.71)
 					1089154
 					""",
 					"hidden": False,
