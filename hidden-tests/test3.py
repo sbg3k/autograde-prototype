@@ -1,25 +1,32 @@
 test = {
-    "name": "test3",
-    "points": 2,
-    "hidden": True,
-    "suites": [
-        {
-            "cases": [
-                {
-                    "code": r"""
-                    >>> "my_cars" in dir()
-                    True
-                    >>> my_cars([16, 1, 7, 5, 14, 3, 13, 17, 9, 8, 11, 14, 10])==80
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-            ],
-            "scored": False,
-            "setup": "",
-            "teardown": "",
-            "type": "doctest"
-        }
-    ]
+	"name": "test3",
+	"points": 2,
+	"hidden": True,
+	"suites": [
+		{
+			"cases": [
+				{
+					"code": r"""
+					>>> def errorr(n):
+					...	 try:
+					...		 x=sparsify(n)
+					...	 except AssertionError:
+					...		 return True
+					...	 except:
+					...		 return False
+					...	 else:
+					...		 return x
+					>>> errorr({"A": {"B":1}, "B":{"c":2}, "c":{"A":1, "D":1}, "d":{}})
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+			],
+			"scored": False,
+			"setup": "",
+			"teardown": "",
+			"type": "doctest"
+		}
+	]
 }
