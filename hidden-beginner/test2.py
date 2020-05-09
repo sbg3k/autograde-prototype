@@ -9,7 +9,7 @@ test = {
 					"code": r"""
                     >>> "fibSum" in dir()
 					True
-					>>> fibSum(150) == 88
+					>>> fibSum(150) == 188
 					True
 					""",
 					"hidden": False,
