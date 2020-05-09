@@ -1,6 +1,6 @@
 test = {
-    "name": "test1",
-    "points": 0.6666666666666666,
+    "name": "test4",
+    "points": 1.3333333333333333,
     "hidden": True,
     "suites": [
         {
@@ -8,7 +8,7 @@ test = {
                 {
                     "code": r"""
                     >>> import inspect
-                    >>> to_base(665,8)=='1231' and 'hex(' not in inspect.getsource(to_base)
+                    >>> to_base(64,2)=='1000000' and '//' not in inspect.getsource(to_base)
                     True
                     """,
                     "hidden": False,

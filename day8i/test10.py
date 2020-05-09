@@ -1,6 +1,6 @@
 test = {
-    "name": "test1",
-    "points": 0.6666666666666666,
+    "name": "test10",
+    "points": 1.3333333333333333,
     "hidden": True,
     "suites": [
         {
@@ -8,7 +8,8 @@ test = {
                 {
                     "code": r"""
                     >>> import inspect
-                    >>> to_base(665,8)=='1231' and 'hex(' not in inspect.getsource(to_base)
+                    >>> xx = ['//','hex(','bin(','%']
+                    >>> to_base.__doc__ != None and  sum([i not in inspect.getsource(to_base) for i in xx])==4
                     True
                     """,
                     "hidden": False,
