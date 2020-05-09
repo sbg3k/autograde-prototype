@@ -1,33 +1,32 @@
 test = {
-    "name": "test6",
-    "points": 2,
-    "hidden": True,
-    "suites": [
-        {
-            "cases": [
-                {
-                    "code": r"""
-                    >>> def errorr(n,b):
-                    ...     try:
-                    ...         x=to_base(n,b)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    >>> import inspect
-                    >>> errorr(22,6) and '/' not in inspect.getsource(to_base)
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-            ],
-            "scored": False,
-            "setup": "",
-            "teardown": "",
-            "type": "doctest"
-        }
-    ]
+	"name": "test6",
+	"points": 1,
+	"hidden": True,
+	"suites": [
+		{
+			"cases": [
+				{
+					"code": r"""
+					>>> def errorr(n):
+					...	 try:
+					...		 x=sparsify(n)
+					...	 except AssertionError:
+					...		 return True
+					...	 except:
+					...		 return False
+					...	 else:
+					...		 return x
+					>>> errorr({'0': {'1':1}, '1':{'2':2}, '2':{'0':1}, '3':{}})
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+			],
+			"scored": False,
+			"setup": "",
+			"teardown": "",
+			"type": "doctest"
+		}
+	]
 }
