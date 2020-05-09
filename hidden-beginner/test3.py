@@ -10,12 +10,12 @@ test = {
 					>>> "fibSum" in dir()
 					True
 					>>> def errorr(n):
-					...	 try:
-					...		 x=fibSum(n)
-					...	 except:
-					...		 return True
-					...	 else:
-					...		 return type(x) == str or x == 0
+					...     try:
+					...         x=fibSum(n)
+					...     except:
+					...         return True
+					...     else:
+					...         return type(x) == str or x == 0
 					>>> errorr('a')
 					True
 					""",
