@@ -8,18 +8,9 @@ test = {
 				{
 					"code": r"""
                     >>> "fibSum" in dir()
-                    True
-                    >>> from multiprocessing import Process
-					>>> def run_with_limited_time(func, args, kwargs, time):
-					... p = Process(target=func, args=args, kwargs=kwargs)
-					... p.start()
-					... p.join(time)
-					... if p.is_alive():
-					... 	p.terminate()
-					... 	return False
-					... return True
-					>>> run_with_limited_time(fibSum, (1_000_000,), {}, 0.78)
-                    True
+					True
+					>>> fibSum(150) == 88
+					True
 					""",
 					"hidden": False,
 					"locked": False,
