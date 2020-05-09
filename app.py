@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 CORS(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
-UPLOAD_FOLDER = os.environ['UPLOAD_FOLDER']
+
 
 def allowed_file(filename):
 	return '.' in filename and \
@@ -33,7 +33,7 @@ def upload_file():
 		
 		if file.filename == '':
 			return 'No selected file'
-		
+		UPLOAD_FOLDER = request.form['day']
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
@@ -81,7 +81,7 @@ def upload_file():
 	<form method=post enctype=multipart/form-data>
 	  <input type=file name=file>
 	  <input type=text name=name placeholder="Email">
-	  <input type=text name=level placeholder="beginner or intermediate (lowercase)">
+	  <input type=text name=day placeholder="day9b/day9i/day8b/etc">
 	  <input type=submit value=Upload>
 	</form>
 	'''
