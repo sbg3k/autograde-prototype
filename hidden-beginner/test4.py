@@ -2,19 +2,19 @@ test = {
 	"name": "test4",
 	"points": 2,
 	"hidden": True,
-	"suites": [ 
+	"suites": [
 		{
-			"cases": [ 
+			"cases": [
 				{
 					"code": r"""
-					>>> "fastSum" in dir()
+					>>> "fibSum" in dir()
 					True
-					>>> len(fastSum.__doc__) > 15
+					>>> fibSum(100) == 44
 					True
 					""",
 					"hidden": False,
 					"locked": False,
-				}, 
+				},
 			],
 			"scored": False,
 			"setup": "",

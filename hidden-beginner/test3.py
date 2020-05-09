@@ -1,20 +1,27 @@
 test = {
 	"name": "test3",
-	"points": 1,
+	"points": 2,
 	"hidden": True,
-	"suites": [ 
+	"suites": [
 		{
-			"cases": [ 
+			"cases": [
 				{
 					"code": r"""
-					>>> "fastSum" in dir()
+					>>> "fibSum" in dir()
 					True
-					>>> fastSum.__doc__ != None
+					>>> def errorr(n):
+					...     try:
+					...         x=fibSum(n)
+					...     except:
+					...         return True
+					...     else:
+					...         return type(x) == str or x == 0
+					>>> errorr('a')
 					True
 					""",
 					"hidden": False,
 					"locked": False,
-				}, 
+				},
 			],
 			"scored": False,
 			"setup": "",
