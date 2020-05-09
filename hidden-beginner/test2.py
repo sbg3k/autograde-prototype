@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-                    >>> "fibSum" in dir()
+					>>> "fibSum" in dir()
 					True
 					>>> fibSum(150) == 188
 					True
