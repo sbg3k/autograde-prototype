@@ -63,7 +63,7 @@ def upload_file():
 							b = a.split('\n')[2]
 							c = b.split(":")[1]
 							d = c.replace(",", "")
-							scores += int(d)
+							scores += float(d)
 							print(d)
 				
 				
