@@ -18,7 +18,6 @@ test = {
 					... 	p.terminate()
 					... 	return False
 					... return True
-					... 
 					>>> run_with_limited_time(fibSum, (1_000_000,), {}, 0.78)
                     True
 					""",
