@@ -1,6 +1,6 @@
 test = {
-	"name": "test7",
-	"points": 1,
+	"name": "test1",
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
@@ -9,7 +9,7 @@ test = {
 					"code": r"""
 					>>> "fibSum" in dir()
 					True
-					>>> len(fibSum.__doc__) > 15
+					>>> fibSum(10) == 10
 					True
 					""",
 					"hidden": False,

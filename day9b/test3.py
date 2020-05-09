@@ -1,6 +1,6 @@
 test = {
-	"name": "test7",
-	"points": 1,
+	"name": "test3",
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
@@ -9,7 +9,14 @@ test = {
 					"code": r"""
 					>>> "fibSum" in dir()
 					True
-					>>> len(fibSum.__doc__) > 15
+					>>> def errorr(n):
+					...	 try:
+					...		 x=fibSum(n)
+					...	 except:
+					...		 return True
+					...	 else:
+					...		 return type(x) == str or x == 0
+					>>> errorr('a')
 					True
 					""",
 					"hidden": False,
