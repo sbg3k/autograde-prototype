@@ -7,7 +7,8 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> assert "Student" in dir() and "average" in dir()
+					>>> "Student" in dir() and "average" in dir()
+					True
 					>>> def errorr():
 					...	 try:
 					...		 Fortune=Student(2,12,3.0)

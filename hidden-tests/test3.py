@@ -7,7 +7,8 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> assert "Student" in dir() and "average" in dir()
+					>>> "Student" in dir() and "average" in dir()
+					True
 					>>> Fortune=Student(20,45.50,6.7)
 					>>> Joba=Student(19,43.28,8.4)
 					>>> Fortune.info()

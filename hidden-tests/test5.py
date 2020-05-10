@@ -7,7 +7,8 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> assert "Student" in dir() and "average" in dir()
+					>>> "Student" in dir() and "average" in dir()
+					True
 					>>> average.__doc__!=None
 					True
 					""",
