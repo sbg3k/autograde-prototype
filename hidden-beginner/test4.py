@@ -7,9 +7,8 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> "fibSum" in dir()
-					True
-					>>> fibSum(100) == 44
+					>>> assert "fibonacci" in dir()
+					>>> fibonacci.__doc__ != None
 					True
 					""",
 					"hidden": False,

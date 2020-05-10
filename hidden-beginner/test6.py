@@ -1,16 +1,22 @@
 test = {
 	"name": "test6",
-	"points": 1,
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
 					"code": r"""
-					>>> "fibSum" in dir()
-					True
-					>>> fibSum.__doc__ != None
-					True
+					>>> assert "fibonacci" in dir()
+					>>> try:
+					...	 a = False
+					...	 x = fibonacci('a')
+					...	 a = True
+					...	 if isinstance(x, str) or isinstance(x, bool):
+					...		 a = False
+					... except:
+					...	 a == True
+					False
 					""",
 					"hidden": False,
 					"locked": False,

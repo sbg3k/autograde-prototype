@@ -7,16 +7,8 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> "fibSum" in dir()
-					True
-					>>> def errorr(n):
-					...     try:
-					...         x=fibSum(n)
-					...     except:
-					...         return True
-					...     else:
-					...         return type(x) == str or x == 0
-					>>> errorr('a')
+					>>> assert "fibonacci" in dir()
+					>>> fibonacci(17711)
 					True
 					""",
 					"hidden": False,

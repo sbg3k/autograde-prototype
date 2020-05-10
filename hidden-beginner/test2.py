@@ -1,16 +1,15 @@
 test = {
 	"name": "test2",
-	"points": 2,
+	"points": 1,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
 					"code": r"""
-					>>> "fibSum" in dir()
-					True
-					>>> fibSum(150) == 188
-					True
+					>>> assert "fibonacci" in dir()
+					>>> fibonacci(17811)
+					False
 					""",
 					"hidden": False,
 					"locked": False,
