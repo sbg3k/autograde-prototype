@@ -15,8 +15,9 @@ test = {
 					...	 if isinstance(x, str) or isinstance(x, bool):
 					...		 a = False
 					... except:
-					...	 a == True
-					False
+					...	 a = False
+					>>> a == False
+					True
 					""",
 					"hidden": False,
 					"locked": False,
