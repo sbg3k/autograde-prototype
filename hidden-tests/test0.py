@@ -1,5 +1,5 @@
 test = {
-	"name": "test2",
+	"name": "test0",
 	"points": 1,
 	"hidden": True,
 	"suites": [
@@ -7,10 +7,10 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> assert "Student" in dir() and "average" in dir()
+					>>> "Student" in dir()
 					>>> def errorr():
 					...	 try:
-					...		 Fortune=Student(2,12.34,8)
+					...		 Fortune=Student(2.0,12.4,3.0)
 					...	 except AssertionError:
 					...		 return True
 					...	 except:

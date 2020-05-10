@@ -1,27 +1,32 @@
 test = {
-    "name": "test6",
-    "points": 2,
-    "hidden": True,
-    "suites": [
-        {
-            "cases": [
-                {
-                    "code": r"""
-                    >>> "order" in dir()
-                    True
-                    >>> order([1, 1, 2]) == (2, [1])
-                    True
-                    >>> order([1,100,1000,1002])
-                    (0, [1, 100, 1000, 1002])
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-            ],
-            "scored": False,
-            "setup": "",
-            "teardown": "",
-            "type": "doctest"
-        }
-    ]
+	"name": "test6",
+	"points": 1,
+	"hidden": True,
+	"suites": [
+		{
+			"cases": [
+				{
+					"code": r"""
+					>>> assert "Student" in dir() and "average" in dir()
+					>>> def errorr():
+					...	 try:
+					...		 average([2,4,6,7.8,10])
+					...	 except AssertionError:
+					...		 return True
+					...	 except:
+					...		 return False
+					...	 return False
+					>>> errorr()
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+			],
+			"scored": False,
+			"setup": "",
+			"teardown": "",
+			"type": "doctest"
+		}
+	]
 }
