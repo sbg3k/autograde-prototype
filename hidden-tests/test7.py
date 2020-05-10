@@ -7,8 +7,18 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> sparsify({"A": {"B":1,'E':2}, "B":{"C":2},'E':{'C':2}, "C":{"A":1, "D":1}, "D":{}})
-					[[0, 0, 1, 0, 0], [1, 0, 0, 0, 0], [0, 2, 0, 0, 2], [0, 0, 1, 0, 0], [2, 0, 0, 0, 0]]
+					>>> def errorr():
+					...	 try:
+					...		 Fortune=Student(23,4.50,6.70)
+					...		 Joba=Student(21,45.67,3.40)
+					...		 average([Joba,Fortune,'3'])
+					...	 except AssertionError:
+					...		 return True
+					...	 except:
+					...		 return False
+					...	 return False
+					>>> errorr()
+					True
 					""",
 					"hidden": False,
 					"locked": False,
