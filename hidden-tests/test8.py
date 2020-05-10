@@ -1,14 +1,16 @@
 test = {
 	"name": "test8",
-	"points": 1,
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
 					"code": r"""
-					>>> sparsify({"A":{"B":1},"B":{}})
-					[[0, 0], [1, 0]]
+					>>> Fortune=Student(23,4.50,6.70)
+					>>> Joba=Student(21,45.67,3.40)
+					>>> average([Joba,Fortune])
+					(32.0, 40.86, 6.16)
 					""",
 					"hidden": False,
 					"locked": False,

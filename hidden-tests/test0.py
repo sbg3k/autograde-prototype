@@ -1,5 +1,5 @@
 test = {
-	"name": "test6",
+	"name": "test0",
 	"points": 1,
 	"hidden": True,
 	"suites": [
@@ -9,7 +9,7 @@ test = {
 					"code": r"""
 					>>> def errorr():
 					...	 try:
-					...		 average([2,4,6,7.8,10])
+					...		 Fortune=Student(2.0,12.4,3.0)
 					...	 except AssertionError:
 					...		 return True
 					...	 except:
