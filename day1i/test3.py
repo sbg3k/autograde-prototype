@@ -1,14 +1,17 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test3",
+	"points": 4,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> round(average('1 2 4 5 7 8 9'),2)
-					5.14
+					>>> a=[str(i) for i in range(100)]
+					>>> b=[i for i in range(100)]
+					>>> a=' '.join(a)
+					>>> round(average(a),2)==round(sum(b)/len(b),2)
+					True
 					""",
 					"hidden": False,
 					"locked": False,
