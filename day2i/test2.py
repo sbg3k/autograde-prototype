@@ -1,14 +1,14 @@
 test = {
-	"name": "test1",
-	"points": 1,
+	"name": "test2",
+	"points": 2,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> termino('()()()()()()()()')
-					0
+					>>> termino('))())()()))((()))()(')
+					10
 					""",
 					"hidden": False,
 					"locked": False,
