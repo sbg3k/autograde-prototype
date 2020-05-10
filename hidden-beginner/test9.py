@@ -1,30 +1,29 @@
 test = {
 	"name": "test9",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
-	"suites": [ 
+	"suites": [
 		{
-			"cases": [ 
+			"cases": [
 				{
 					"code": r"""
-					>>> "fibSum" in dir()
+					>>> assert "fibonacci" in dir()
+					>>> evenFib = lambda n: (((5 * n**2+4)**0.5)%1==0 or ((5 * n**2-4)**0.5)%1==0)
+					>>> import time
+					>>> start = time.time()
+					>>> x1 = evenFib(317811)
+					>>> end = time.time()
+					>>> bound = end-start+0.0005
+					>>> alpha = time.time()
+					>>> x2 = fibonacci(317811)
+					>>> omega = time.time()
+					>>> diff = omega - alpha
+					>>> diff < bound and x1 == x2
 					True
-					>>> from multiprocessing import Process
-					>>> def run_with_limited_time(func, args, kwargs, time):
-					...     p = Process(target=func, args=args, kwargs=kwargs)
-					...     p.start()
-					...     p.join(time)
-					...     if p.is_alive():
-					...         p.terminate()
-					...         return False
-					...     return fibSum(1_000_000)
-					... 
-					>>> run_with_limited_time(fibSum, (2_000_000,), {}, 1.71)
-					1089154
 					""",
 					"hidden": False,
 					"locked": False,
-				}, 
+				},
 			],
 			"scored": False,
 			"setup": "",
