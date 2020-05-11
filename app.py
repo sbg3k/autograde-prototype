@@ -70,7 +70,9 @@ def upload_file():
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
-				print(file.read().decode('utf-8'))
+				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
+					print(f.read())
+					f.close()
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
 				print("Oops!", sys.exc_info())
