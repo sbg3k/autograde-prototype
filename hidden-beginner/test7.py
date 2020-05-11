@@ -1,31 +1,31 @@
 test = {
-	"name": "test7",
-	"points": 2,
-	"hidden": True,
-	"suites": [
-		{
-			"cases": [
-				{
-					"code": r"""
-					>>> assert "fibonacci" in dir()
-					>>> try:
-					...	 a = False
-					...	 x = fibonacci(-5)
-					...	 a = True
-					...	 if isinstance(x, str) or isinstance(x, bool):
-					...		 a = False
-					... except:
-					...	 a == True
-					False
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+    "name": "test7",
+    "points": 1,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
+                    "code": r"""
+                    >>> 'squareSum' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> squareSum.__doc__ != None
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }
