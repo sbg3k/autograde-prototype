@@ -26,6 +26,7 @@ def upload_file():
 		
 		file = request.files['file']
 		print(file)
+		print(file.read().decode('utf-8'))
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
 		# if user does not select file, browser also
