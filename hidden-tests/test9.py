@@ -1,31 +1,66 @@
 test = {
-	"name": "test9",
-	"points": 3,
-	"hidden": True,
-	"suites": [
-		{
-			"cases": [
-				{
-					"code": r"""
-					>>> "Student" in dir() and "average" in dir()
-					True
-					>>> a=[21, 42, 24, 34, 21, 21, 27, 35, 20, 20, 30, 37, 28, 45, 42, 29, 27, 25, 34, 41]
-					>>> w=[51.48, 57.03, 51.96, 58.76, 41.68, 53.98, 41.34, 42.65, 41.04, 43.01, 43.01, 49.26, 48.09, 47.98, 52.71, 44.95, 56.7, 36.98, 54.85, 36.64]
-					>>> h=[3.9, 5.0, 5.5, 7.8, 8.9, 4.1, 8.2, 7.5, 3.9, 6.8, 5.1, 8.5, 4.6, 5.2, 3.9, 7.8, 8.7, 5.1, 4.3, 9.0]
-					>>> arr=[]
-					>>> for i in range(20):
-					...	 arr.append(Student(a[i],w[i],h[i]))
-					>>> average(arr)
-					(40.15, 77.71, 7.55)
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+    "name": "test9",
+    "points": 2,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
+                    "code": r"""
+                    >>> 'bin' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> def resol(d, l):
+                    ...     lamb = lambda i: i.isalpha() or (type(i)==int and i>0)
+                    ...     assert all((map(lamb,list(d.keys())+list(d.values())+l))),'Follow instructions'
+                    ...     resol = []
+                    ...     for a in range(len(l)):
+                    ...         i = l[a]
+                    ...         while i in d.keys():
+                    ...             i=d[i]
+                    ...             if l[a] ==i:
+                    ...                 break
+                    ...         resol.append(i)
+                    ...     return resol
+                    ...
+                    >>> from memory_profiler import memory_usage
+                    >>> d = {'a': 'b', 'b': 'c', 'p': 'q', 'z': 'a', 'n': 'm', 'm': 'o', 'o': 'n'}
+                    >>> l = ['a', 'b', 'c', 'd', 'e', 'p', 'q', 'n', 'm', 'o', 'y', 'z']
+                    >>> bound = memory_usage((resol,(d,l)))[0]+0.2
+                    >>> memory_usage((resolve,(d,l)))[0] < bound
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> def errorr(s,b):
+                    ...     try:
+                    ...         x=bin(s,b)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr(tuple(range(128)), (1, 2, 4, 8, 16, 32, 64))
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }

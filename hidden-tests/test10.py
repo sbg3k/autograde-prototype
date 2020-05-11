@@ -1,6 +1,6 @@
 test = {
-    "name": "test7",
-    "points": 1,
+    "name": "test10",
+    "points": 2,
     "hidden": True,
     "suites": [
         {
@@ -24,7 +24,10 @@ test = {
                     ...         return False
                     ...     else:
                     ...         return x
-                    >>> errorr({},[])== []
+                    ...
+                    >>> d = {'a': '1', '1': 'c', 'p': '2', 'z': 'a', 'n': 'm', 'm': 'o', 'o': 'n'}
+                    >>> l = ['a', '1', 'c', 'd', 'e', 'p', '2', 'n', 'm', 'o', 'y', 'z']
+                    >>> errorr(d,l)
                     True
                     """,
                     "hidden": False,
