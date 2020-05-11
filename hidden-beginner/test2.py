@@ -1,24 +1,37 @@
 test = {
-	"name": "test2",
-	"points": 1,
-	"hidden": True,
-	"suites": [
-		{
-			"cases": [
-				{
-					"code": r"""
-					>>> assert "fibonacci" in dir()
-					>>> fibonacci(17811)
-					False
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+    "name": "test2",
+    "points": 2,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
+                    "code": r"""
+                    >>> 'squareSum' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> try:
+                    ...	 x = squareSum('a')
+                    ...	 res = isinstance(x, str) or isinstance(x, bool)
+                    ...	 assert res
+                    ... except:
+                    ...	 res = True
+                    >>> res == True
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }
