@@ -26,7 +26,7 @@ def upload_file():
 		
 		file = request.files['file']
 		print(file)
-		print(file.read().decode('utf-8'))
+		
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
 		# if user does not select file, browser also
@@ -70,6 +70,7 @@ def upload_file():
 				
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
+				print(file.read().decode('utf-8'))
 				return jsonify({"name":request.form['name'], "score":scores})
 			except:
 				print("Oops!", sys.exc_info())
