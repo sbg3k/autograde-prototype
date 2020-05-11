@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([3*n for n in range(128)], [1, 2, 4, 8, 16, 32, 64]))
+                    >>> errorr([3*n for n in range(128)], [1, 2, 4, 8, 16, 32, 64])
                     [0, 1, 1, 3, 5, 11, 106]
                     """,
                     "hidden": False,
