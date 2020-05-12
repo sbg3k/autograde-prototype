@@ -1,13 +1,13 @@
 test = {
     "name": "test5",
-    "points": 2,
+    "points": 3,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'resolve' in dir()
+                    >>> 'pathfinder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,20 +15,26 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(d,l):
+                    >>> def errorr(m,s,d):
                     ...     try:
-                    ...         x=resolve(d,l)
+                    ...         x=pathfinder(m,s,d)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> d = {'a': 'b', 'b': 'c', 'p': 'q', 'z': 'a', 'n': 'm', 'm': 'o', 'o': 'n'}
-                    >>> l = ['a', 'b', 'c', 'd', 'e', 'p', 'q', 'n', 'm', 'o', 'y', 'z']
-                    >>> errorr(d,l)
-                    ['c', 'c', 'c', 'd', 'e', 'q', 'q', 'n', 'm', 'o', 'y', 'c']
+                    >>> matrix= [
+                    ...     [1, 1, 1, 0, 0, 1, 1, 1],
+                    ...     [1, 0, 0, 0, 0, 1, 1, 1],
+                    ...     [1, 1, 1, 1, 1, 1, 0, 1],
+                    ...     [0, 1, 0, 0, 0, 1, 1, 1],
+                    ...     [0, 1, 0, 0, 1, 1, 1, 0],
+                    ...     [1, 1, 1, 1, 1, 0, 1, 0],
+                    ...     [0, 0, 0, 0, 0, 0, 0, 1],
+                    ...     [1, 1, 0, 0, 1, 1, 0, 1]]
+                    >>> errorr(matrix,(4,0),(3,7))
+                    True
                     """,
                     "hidden": False,
                     "locked": False,

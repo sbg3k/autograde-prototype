@@ -1,13 +1,13 @@
 test = {
     "name": "test6",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'resolve' in dir()
+                    >>> 'pathfinder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,20 +15,8 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(d,l):
-                    ...     try:
-                    ...         x=resolve(d,l)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> d = {'alpha':1,'b':'B','cab':'drive','drive':1,'B':'Ball'}
-                    >>> l = ['alpha', 'b', 'cab', 'd', 'e',]
-                    >>> errorr(d,l)
-                    [1, 'Ball', 1, 'd', 'e']
+                    >>> pathfinder.__doc__ != None
+                    True
                     """,
                     "hidden": False,
                     "locked": False,

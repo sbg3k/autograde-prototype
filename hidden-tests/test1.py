@@ -1,13 +1,13 @@
 test = {
     "name": "test1",
-    "points": 1,
+    "points": 3,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'bin' in dir() and 'resolve' in dir()
+                    >>> 'pathfinder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,26 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> bin.__doc__ !=None and resolve.__doc__ != None
+                    >>> def errorr(m,s,d):
+                    ...     try:
+                    ...         x=pathfinder(m,s,d)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    >>> matrix= [
+                    ...     [1, 1, 1, 0, 0, 1, 1, 1],
+                    ...     [1, 0, 0, 0, 0, 1, 1, 1],
+                    ...     [1, 1, 1, 1, 1, 1, 0, 1],
+                    ...     [0, 1, 0, 0, 0, 1, 1, 1],
+                    ...     [0, 1, 0, 0, 1, 1, 1, 0],
+                    ...     [1, 1, 1, 1, 1, 0, 1, 0],
+                    ...     [0, 0, 0, 0, 0, 0, 0, 1],
+                    ...     [1, 1, 0, 0, 1, 1, 0, 1]]
+                    >>> 
+                    >>> errorr(matrix,(5,0),(3,7)) == 9
                     True
                     """,
                     "hidden": False,

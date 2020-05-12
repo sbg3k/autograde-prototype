@@ -1,13 +1,13 @@
 test = {
     "name": "test2",
-    "points": 2,
+    "points": 3,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'bin' in dir()
+                    >>> 'pathfinder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,18 +15,27 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(s,b):
+                    >>> def errorr(m,s,d):
                     ...     try:
-                    ...         x=bin(s,b)
+                    ...         x=pathfinder(m,s,d)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> errorr([3*n for n in range(128)], [1, 2, 4, 8, 16, 32, 64])
-                    [0, 1, 1, 3, 5, 11, 106]
+                    >>> matrix= [
+                    ...     [1, 1, 1, 0, 0, 1, 1, 1],
+                    ...     [1, 0, 0, 0, 0, 1, 1, 1],
+                    ...     [1, 1, 1, 1, 1, 1, 0, 1],
+                    ...     [0, 1, 0, 0, 0, 1, 1, 1],
+                    ...     [0, 1, 0, 0, 1, 1, 1, 0],
+                    ...     [1, 1, 1, 1, 1, 0, 1, 0],
+                    ...     [0, 0, 0, 0, 0, 0, 0, 1],
+                    ...     [1, 1, 0, 0, 1, 1, 0, 1]]
+                    >>> 
+                    >>> errorr(matrix,(0,0),(6,7))
+                    True
                     """,
                     "hidden": False,
                     "locked": False,
