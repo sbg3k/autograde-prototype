@@ -1,13 +1,13 @@
 test = {
     "name": "test2",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'squareSum' in dir()
+                    >>> 'Taxi' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,13 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> try:
-                    ...	 x = squareSum('a')
-                    ...	 res = isinstance(x, str) or isinstance(x, bool)
-                    ...	 assert res
-                    ... except:
-                    ...	 res = True
-                    >>> res == True
+                    >>> Taxi.__doc__ != None
                     True
                     """,
                     "hidden": False,
