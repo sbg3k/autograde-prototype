@@ -1,13 +1,13 @@
 test = {
     "name": "test1",
-    "points": 2,
+    "points": 13,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'squareSum' in dir()
+                    >>> 'Taxi' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> squareSum(10)==2640
+                    >>> Taxi(1) == 2
                     True
                     """,
                     "hidden": False,
