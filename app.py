@@ -75,8 +75,10 @@ def upload_file():
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
-			except:
-				print("Oops!", sys.exc_info())
+			except Exception as e:
+				print(e)
+				scores = 1
+				return jsonify({"name":request.form['name'], "score":scores})
 				return "Oops! an error occured."
 	
 	return '''
