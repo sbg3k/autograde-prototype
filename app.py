@@ -35,6 +35,7 @@ def upload_file():
 		if file.filename == '':
 			return 'No selected file'
 		
+		UPLOAD_FOLDER = "./" + request.form['task_day'].replace(" ", "") + request.form['level'].lower()[0]
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
