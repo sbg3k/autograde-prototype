@@ -7,8 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> import os
-                    >>> "order" in dir()
+                    >>> 'pathfinder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -16,26 +15,27 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> order([1, 1, 2]) == (2, [1])
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
-                    "code": r"""
-                    >>> def errorr(s):
+                    >>> def errorr(m,s,d):
                     ...     try:
-                    ...         x=order(s)
+                    ...         x=pathfinder(m,s,d)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> errorr((100,1,2,3,21,22,23,200,31,32,33,4))
-                    (4, [21, 22, 23, 31, 32, 33, 100, 200])
+                    >>> matrix= [
+                    ...     [1, 1, 1, 0, 0, 1, 1, 1],
+                    ...     [1, 0, 0, 0, 0, 1, 1, 1],
+                    ...     [1, 1, 1, 1, 1, 1, 0, 1],
+                    ...     [0, 1, 0, 0, 0, 1, 1, 1],
+                    ...     [0, 1, 0, 0, 1, 1, 1, 0],
+                    ...     [1, 1, 1, 1, 1, 0, 1, 0],
+                    ...     [0, 0, 0, 0, 0, 0, 0, 1],
+                    ...     [1, 1, 0, 0, 1, 1, 0, 1]]
+                    >>> 
+                    >>> errorr(matrix,(5,0),(3,7)) == 9
+                    True
                     """,
                     "hidden": False,
                     "locked": False,

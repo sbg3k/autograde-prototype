@@ -1,14 +1,13 @@
 test = {
     "name": "test2",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> import os
-                    >>> "order" in dir()
+                    >>> 'pathfinder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -16,25 +15,26 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> order([1, 1, 2]) == (2, [1])
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
-                    "code": r"""
-                    >>> def errorr(s):
+                    >>> def errorr(m,s,d):
                     ...     try:
-                    ...         x=order(s)
+                    ...         x=pathfinder(m,s,d)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> errorr('100,1,2,3,21,22,23,200,31,32,33,4')
+                    >>> matrix= [
+                    ...     [1, 1, 1, 0, 0, 1, 1, 1],
+                    ...     [1, 0, 0, 0, 0, 1, 1, 1],
+                    ...     [1, 1, 1, 1, 1, 1, 0, 1],
+                    ...     [0, 1, 0, 0, 0, 1, 1, 1],
+                    ...     [0, 1, 0, 0, 1, 1, 1, 0],
+                    ...     [1, 1, 1, 1, 1, 0, 1, 0],
+                    ...     [0, 0, 0, 0, 0, 0, 0, 1],
+                    ...     [1, 1, 0, 0, 1, 1, 0, 1]]
+                    >>> 
+                    >>> errorr(matrix,(0,0),(6,7))
                     True
                     """,
                     "hidden": False,

@@ -1,15 +1,13 @@
 test = {
     "name": "test6",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> order([1, 1, 2]) == (2, [1])
-                    True
-                    >>> "order" in dir()
+                    >>> 'pathfinder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -17,8 +15,8 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> order([1,100,1000,1002])
-                    (0, [1, 100, 1000, 1002])
+                    >>> pathfinder.__doc__ != None
+                    True
                     """,
                     "hidden": False,
                     "locked": False,
