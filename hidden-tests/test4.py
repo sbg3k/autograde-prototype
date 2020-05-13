@@ -1,13 +1,13 @@
 test = {
     "name": "test4",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'pathfinder' in dir()
+                    >>> 'Node' in dir() and 'pop' in dir() and 'append' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,25 +15,10 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(m,s,d):
-                    ...     try:
-                    ...         x=pathfinder(m,s,d)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    >>> matrix= [
-                    ...     [1, 1, 'a', 0, 0, 1, 1, 1],
-                    ...     [1, 0, 0, 0, 0, 1, 1, 1],
-                    ...     [1, 1, 1, 1, 1, 1, 0, 1],
-                    ...     [0, 1, 0, 0, 0, 1, 1, 1],
-                    ...     [0, 1, 0, 0, 1, 1, 1, 0],
-                    ...     [1, 1, 1, 1, 1, 'a', 1, 0],
-                    ...     [0, 0, 0, 0, 0, 0, 0, 1],
-                    ...     [1, 1, 0, 0, 1, 1, 0, 1]]
-                    >>> errorr(matrix,(5,0),(3,7))
+                    >>> a=append.__doc__!=None
+                    >>> b=pop.__doc__!=None
+                    >>> c=Node.__doc__!=None
+                    >>> a&b&c
                     True
                     """,
                     "hidden": False,

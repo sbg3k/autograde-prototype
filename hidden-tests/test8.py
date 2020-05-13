@@ -1,5 +1,5 @@
 test = {
-    "name": "test7",
+    "name": "test8",
     "points": 2,
     "hidden": True,
     "suites": [
@@ -29,6 +29,10 @@ test = {
                     ...
                     >>> count(a)
                     5
+                    >>> pop(a)
+                    >>> pop(a)
+                    >>> count(a)
+                    3
                     """,
                     "hidden": False,
                     "locked": False,
