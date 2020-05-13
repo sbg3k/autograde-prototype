@@ -1,5 +1,5 @@
 test = {
-	"name": "test2",
+	"name": "test3",
 	"points": 3,
 	"hidden": True,
 	"suites": [
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> k_largest([10, 4, 56, 66, 55, 44, 21, 20], 4) == 44 # 2 pointd
+					>>> k_largest([2, 1, -1, 0, 99, 100, 1000, 67, 45, 23, 89, 4, 777, 567, 12,], 8)==45
 					True
 					""",
 					"hidden": False,

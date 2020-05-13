@@ -1,6 +1,6 @@
 test = {
-	"name": "test2",
-	"points": 3,
+	"name": "test5",
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> k_largest([10, 4, 56, 66, 55, 44, 21, 20], 4) == 44 # 2 pointd
+					>>> k_largest.__doc__ != None 
 					True
 					""",
 					"hidden": False,
