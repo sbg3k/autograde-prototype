@@ -7,6 +7,14 @@ test = {
 			"cases": [
 				{
 					"code": r"""
+					>>> callable(k_largest)
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+				{
+					"code": r"""
 					>>> len(k_largest.__doc__) >= 15
 					True
 					""",
