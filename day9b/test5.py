@@ -6,9 +6,15 @@ test = {
 		{
 			"cases": [
 				{
+                    "code": r"""
+                    >>> "fibSum" in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
 					"code": r"""
-					>>> "fibSum" in dir()
-					True
 					>>> fibSum(20) == 10
 					True
 					""",

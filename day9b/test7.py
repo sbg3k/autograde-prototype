@@ -6,9 +6,15 @@ test = {
 		{
 			"cases": [
 				{
+                    "code": r"""
+                    >>> "fibSum" in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
 					"code": r"""
-					>>> "fibSum" in dir()
-					True
 					>>> len(fibSum.__doc__) > 15
 					True
 					""",

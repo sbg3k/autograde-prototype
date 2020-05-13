@@ -6,9 +6,15 @@ test = {
 		{
 			"cases": [ 
 				{
+                    "code": r"""
+                    >>> "fibSum" in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
 					"code": r"""
-					>>> "fibSum" in dir()
-					True
 					>>> from multiprocessing import Process
 					>>> def run_with_limited_time(func, args, kwargs, time):
 					...     p = Process(target=func, args=args, kwargs=kwargs)
@@ -19,7 +25,7 @@ test = {
 					...         return False
 					...     return fibSum(1_000_000)
 					... 
-					>>> run_with_limited_time(fibSum, (2_000_000,), {}, 1.71)
+					>>> run_with_limited_time(fibSum, (1_000_000,), {}, 1.71)
 					1089154
 					""",
 					"hidden": False,

@@ -1,10 +1,18 @@
 test = {
     "name": "test8",
-    "points": 0.6666666666666666,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
+                {
+                    "code": r"""
+                    >>> "to_base" in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
                 {
                     "code": r"""
                     >>> def errorr(n,b):

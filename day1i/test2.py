@@ -6,6 +6,14 @@ test = {
 		{
 			"cases": [ 
 				{
+                    "code": r"""
+                    >>> 'average' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
 					"code": r"""
 					>>> a=''
 					>>> for i in range(11):

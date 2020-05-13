@@ -7,6 +7,14 @@ test = {
 			"cases": [
 				{
 					"code": r"""
+					>>> 'sparsify' in dir()
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+				{
+					"code": r"""
 					>>> sparsify.__doc__ != None
 					True
 					""",

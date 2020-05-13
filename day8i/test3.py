@@ -1,10 +1,18 @@
 test = {
     "name": "test3",
-    "points": 1.3333333333333333,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
+                {
+                    "code": r"""
+                    >>> "to_base" in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
                 {
                     "code": r"""
                     >>> import inspect
