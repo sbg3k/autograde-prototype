@@ -1,13 +1,13 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test6",
+	"points": 1,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
 					"code": r"""
-					>>> k_largest([7, 4, 6, 3, 9, 1], 2) == 7 # 2 points
+					>>> len(k_largest.__doc__) >= 15
 					True
 					""",
 					"hidden": False,

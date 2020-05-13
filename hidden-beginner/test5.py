@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test5",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> k_largest([7, 4, 6, 3, 9, 1], 2) == 7 # 2 points
+					>>> k_largest.__doc__ != None 
 					True
 					""",
 					"hidden": False,
