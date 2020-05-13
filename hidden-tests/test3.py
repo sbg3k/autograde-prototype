@@ -17,7 +17,7 @@ test = {
                     "code": r"""
                     >>> def errorr(h):
                     ...     try:
-                    ...         x=append(h)
+                    ...         x=pop(h)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
