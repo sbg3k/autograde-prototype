@@ -2,9 +2,9 @@ test = {
 	"name": "test8",
 	"points": 1,
 	"hidden": True,
-	"suites": [ 
+	"suites": [
 		{
-			"cases": [ 
+			"cases": [
 				{
 					"code": r"""
 					>>> 1 == 1
@@ -12,7 +12,7 @@ test = {
 					""",
 					"hidden": False,
 					"locked": False,
-				}, 
+				},
 			],
 			"scored": False,
 			"setup": "",
