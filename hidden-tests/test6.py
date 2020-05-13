@@ -1,13 +1,13 @@
 test = {
     "name": "test6",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'pathfinder' in dir()
+                    >>> 'Node' in dir() and 'append' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,12 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> pathfinder.__doc__ != None
+                    >>> arr=[1,2,3,4,5]
+                    >>> a=Node(arr[0])
+                    >>> for i in arr[1:]:
+                    ...     append(a,i)
+                    ...
+                    >>> a.next.next.next.next.value==5
                     True
                     """,
                     "hidden": False,
