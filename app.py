@@ -90,6 +90,7 @@ def upload_file():
 	  <input type=file name=file>
 	  <input type=text name=name placeholder="Email">
 	  <input type=text name=level placeholder="beginner or intermediate (lowercase)">
+	  <input type="text" name="task_day" placeholder="day 12 / day 13 / day 10">
 	  <input type=submit value=Upload>
 	</form>
 	'''
