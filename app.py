@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 CORS(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
-
+UPLOAD_FOLDER = os.environ['UPLOAD_FOLDER']
 
 def allowed_file(filename):
 	return '.' in filename and \
@@ -26,6 +26,7 @@ def upload_file():
 		
 		file = request.files['file']
 		print(file)
+		
 		file.filename = request.form['name'].replace(".", "") + '.py'
 		
 		# if user does not select file, browser also
@@ -33,7 +34,7 @@ def upload_file():
 		
 		if file.filename == '':
 			return 'No selected file'
-		UPLOAD_FOLDER = "./" + request.form['day']
+		
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
@@ -63,15 +64,21 @@ def upload_file():
 							b = a.split('\n')[2]
 							c = b.split(":")[1]
 							d = c.replace(",", "")
-							scores += float(d)
+							scores += int(d)
 							print(d)
 				
 				
+
+				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
+					print(f.read())
+					f.close()
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
-			except:
-				print("Oops!", sys.exc_info())
+			except Exception as e:
+				print(e)
+				scores = 1
+				return jsonify({"name":request.form['name'], "score":scores})
 				return "Oops! an error occured."
 	
 	return '''
@@ -81,7 +88,7 @@ def upload_file():
 	<form method=post enctype=multipart/form-data>
 	  <input type=file name=file>
 	  <input type=text name=name placeholder="Email">
-	  <input type=text name=day placeholder="day9b/day9i/day8b/etc">
+	  <input type=text name=level placeholder="beginner or intermediate (lowercase)">
 	  <input type=submit value=Upload>
 	</form>
 	'''
