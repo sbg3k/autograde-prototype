@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
 					"code": r"""
-					>>> callable(k_largest)
+					>>> "Triangle_no" in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> k_largest([1000, 99, 12, 100, 22, 23, 3, 44, 56, 222, 567, 244, 456, 23, 2456, 12, 56], 12) == 23
+					>>> Triangle_no(19090) == False # 3 points
 					True
 					""",
 					"hidden": False,

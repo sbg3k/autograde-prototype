@@ -1,13 +1,13 @@
 test = {
 	"name": "test5",
-	"points": 1,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
 					"code": r"""
-					>>> callable(k_largest)
+					>>> "Triangle_no" in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,7 +15,12 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> k_largest.__doc__ != None 
+					>>> def error(num):
+					...     try:
+					...             Triangle_no(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(-199)==1 # 3 points
 					True
 					""",
 					"hidden": False,
