@@ -18,11 +18,13 @@ test = {
                     >>> def errorr(d):
                     ...     try:
                     ...         q=Queue()
-                                q.enqueue(d)
+                    ...         q.enqueue(d)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
+                    ...     else:
+                    ...         return x
                     ...
                     >>> errorr(3.1422)
                     True
