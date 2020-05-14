@@ -18,7 +18,7 @@ test = {
                     >>> def errorr():
                     ...     try:
                     ...         q=Queue()
-                                q.dequeue()
+                    ...         q.dequeue()
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
