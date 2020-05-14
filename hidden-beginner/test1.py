@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> Triangle_no(10)) == True # 2 points
+					>>> Triangle_no(10) == True # 2 points
 					True
 					""",
 					"hidden": False,
