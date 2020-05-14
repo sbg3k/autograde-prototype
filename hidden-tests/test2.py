@@ -23,8 +23,6 @@ test = {
                     ...         return True
                     ...     except:
                     ...         return False
-                    ...     else:
-                    ...         return x
                     ...
                     >>> errorr(3.1422)
                     True

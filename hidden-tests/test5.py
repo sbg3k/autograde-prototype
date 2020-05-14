@@ -20,11 +20,9 @@ test = {
                     >>> for i in arr:
                     ...     q.enqueue(i)
                     ...     
-	
                     >>> while q.front():
                     ...     q.dequeue()
                     ...
-	
                     1
                     2
                     3
