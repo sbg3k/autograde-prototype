@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'append' in dir()
+                    >>> 'Node' in dir() and 'Queue' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,12 +15,16 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> arr=[1,2,3,4,5]
-                    >>> a=Node(arr[0])
-                    >>> for i in arr[1:]:
-                    ...     append(a,i)
-                    ...
-                    >>> a.next.next.next.next.value==5
+                    >>> import random
+                    >>> arr=[random.randint(2,100) for i in range(20)]
+                    >>> q=Queue()
+                    >>> for i in arr:
+                    ...     q.enqueue(i)
+                    ...     
+	
+                    >>> q.count()
+                    20
+                    >>> q.front()==arr[0]
                     True
                     """,
                     "hidden": False,

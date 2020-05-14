@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'pop' in dir() and 'append' in dir()
+                    >>> 'Node' in dir() and 'Queue' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,10 +15,13 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> a=append.__doc__!=None
-                    >>> b=pop.__doc__!=None
-                    >>> c=Node.__doc__!=None
-                    >>> a&b&c
+                    >>> a=Node.__doc__!=None
+                    >>> b=Queue.__doc__!=None
+                    >>> c=Queue.enqueue.__doc__!=None
+                    >>> d=Queue.dequeue.__doc__!=None
+                    >>> e=Queue.count.__doc__!=None
+                    >>> f=Queue.front.__doc__!=None
+                    >>> a&b&c&d&e&f
                     True
                     """,
                     "hidden": False,

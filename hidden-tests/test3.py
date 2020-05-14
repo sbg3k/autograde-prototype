@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'pop' in dir()
+                    >>> 'Node' in dir() and 'Queue' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,10 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(h):
+                    >>> def errorr():
                     ...     try:
-                    ...         x=pop(h)
+                    ...         q=Queue()
+                                q.dequeue()
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +26,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr('Node')
+                    >>> errorr()
                     True
                     """,
                     "hidden": False,

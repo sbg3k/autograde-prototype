@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir()
+                    >>> 'Node' in dir() and 'Queue' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,13 +15,26 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> a=Node(1)
-                    >>> b=Node(2)
-                    >>> c=Node(3)
-                    >>> a.next=b
-                    >>> b.next=c
-                    >>> a.next.next==b.next
-                    True
+                    >>> q=Queue()
+                    >>> arr=[1,2,3,4,5,6,7,8,9,10]
+                    >>> for i in arr:
+                    ...     q.enqueue(i)
+                    ...     
+	
+                    >>> while q.front():
+                    ...     q.dequeue()
+                    ...
+	
+                    1
+                    2
+                    3
+                    4
+                    5
+                    6
+                    7
+                    8
+                    9
+                    10
                     """,
                     "hidden": False,
                     "locked": False,
