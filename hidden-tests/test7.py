@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'Queue' in dir()
+                    >>> 'adder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,19 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> import random
-                    >>> arr=[random.randint(2,100) for i in range(50)]
-                    >>> q=Queue()
-                    >>> for i in arr:
-                    ...     q.enqueue(i)
+                    >>> def errorr(l):
+                    ...     try:
+                    ...         x=adder(l)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
                     ...
-	
-                    >>> check=[]
-                    >>> for i in range(10):
-                    ...     check.append(arr[i]==q.dequeue())
-                    ...
-	
-                    >>> all(check)
+                    >>> errorr(['95//2','8/90','2/6'])
                     True
                     """,
                     "hidden": False,

@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'Queue' in dir()
+                    >>> 'swap' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,8 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> import random
-                    >>> arr=[random.randint(1,100) for i in range(100)]
-                    >>> q=Queue()
-                    >>> for i in arr:
-                    ...     q.enqueue(i)
-                    ...
-                    
-                    >>> arr3=[q.dequeue() for i in range(100)]
-                    >>> arr3==arr
-                    True
-                    >>> q.front()==None
+                    >>> import inspect
+                    >>> inspect.getsource(swap).count('^')==3
                     True
                     """,
                     "hidden": False,

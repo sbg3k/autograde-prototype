@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'Queue' in dir()
+                    >>> 'adder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,10 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(d):
+                    >>> def errorr(l):
                     ...     try:
-                    ...         q=Queue()
-                    ...         q.enqueue(d)
+                    ...         x=adder(l)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -26,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr(3.1422)
+                    >>> errorr(['1/2','1/3','1/6']) == '1/1'
                     True
                     """,
                     "hidden": False,

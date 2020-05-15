@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'Queue' in dir()
+                    >>> 'swap' in dir() and 'adder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(d):
-                    ...     try:
-                    ...         x=Node(d)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr(3.1422)
+                    >>> swap.__doc__ !=None and adder.__doc__ !=None
                     True
                     """,
                     "hidden": False,

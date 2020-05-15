@@ -1,13 +1,13 @@
 test = {
     "name": "test3",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'Queue' in dir()
+                    >>> 'adder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,10 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr():
+                    >>> def errorr(l):
                     ...     try:
-                    ...         q=Queue()
-                    ...         q.dequeue()
+                    ...         x=adder(l)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -26,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr()
+                    >>> errorr(['95/2','8/90','2/6']) == '4313/90'
                     True
                     """,
                     "hidden": False,

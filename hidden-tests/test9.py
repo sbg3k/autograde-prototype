@@ -1,13 +1,13 @@
 test = {
     "name": "test9",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'Queue' in dir()
+                    >>> 'swap' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> import random
-                    >>> arr=[random.randint(1,100) for i in range(1000)]
-                    >>> q=Queue()
-                    >>> for i in arr:
-                    ...     q.enqueue(i)
+                    >>> def errorr(a,b):
+                    ...     try:
+                    ...         x=swap(a,b)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
                     ...
-                    
-                    >>> arr3=[q.dequeue() for i in range(1000)]
-                    >>> arr3==arr
-                    True
-                    >>> q.front()==None
+                    >>> errorr(2,8) == (8,2)
                     True
                     """,
                     "hidden": False,

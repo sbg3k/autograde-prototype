@@ -1,13 +1,13 @@
 test = {
     "name": "test6",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'Queue' in dir()
+                    >>> 'adder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,16 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> import random
-                    >>> arr=[random.randint(2,100) for i in range(20)]
-                    >>> q=Queue()
-                    >>> for i in arr:
-                    ...     q.enqueue(i)
-                    ...     
-	
-                    >>> q.count()
-                    20
-                    >>> q.front()==arr[0]
+                    >>> def errorr(l):
+                    ...     try:
+                    ...         x=adder(l)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr(('95/2','8/90','2/6'))
                     True
                     """,
                     "hidden": False,
