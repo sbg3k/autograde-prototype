@@ -1,21 +1,21 @@
 test = {
 	"name": "test1",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
-					"code": r"""
-					>>> "Triangle_no" in dir()
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> Triangle_no(10) == True # 2 points
+                    "code": r"""
+                    >>> 'uncensor' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+					>>> uncensor("Wh*r* d*d my v*w*ls g*","eeioeo")=="Where did my vowels go" # 3 points
 					True
 					""",
 					"hidden": False,
@@ -27,5 +27,4 @@ test = {
 			"teardown": "",
 			"type": "doctest"
 		}
-	]
-}
+	]}
