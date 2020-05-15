@@ -7,7 +7,15 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'swap' in dir() and 'adder' in dir()
+                    >>> 'swap' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> 'adder' in dir()
                     True
                     """,
                     "hidden": False,
