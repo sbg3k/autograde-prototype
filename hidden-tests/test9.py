@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'swap' in dir()
+                    >>> 'swap' in dir() and 'adder' in dir()
                     True
                     """,
                     "hidden": False,
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr(2,8) == (8,2)
+                    >>> errorr(2, 8) == (8, 2)
                     True
                     """,
                     "hidden": False,
