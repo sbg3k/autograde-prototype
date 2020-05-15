@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> uncensor("lw*ys w*tch th c*s*s","Aaaeae")=="Always watch the cases" # 3 points
+					>>> uncensor("*lw*ys w*tch th c*s*s","Aaaeae")=="Always watch the cases" # 3 points
 					True
 					""",
 					"hidden": False,
