@@ -34,7 +34,7 @@ def upload_file():
 		
 		if file.filename == '':
 			return 'No selected file'
-		
+		scores = 1
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
@@ -76,6 +76,10 @@ def upload_file():
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except Exception as e:
+				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
+					print(f.read())
+					f.close()
+				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				print(e)
 				scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
