@@ -6,21 +6,16 @@ test = {
 		{
 			"cases": [
 				{
-					"code": r"""
-					>>> "Triangle_no" in dir()
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> def error(num):
-					...     try:
-					...             Triangle_no(num)
-					...     except AssertionError:
-					...             return 1
-					>>> error(-199)==1 # 3 points
+                    "code": r"""
+                    >>> 'uncensor' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+					>>> uncensor("* l*v* pl*y*ng f**tb*ll", "Ioeaiooa")=="O love playing football" # 3 points
 					True
 					""",
 					"hidden": False,

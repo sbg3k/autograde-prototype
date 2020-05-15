@@ -1,21 +1,21 @@
 test = {
 	"name": "test2",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
-					"code": r"""
-					>>> "Triangle_no" in dir()
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> Triangle_no(8) == False# 2 points
+                    "code": r"""
+                    >>> 'uncensor' in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+					>>> uncensor("lw*ys w*tch th c*s*s","Aaaeae")=="Always watch the cases" # 3 points
 					True
 					""",
 					"hidden": False,
