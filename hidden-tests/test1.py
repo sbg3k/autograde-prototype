@@ -7,23 +7,21 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'swap' in dir()
+                    >>> import inspect
+                    >>> 'bubble_sort' in dir()
                     True
+                    >>> check=inspect.getsource(bubble_sort)
+                    >>> '.sort(' in check
+                    False
+                    >>> 'sorted(' in check
+                    False
                     """,
                     "hidden": False,
                     "locked": False,
                 },
                 {
                     "code": r"""
-                    >>> 'adder' in dir()
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
-                    "code": r"""
-                    >>> swap.__doc__ !=None and adder.__doc__ !=None
+                    >>> bubble_sort.__doc__!=None
                     True
                     """,
                     "hidden": False,
