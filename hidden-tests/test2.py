@@ -7,25 +7,23 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'swap' in dir()
+                    >>> import inspect
+                    >>> 'bubble_sort' in dir()
                     True
+                    >>> check=inspect.getsource(bubble_sort)
+                    >>> '.sort(' in check
+                    False
+                    >>> 'sorted(' in check
+                    False
                     """,
                     "hidden": False,
                     "locked": False,
                 },
                 {
                     "code": r"""
-                    >>> 'adder' in dir()
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
-                    "code": r"""
-                    >>> def errorr(l):
+                    >>> def errorr(arr):
                     ...     try:
-                    ...         x=adder(l)
+                    ...         x=bubble_sort(arr)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -33,7 +31,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr(['1/2','1/3','1/6']) == '1/1'
+                    >>> errorr([1, 2, 3, 6, 5, 4, 3, 2.054, 10])
                     True
                     """,
                     "hidden": False,

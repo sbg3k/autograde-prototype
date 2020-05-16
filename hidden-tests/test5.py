@@ -1,40 +1,31 @@
 test = {
     "name": "test5",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'swap' in dir()
+                    >>> import inspect
+                    >>> 'bubble_sort' in dir()
                     True
+                    >>> check=inspect.getsource(bubble_sort)
+                    >>> '.sort(' in check
+                    False
+                    >>> 'sorted(' in check
+                    False
                     """,
                     "hidden": False,
                     "locked": False,
                 },
                 {
                     "code": r"""
-                    >>> 'adder' in dir()
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
-                    "code": r"""
-                    >>> def errorr(l):
-                    ...     try:
-                    ...         x=adder(l)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr(['95/2','8/a','2/6'])
-                    True
+                    >>> c=[9, 10, 6, 2, 3, 5, 4, 8, 7, 1]
+                    >>> bubble_sort(c)
+                    29
+                    >>> c
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                     """,
                     "hidden": False,
                     "locked": False,
