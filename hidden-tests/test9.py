@@ -24,7 +24,7 @@ test = {
                     >>> arr=[i for i in range(1,501)]
                     >>> bubble_sort(arr)==0
                     True
-                    """
+                    """,
                     "hidden": False,
                     "locked": False,
                 },
