@@ -1,21 +1,26 @@
 test = {
 	"name": "test6",
-	"points": 1,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'uncensor' in dir()
+                    >>> 'single2stupor' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> len(uncensor.__doc__) > 15 # 1 point
+				{
+					"code": r"""
+					>>> def error(num):
+					...     try:
+					...             single2stupor(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(-1)==1
 					True
 					""",
 					"hidden": False,

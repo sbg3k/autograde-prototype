@@ -1,13 +1,13 @@
 test = {
 	"name": "test1",
-	"points": 3,
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'uncensor' in dir()
+                    >>> 'single2stupor' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> uncensor("Wh*r* d*d my v*w*ls g*","eeioeo")=="Where did my vowels go" # 3 points
+					>>> single2stupor(10)) == 0
 					True
 					""",
 					"hidden": False,
@@ -27,4 +27,5 @@ test = {
 			"teardown": "",
 			"type": "doctest"
 		}
-	]}
+	]
+}

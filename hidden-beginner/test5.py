@@ -7,15 +7,20 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'uncensor' in dir()
+                    >>> 'single2stupor' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> uncensor("* l*v* pl*y*ng f**tb*ll", "Ioeaiooa")=="I love playing football" # 3 points
+				{
+					"code": r"""
+					>>> def error(num):
+					...     try:
+					...             single2stupor(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(-12)==1
 					True
 					""",
 					"hidden": False,

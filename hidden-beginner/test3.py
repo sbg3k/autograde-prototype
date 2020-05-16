@@ -1,13 +1,13 @@
 test = {
 	"name": "test3",
-	"points": 3,
+	"points": 1,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'uncensor' in dir()
+                    >>> 'single2stupor' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> uncensor("dry cry","")=="dry cry" # 3 points
+					>>> single2stupor.__doc__ != None
 					True
 					""",
 					"hidden": False,

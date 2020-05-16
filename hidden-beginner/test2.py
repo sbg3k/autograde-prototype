@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'uncensor' in dir()
+                    >>> 'single2stupor' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> uncensor("*lw*ys w*tch th* c*s*s","Aaaeae")=="Always watch the cases" # 3 points
+					>>> single2stupor(783)) == 6
 					True
 					""",
 					"hidden": False,
