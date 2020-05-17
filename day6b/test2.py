@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test2",
 	"points": 2,
 	"hidden": True,
 	"suites": [ 
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
+					>>> len(primeSum.__doc__) > 15
 					True
 					""",
 					"hidden": False,

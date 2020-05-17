@@ -1,30 +1,28 @@
 test = {
-	"name": "test9",
-	"points": 2,
-	"hidden": True,
+	"name": "test7",
+	"points": 11,
+	"hidden": False,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
-                    "code": r"""
-                    >>> "fibSum" in dir()
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
+					"code": r"""
+					>>> assert "fastSum" in dir()
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+				{
                     "code": r"""
                     >>> import time	
-                    >>> evenFibs = lambda n: (((5 * n**2+4)**0.5)%1==0 or ((5 * n**2-4)**0.5)%1==0)
-                    >>> def fibSumm(n):
-                    ...     return sum(list(filter(evenFibs, range(2,n+1, 2))))
+                    >>> fastSumm = lambda n: int((n/2)*(1+n))
                     >>> alpha = time.time()
-                    >>> y = fibSumm(1_000_000)
+                    >>> y = fastSumm(10_000_000_000)
                     >>> omega = time.time()
                     >>> bound=round(omega-alpha,4)+0.0032
                     >>> start = time.time()
-                    >>> x = fibSumm(1_000_000)
+                    >>> x = fastSum(10_000_000_000)
                     >>> end = time.time()
                     >>> diff= end-start
                     >>> diff < bound

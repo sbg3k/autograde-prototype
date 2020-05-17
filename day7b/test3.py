@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test3",
 	"points": 2,
 	"hidden": True,
 	"suites": [ 
@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "primeSum" in dir()
+					>>> "averageMultiple" in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
+					>>> round(averageMultiple(100), 5) == 50.39130
 					True
 					""",
 					"hidden": False,

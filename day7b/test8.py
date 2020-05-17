@@ -1,21 +1,13 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test8",
+	"points": 1,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "primeSum" in dir()
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> primeSum(10) == 17
+					>>> 1 == 1
 					True
 					""",
 					"hidden": False,

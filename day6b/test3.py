@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test3",
 	"points": 2,
 	"hidden": True,
 	"suites": [ 
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
+					>>> primeSum(30) == 129
 					True
 					""",
 					"hidden": False,

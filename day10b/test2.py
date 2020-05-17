@@ -1,13 +1,13 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test2",
+	"points": 1,
 	"hidden": True,
-	"suites": [ 
+	"suites": [
 		{
-			"cases": [ 
+			"cases": [
 				{
 					"code": r"""
-					>>> "primeSum" in dir()
+					>>> "fibonacci" in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,12 +15,12 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
-					True
+					>>> fibonacci(17811)
+					False
 					""",
 					"hidden": False,
 					"locked": False,
-				}, 
+				},
 			],
 			"scored": False,
 			"setup": "",

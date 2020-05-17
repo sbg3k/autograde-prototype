@@ -1,13 +1,13 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test7",
+	"points": 1,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "primeSum" in dir()
+					>>> "averageMultiple" in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
+					>>> averageMultiple.__doc__ != None
 					True
 					""",
 					"hidden": False,

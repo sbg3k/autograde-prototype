@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test4",
 	"points": 2,
 	"hidden": True,
 	"suites": [ 
@@ -7,15 +7,9 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "primeSum" in dir()
+					>>> "fastSum" in dir()
 					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> primeSum(10) == 17
+					>>> len(fastSum.__doc__) > 15
 					True
 					""",
 					"hidden": False,

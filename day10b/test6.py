@@ -1,13 +1,13 @@
 test = {
-	"name": "test1",
+	"name": "test6",
 	"points": 2,
 	"hidden": True,
-	"suites": [ 
+	"suites": [
 		{
-			"cases": [ 
+			"cases": [
 				{
 					"code": r"""
-					>>> "primeSum" in dir()
+					>>> "fibonacci" in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,12 +15,20 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> primeSum(10) == 17
+					>>> try:
+					...	 a = False
+					...	 x = fibonacci('a')
+					...	 a = True
+					...	 if isinstance(x, str) or isinstance(x, bool):
+					...		 a = False
+					... except:
+					...	 a = False
+					>>> a == False
 					True
 					""",
 					"hidden": False,
 					"locked": False,
-				}, 
+				},
 			],
 			"scored": False,
 			"setup": "",
