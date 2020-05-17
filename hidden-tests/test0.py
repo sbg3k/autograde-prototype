@@ -1,28 +1,32 @@
 test = {
-    "name": "test10",
-    "points": 2,
+    "name": "test0",
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'bubble_sort' in dir()
+                    >>> a=True
+                    >>> for i in dir():
+                    ...     try:
+                    ...         exec('import '+i)
+                    ...         a=False
+                    ...         break
+                    ...     except:
+                    ...         pass
+                    ...
+                    >>> a
                     True
-                    >>> check=inspect.getsource(bubble_sort)
-                    >>> '.sort(' in check
-                    False
-                    >>> 'sorted(' in check
-                    False
+                    >>> 'combo' in dir() and 'my_money' in dir()
+                    True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
                 {
                     "code": r"""
-                    >>> arr=[i for i in range(1,1001)]
-                    >>> bubble_sort(arr)==0
+                    >>> combo.__doc__!=None and my_money.__doc__!=None
                     True
                     """,
                     "hidden": False,

@@ -7,21 +7,36 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'bubble_sort' in dir()
+                    >>> a=True
+                    >>> for i in dir():
+                    ...     try:
+                    ...         exec('import '+i)
+                    ...         a=False
+                    ...         break
+                    ...     except:
+                    ...         pass
+                    ...
+                    >>> a
                     True
-                    >>> check=inspect.getsource(bubble_sort)
-                    >>> '.sort(' in check
-                    False
-                    >>> 'sorted(' in check
-                    False
+                    >>> 'combo' in dir() and 'my_money' in dir()
+                    True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
                 {
                     "code": r"""
-                    >>> bubble_sort.__doc__!=None
+                    >>> def errorr(arr):
+                    ...     try:
+                    ...         x=my_money(arr)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>>errorr([-5,5,10,20])
                     True
                     """,
                     "hidden": False,

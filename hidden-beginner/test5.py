@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'single2stupor' in dir()
+                    >>> 'OddEven' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,12 +15,12 @@ test = {
                 },
 				{
 					"code": r"""
-					>>> def error(num):
+					>>> def error(f, num):
 					...     try:
-					...             single2stupor(num)
+					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(-12)==1
+					>>> error(OddEven, -12)==1
 					True
 					""",
 					"hidden": False,

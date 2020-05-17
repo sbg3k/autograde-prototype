@@ -1,13 +1,13 @@
 test = {
 	"name": "test4",
-	"points": 2,
+	"points": 1,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'single2stupor' in dir()
+                    >>> 'OddEven' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> single2stupor(985) == 2
+					>>> OddEven.__doc__ != None
 					True
 					""",
 					"hidden": False,
@@ -29,3 +29,4 @@ test = {
 		}
 	]
 }
+

@@ -7,23 +7,28 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'bubble_sort' in dir()
+                    >>> a=True
+                    >>> for i in dir():
+                    ...     try:
+                    ...         exec('import '+i)
+                    ...         a=False
+                    ...         break
+                    ...     except:
+                    ...         pass
+                    ...
+                    >>> a
                     True
-                    >>> check=inspect.getsource(bubble_sort)
-                    >>> '.sort(' in check
-                    False
-                    >>> 'sorted(' in check
-                    False
+                    >>> 'combo' in dir() and 'my_money' in dir()
+                    True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
                 {
                     "code": r"""
-                    >>> arr=[i for i in range(1,501)]
-                    >>> bubble_sort(arr)==0
-                    True
+                    >>> arr=[10]
+                    >>> my_money(arr)
+                    False
                     """,
                     "hidden": False,
                     "locked": False,

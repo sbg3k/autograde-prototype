@@ -1,13 +1,13 @@
 test = {
 	"name": "test6",
-	"points": 3,
+	"points": 4,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'single2stupor' in dir()
+                    >>> 'OddEven' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,12 +15,12 @@ test = {
                 },
 				{
 					"code": r"""
-					>>> def error(num):
+					>>> def error(f, num):
 					...     try:
-					...             single2stupor(num)
+					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(-1)==1
+					>>> error(OddEven, 'biscuit')==1
 					True
 					""",
 					"hidden": False,
@@ -34,3 +34,4 @@ test = {
 		}
 	]
 }
+

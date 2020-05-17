@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'single2stupor' in dir()
+                    >>> 'OddEven' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> single2stupor(10) == 1
+					>>> OddEven(43457)== "Oddish"
 					True
 					""",
 					"hidden": False,
