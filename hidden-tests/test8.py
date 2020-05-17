@@ -7,17 +7,6 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> a=True
-                    >>> for i in dir():
-                    ...     try:
-                    ...         exec('import '+i)
-                    ...         a=False
-                    ...         break
-                    ...     except:
-                    ...         pass
-                    ...
-                    >>> a
-                    True
                     >>> 'combo' in dir() and 'my_money' in dir()
                     True
                     """,
