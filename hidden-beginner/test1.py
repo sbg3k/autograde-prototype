@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> single2stupor(10) == 0
+					>>> single2stupor(10) == 1
 					True
 					""",
 					"hidden": False,
