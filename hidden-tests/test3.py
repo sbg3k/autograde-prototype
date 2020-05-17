@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>>errorr([5.20,5,10,20],0)
+                    >>> errorr([5.20,5,10,20],0)
                     True
                     """,
                     "hidden": False,
