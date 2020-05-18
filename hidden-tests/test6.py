@@ -1,5 +1,5 @@
 test = {
-    "name": "test6",
+    "name": "test5",
     "points": 2,
     "hidden": True,
     "suites": [
@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'selection' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,8 +15,8 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> arr=[i for i in range(100)]
-                    >>> len(combo(arr,1))==len(arr)
+                    >>> from inspect import getsource
+					>>> not any(i in getsource(selection) for i in ['max(','min(','sort()','sorted()']))
                     True
                     """,
                     "hidden": False,

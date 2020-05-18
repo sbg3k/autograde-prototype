@@ -1,5 +1,5 @@
 test = {
-    "name": "test7",
+    "name": "test5",
     "points": 2,
     "hidden": True,
     "suites": [
@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'selection' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,8 +15,10 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> arr=[5, 5, 5, 5, 10, 20, 20, 20, 20, 100, 100, 100, 100, 200, 200, 500, 500, 500, 1000, 1000]
-                    >>> my_money(arr)
+                    >>> import re
+                    >>> from inspect import getsource
+                    >>> pattern=re.compile('=\s{0,1}\[\]')
+                    >>> not pattern.findall(getsource(selection))
                     True
                     """,
                     "hidden": False,

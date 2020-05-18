@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Bcalculator' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> OddEven.__doc__ != None
+					>>> Bcalculator.__doc__ != None
 					True
 					""",
 					"hidden": False,
@@ -29,4 +29,3 @@ test = {
 		}
 	]
 }
-

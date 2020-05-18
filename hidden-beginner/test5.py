@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Bcalculator' in dir()
                     True
                     """,
                     "hidden": False,
@@ -20,7 +20,7 @@ test = {
 					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(OddEven, -12)==1
+					>>> error(Bcalculator, 'biscuit')==1
 					True
 					""",
 					"hidden": False,
@@ -34,3 +34,4 @@ test = {
 		}
 	]
 }
+

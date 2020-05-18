@@ -1,13 +1,13 @@
 test = {
     "name": "test5",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'selection' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,12 +15,18 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> arr=[1,2,3,4,5,6,7,8]
-                    >>> a=combo(arr,4)
-                    >>> len(a)
-                    70
-                    >>> a[0]
-                    [1, 2, 3, 4]
+                    >>> def errorr(l):
+                    ...     try:
+                    ...         x=selection(l)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr([8,7,6,5,4,3,2,'a'])
+                    True
                     """,
                     "hidden": False,
                     "locked": False,

@@ -1,13 +1,13 @@
 test = {
 	"name": "test6",
-	"points": 4,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Bcalculator' in dir()
                     True
                     """,
                     "hidden": False,
@@ -20,7 +20,7 @@ test = {
 					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(OddEven, 'biscuit')==1
+					>>> error(Bcalculator, -12)==1
 					True
 					""",
 					"hidden": False,

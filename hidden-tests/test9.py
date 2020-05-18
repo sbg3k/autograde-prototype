@@ -1,13 +1,13 @@
 test = {
     "name": "test9",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'short_sub' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,18 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> arr=[10]
-                    >>> my_money(arr)
-                    False
+                    >>> def errorr(l,s):
+                    ...     try:
+                    ...         x=short_sub(l,s)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr('wednesday',['d' 'e','n'])
+                    True
                     """,
                     "hidden": False,
                     "locked": False,

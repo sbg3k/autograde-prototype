@@ -1,13 +1,13 @@
 test = {
 	"name": "test3",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Bcalculator' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> OddEven(4433234559)== "Evenish"
+					>>> Bcalculator("10111" ,"10011")==42
 					True
 					""",
 					"hidden": False,
@@ -29,4 +29,3 @@ test = {
 		}
 	]
 }
-

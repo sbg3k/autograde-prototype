@@ -1,13 +1,13 @@
 test = {
-    "name": "test1",
-    "points": 2,
+    "name": "test8",
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir()
+                    >>> 'short_sub' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l):
+                    >>> def errorr(l,s):
                     ...     try:
-                    ...         x=selection(l)
+                    ...         x=short_sub(l,s)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([8,7,6,5,4,3,2,6])==[2, 3, 4, 5, 6, 6, 7, 8]
+                    >>> errorr(list('wednesday'),{'d' 'e','f'})
                     True
                     """,
                     "hidden": False,
