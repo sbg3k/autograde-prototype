@@ -16,7 +16,7 @@ test = {
                 {
                     "code": r"""
                     >>> from inspect import getsource
-		    >>> not any(i in getsource(selection) for i in ['max(','min(','sort()','sorted()']))
+		    >>> not any(i in getsource(selection) for i in ['max(','min(','sort()','sorted()'])
                     True
                     """,
                     "hidden": False,
