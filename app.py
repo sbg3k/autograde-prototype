@@ -76,6 +76,14 @@ def upload_file():
 					f.close()
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
+				exec('import ' + filename[:-3] + ' as ma', globals())
+				for name, data in inspect.getmembers(ma):
+					if name.startswith('_'):
+						continue
+					if name in globals():
+						print(name, ['deleting...'])
+						del globals()[name]
+				if ma in globals(): del globals()[ma]
 				return jsonify({"name":request.form['name'], "score":scores})
 			except Exception as e:
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
@@ -84,6 +92,14 @@ def upload_file():
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				print(e)
 				scores = 1
+				exec('import ' + filename[:-3] + ' as ma', globals())
+				for name, data in inspect.getmembers(ma):
+					if name.startswith('_'):
+						continue
+					if name in globals():
+						print(name, ['deleting...'])
+						del globals()[name]
+				if ma in globals(): del globals()[ma]
 				return jsonify({"name":request.form['name'], "score":scores})
 				return "Oops! an error occured."
 	
