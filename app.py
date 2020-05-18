@@ -19,7 +19,7 @@ def allowed_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-	try: if request.method == 'POST':
+	if request.method == 'POST':
 		# check if the post request has the file part
 		
 		if 'file' not in request.files:
@@ -112,7 +112,7 @@ def upload_file():
 				scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 				return "Oops! an error occured."
-	except: return jsonify({"name":request.form['name'], "score":1}) if request.form['name'] else "Oops! an error occured."
+	
 	return '''
 	<!doctype html>
 	<title>Upload new File</title>
