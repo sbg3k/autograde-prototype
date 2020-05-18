@@ -20,7 +20,7 @@ test = {
 					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(Bcalculator, 'biscuit')==1
+					>>> error(Bcalculator, 'biscuit', 1)==1
 					True
 					""",
 					"hidden": False,
