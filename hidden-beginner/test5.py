@@ -17,10 +17,10 @@ test = {
 					"code": r"""
 					>>> def error(f, num):
 					...     try:
-					...             f(num)
+					...             f(num, 1)
 					...     except AssertionError:
 					...             return 1
-					>>> error(Bcalculator, 'biscuit', 1)==1
+					>>> error(Bcalculator, 'biscuit')==1
 					True
 					""",
 					"hidden": False,
