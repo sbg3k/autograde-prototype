@@ -19,7 +19,7 @@ def allowed_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-	if request.method == 'POST':
+	try: if request.method == 'POST':
 		# check if the post request has the file part
 		
 		if 'file' not in request.files:
@@ -41,11 +41,10 @@ def upload_file():
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
 			try:
 				nen = globals()
-				print(nen)
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
 				nan = globals()
-				print(nan)
+				print({i for i in nan if i not in nen})
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
@@ -113,7 +112,7 @@ def upload_file():
 				scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 				return "Oops! an error occured."
-	
+	except: return jsonify({"name":request.form['name'], "score":1}) if request.form['name'] else "Oops! an error occured."
 	return '''
 	<!doctype html>
 	<title>Upload new File</title>
