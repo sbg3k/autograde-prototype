@@ -44,7 +44,7 @@ def upload_file():
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
 				nan = globals()
-				print({i for i in nan if i not in nen})
+				print(set(nan) - set(nen))
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
