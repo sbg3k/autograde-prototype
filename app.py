@@ -39,8 +39,10 @@ def upload_file():
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
 			try:
+				print(globals())
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
+				print(globals())
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
