@@ -40,10 +40,12 @@ def upload_file():
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
 			try:
-				print(globals())
+				nen = globals()
+				print(nen)
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
-				print(globals())
+				nan = globals()
+				print(nan)
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
@@ -80,6 +82,10 @@ def upload_file():
 						print(name, ['deleting...'])
 						del globals()[name]
 				if ma in globals(): del globals()[ma]
+				for i in nan:
+					if i not in nen:
+						print(i, ["deleting..."])
+						del globals()[i]
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
 					print(f.read())
 					f.close()
@@ -95,6 +101,10 @@ def upload_file():
 						print(name, ['deleting...'])
 						del globals()[name]
 				if ma in globals(): del globals()[ma]
+				for i in nan:
+					if i not in nen:
+						print(i, ["deleting..."])
+						del globals()[i]
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
 					print(f.read())
 					f.close()
