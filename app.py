@@ -80,12 +80,12 @@ def upload_file():
 					if name.startswith('_'):
 						continue
 					if name in globals():
-						print(name, ['deleting...'])
+						print(["2"], name, ['deleting...'])
 						del globals()[name]
 				if ma in globals(): del globals()[ma]
-				for i in nan:
-					if i not in nen:
-						print(i, ["deleting..."])
+				for i in globals():
+					if str(i) in non and str(i) not in nen:
+						print(["2"], i, ["deleting..."])
 						del globals()[i]
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
 					print(f.read())
@@ -102,9 +102,9 @@ def upload_file():
 						print(name, ['deleting...'])
 						del globals()[name]
 				if ma in globals(): del globals()[ma]
-				for i in nan:
-					if i not in nen:
-						print(i, ["deleting..."])
+				for i in globals():
+					if str(i) in non and str(i) not in nen:
+						print(["2"], i, ["deleting..."])
 						del globals()[i]
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
 					print(f.read())
