@@ -40,11 +40,13 @@ def upload_file():
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
 			try:
-				nen = globals()
+				nen = {i:globals()[i] for i in globals()}
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
-				nan = globals()
-				print(set(nan) - set(nen))
+				nan = {i:globals()[i] for i in globals()}
+				non = set(nan) - set(nen)
+				for i in non:
+					print(["importing..."], i, globals()[i])
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER)
 				for i in tests:
