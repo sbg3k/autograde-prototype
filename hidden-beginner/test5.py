@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Bcalculator' in dir()
+                    >>> 'variableParam' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,12 +15,12 @@ test = {
                 },
 				{
 					"code": r"""
-					>>> def error(f, num):
+					>>> def error(f, *num):
 					...     try:
-					...             f(num, 1)
+					...             f(*num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(Bcalculator, 'biscuit')==1
+					>>> error(variableParam, '1124', '1111')==1
 					True
 					""",
 					"hidden": False,

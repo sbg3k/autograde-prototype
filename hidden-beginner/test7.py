@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test7",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -13,9 +13,14 @@ test = {
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> variableParam('111', '1100011', '11111111')==('11111111',)
+				{
+					"code": r"""
+					>>> def error(f, *num):
+					...     try:
+					...             f(*num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(variableParam, '111', 'a')==1
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+

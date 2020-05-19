@@ -1,13 +1,13 @@
 test = {
 	"name": "test3",
-	"points": 3,
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Bcalculator' in dir()
+                    >>> 'variableParam' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> Bcalculator("10111" ,"10011")==42
+					>>> variableParam('111', '110111', '1110011', '111111111', '111000010011')==('110111', '1110011')
 					True
 					""",
 					"hidden": False,

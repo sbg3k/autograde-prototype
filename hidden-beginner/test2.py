@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Bcalculator' in dir()
+                    >>> 'variableParam' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> Bcalculator("101" ,"10")==7 # 2 points
+					>>> variableParam('111', '110111', '1110011', '111111111', '1110000111')==('110111', '1110011')
 					True
 					""",
 					"hidden": False,
