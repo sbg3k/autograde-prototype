@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir() and 'short_sub' in dir()
+                    >>> 'insertion' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> selection.__doc__!=None and short_sub.__doc__!=None
+                    >>> def errorr(l):
+                    ...     try:
+                    ...         x=insertion(l)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr({3,5,6,2,1,4})
                     True
                     """,
                     "hidden": False,

@@ -1,13 +1,13 @@
 test = {
-    "name": "test5",
-    "points": 2,
+    "name": "test7",
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir()
+                    >>> 'biggie' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,10 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> import re
-                    >>> from inspect import getsource
-                    >>> pattern=re.compile('=\s{0,1}\[\]')
-                    >>> not pattern.findall(getsource(selection))
+                    >>> def errorr(l,n):
+                    ...     try:
+                    ...         x=biggie(l,n)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr([10,5,3,10,3,6],3)
                     True
                     """,
                     "hidden": False,

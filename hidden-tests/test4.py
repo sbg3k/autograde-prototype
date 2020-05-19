@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir()
+                    >>> 'insertion' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,8 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l):
-                    ...     try:
-                    ...         x=selection(l)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr((8,7,6,5,4,3,2,6))
+                    >>> from inspect import getsource 
+                    >>> not any(i in getsource(insertion) for i in ['chr(','ord(','sorted(','.sort'])
                     True
                     """,
                     "hidden": False,

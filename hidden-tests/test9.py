@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'short_sub' in dir()
+                    >>> 'biggie' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,16 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l,s):
+                    >>> def errorr(l,n):
                     ...     try:
-                    ...         x=short_sub(l,s)
+                    ...         x=biggie(l,n)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> errorr('wednesday',['d' 'e','n'])
+                    >>> errorr([10,5,3,10,3,6],4) in [3,5]
                     True
                     """,
                     "hidden": False,

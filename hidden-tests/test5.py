@@ -1,13 +1,13 @@
 test = {
     "name": "test5",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir()
+                    >>> 'insertion' in dir()
                     True
                     """,
                     "hidden": False,
@@ -17,7 +17,7 @@ test = {
                     "code": r"""
                     >>> def errorr(l):
                     ...     try:
-                    ...         x=selection(l)
+                    ...         x=insertion(l)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,8 +25,8 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([8,7,6,5,4,3,2,'a'])
-                    True
+                    >>> errorr(['a','c','A','e','g','K'])
+                    ['A', 'K', 'a', 'c', 'e', 'g']
                     """,
                     "hidden": False,
                     "locked": False,

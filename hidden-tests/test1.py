@@ -1,13 +1,13 @@
 test = {
     "name": "test1",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir()
+                    >>> 'insertion' in dir() and 'biggie' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l):
-                    ...     try:
-                    ...         x=selection(l)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([8,7,6,5,4,3,2,6])==[2, 3, 4, 5, 6, 6, 7, 8]
+                    >>> insertion.__doc__!=None and biggie.__doc__ != None
                     True
                     """,
                     "hidden": False,

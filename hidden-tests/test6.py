@@ -1,13 +1,13 @@
 test = {
-    "name": "test5",
-    "points": 2,
+    "name": "test6",
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir()
+                    >>> 'insertion' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,18 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> from inspect import getsource
-		    >>> not any(i in getsource(selection) for i in ['max(','min(','sort()','sorted()'])
-                    True
+                    >>> def errorr(l):
+                    ...     try:
+                    ...         x=insertion(l)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr([53,5,6,2,1,4,-1])
+                    [-1, 1, 2, 4, 5, 6, 53]
                     """,
                     "hidden": False,
                     "locked": False,

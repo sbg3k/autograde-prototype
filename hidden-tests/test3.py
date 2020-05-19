@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'selection' in dir()
+                    >>> 'insertion' in dir()
                     True
                     """,
                     "hidden": False,
@@ -17,7 +17,7 @@ test = {
                     "code": r"""
                     >>> def errorr(l):
                     ...     try:
-                    ...         x=selection(l)
+                    ...         x=insertion(l)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([8,7,6,5,4,3,2,6,6,4,4,85,2000,1005])== [2, 3, 4, 4, 4, 5, 6, 6, 6, 7, 8, 85, 1005, 2000]
+                    >>> errorr([3,'b',6,'a',1,4])
                     True
                     """,
                     "hidden": False,
