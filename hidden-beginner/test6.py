@@ -1,6 +1,6 @@
 test = {
 	"name": "test6",
-	"points": 2,
+	"points": 1,
 	"hidden": True,
 	"suites": [
 		{
@@ -15,12 +15,7 @@ test = {
                 },
 				{
 					"code": r"""
-					>>> def error(f, *num):
-					...     try:
-					...             f(*num)
-					...     except AssertionError:
-					...             return 1
-					>>> error(variableParam, '1124', '1111')==1
+					>>> variableParam.__doc__ != None
 					True
 					""",
 					"hidden": False,
