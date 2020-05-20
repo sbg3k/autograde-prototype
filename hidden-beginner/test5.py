@@ -1,13 +1,13 @@
 test = {
 	"name": "test5",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'variableParam' in dir()
+                    >>> 'create_arr' in dir()
                     True
                     """,
                     "hidden": False,
@@ -20,7 +20,7 @@ test = {
 					...             f(*num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(variableParam, '1124', '1111')==1
+					>>> error(create_arr, 'a', -1)==1
 					True
 					""",
 					"hidden": False,

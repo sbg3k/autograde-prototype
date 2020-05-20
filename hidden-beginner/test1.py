@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'variableParam' in dir()
+                    >>> 'create_arr' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> variableParam('111', '1100011', '11111111')==('11111111',)
+					>>> create_arr(3, 5)==[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]
 					True
 					""",
 					"hidden": False,
