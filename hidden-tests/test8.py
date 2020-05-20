@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'biggie' in dir()
+                    >>> 'loop_read' in dir() and 'rotate' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,18 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l,n):
-                    ...     try:
-                    ...         x=biggie(l,n)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([10,5,3,10,3,6],6)
-                    True
+                    a=[['1']]
+                    >>> loop_read(a)
+                    '1'
                     """,
                     "hidden": False,
                     "locked": False,

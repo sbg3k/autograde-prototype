@@ -1,13 +1,13 @@
 test = {
     "name": "test4",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'insertion' in dir()
+                    >>> 'loop_read' in dir() and 'rotate' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,8 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> from inspect import getsource 
-                    >>> not any(i in getsource(insertion) for i in ['chr(','ord(','sorted(','.sort'])
+                    >>> d=[[1]]
+                    >>> rotate(d)
+                    >>> d==[[1]]
                     True
                     """,
                     "hidden": False,

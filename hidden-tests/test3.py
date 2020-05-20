@@ -1,13 +1,13 @@
 test = {
     "name": "test3",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'insertion' in dir()
+                    >>> 'loop_read' in dir() and 'rotate' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l):
+                    >>> def errorr(arr):
                     ...     try:
-                    ...         x=insertion(l)
+                    ...         x=loop_read(arr)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([3,'b',6,'a',1,4])
+                    >>> errorr(a=[['1','2','3','4'],['5','6','7','8'],['0','0','9',0],['1','2','1','2']])
                     True
                     """,
                     "hidden": False,

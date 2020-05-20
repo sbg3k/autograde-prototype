@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'insertion' in dir() and 'biggie' in dir()
+                    >>> 'loop_read' in dir() and 'rotate' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> insertion.__doc__!=None and biggie.__doc__ != None
+                    >>> def errorr(arr):
+                    ...     try:
+                    ...         x=loop_read(arr)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr([1, 2, 3, 6, 5, 4, 3, 2, 10])
                     True
                     """,
                     "hidden": False,

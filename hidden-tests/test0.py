@@ -1,13 +1,13 @@
 test = {
-    "name": "test10",
-    "points": 2,
+    "name": "test0",
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'biggie' in dir()
+                    >>> 'loop_read' in dir() and 'rotate' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l,n):
-                    ...     try:
-                    ...         x=biggie(l,n)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([17,5,3,10,3,16],5) == 0
+                    >>>rotate.__doc__!=None and loop_read.__doc__!=None
                     True
                     """,
                     "hidden": False,
