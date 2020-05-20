@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>>rotate.__doc__!=None and loop_read.__doc__!=None
+                    >>> rotate.__doc__!=None and loop_read.__doc__!=None
                     True
                     """,
                     "hidden": False,
