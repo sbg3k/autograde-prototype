@@ -7,15 +7,20 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'create_arr' in dir()
+                    >>> 'var_sort' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> create_arr(1, 3)==[[0, 0, 0]]
+				{
+					"code": r"""
+					>>> def error(f, *num):
+					...     try:
+					...             f(*num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(var_sort, ('ade', 12, 11), ('John', -1, 2))==1 # 2 points
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+

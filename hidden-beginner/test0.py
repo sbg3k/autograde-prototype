@@ -1,5 +1,5 @@
 test = {
-	"name": "test5",
+	"name": "test0",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -20,7 +20,7 @@ test = {
 					...             f(*num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(var_sort, (1, 1, 1))==1
+					>>> var_sort.__doc__ != None # 1 point
 					True
 					""",
 					"hidden": False,

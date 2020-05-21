@@ -1,13 +1,13 @@
 test = {
 	"name": "test6",
-	"points": 3,
+	"points": 2,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'create_arr' in dir()
+                    >>> 'var_sort' in dir()
                     True
                     """,
                     "hidden": False,
@@ -20,7 +20,7 @@ test = {
 					...             f(*num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(create_arr, -1, -2) ==1
+					>>> error(var_sort, ('Jane', 11, 2),  ('Bame', 12, 34), ('Tom', 12, 22))==[('Bame', 12, 34), ('Jane', 11, 2), ('Tom', 12, 22)]
 					True
 					""",
 					"hidden": False,
