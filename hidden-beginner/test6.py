@@ -17,7 +17,7 @@ test = {
 					"code": r"""
 					>>> def error(f, *num):
 					...     try:
-					...             f(*num)
+					...             return f(*num)
 					...     except AssertionError:
 					...             return 1
 					>>> error(var_sort, ('Jane', 11, 2),  ('Bame', 12, 34), ('Tom', 12, 22))==[('Bame', 12, 34), ('Jane', 11, 2), ('Tom', 12, 22)]
