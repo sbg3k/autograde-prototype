@@ -1,13 +1,13 @@
 test = {
     "name": "test3",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'loop_read' in dir() and 'rotate' in dir()
+                    >>> 'overflow' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,37 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
+                    >>> def errorr(i,c,f,p):
                     ...     try:
-                    ...         x=loop_read(arr)
+                    ...         x=overflow(i,c,f,p)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    >>> a = [['1','2','3','4'],['5','6','7','8'],['0','0','9',0],['1','2','1','2']]
-                    >>> errorr(a)
+                    ...
+                    >>> image2 = [[1, 1, 2, 3, 1],
+                    ...  [1, 2, 3, 1, 2],
+                    ...  [3, 1, 2, 1, 1],
+                    ...  [3, 1, 1, 1, 2],
+                    ...  [2, 1, 1, 3, 1],
+                    ...  [2, 3, 1, 2, 2],
+                    ...  [3, 2, 1, 1, 3],
+                    ...  [1, 2, 1, 1, 2],
+                    ...  [3, 3, 3, 3, 2],
+                    ...  [2, 2, 1, 1, 1]]
+                    >>> result = [[1, 1, 2, 3, 1],
+                    ...  [1, 2, 3, 0, 2],
+                    ...  [3, 0, 2, 0, 0],
+                    ...  [3, 0, 0, 0, 2],
+                    ...  [2, 0, 0, 3, 1],
+                    ...  [2, 3, 0, 2, 2],
+                    ...  [3, 2, 0, 0, 3],
+                    ...  [1, 2, 0, 0, 2],
+                    ...  [3, 3, 3, 3, 2],
+                    ...  [2, 2, 1, 1, 1]]
+                    >>> errorr(image2,(5,2),0,1) == result
                     True
                     """,
                     "hidden": False,

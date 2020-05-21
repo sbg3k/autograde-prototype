@@ -1,13 +1,13 @@
 test = {
     "name": "test5",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'loop_read' in dir() and 'rotate' in dir()
+                    >>> 'overflow' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,10 +15,23 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> d=[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]
-                    >>> rotate(d)
-                    >>> d
-                    [[0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [1, 0, 0, 0]]
+                    >>> def errorr(i,c,f,p):
+                    ...     try:
+                    ...         x=overflow(i,c,f,p)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> image = [
+                    ...     [0,1,1],
+                    ...     (1,0,0),
+                    ...     [1,0,1]
+                    ... ]
+                    >>> errorr(image,(1,1),2,1)
+                    True
                     """,
                     "hidden": False,
                     "locked": False,
