@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(i,c,f,p):
+                    >>> def errorr(i,c,p,f):
                     ...     try:
                     ...         x=overflow(i,c,p,f)
                     ...     except AssertionError:
