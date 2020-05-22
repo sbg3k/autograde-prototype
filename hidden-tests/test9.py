@@ -53,8 +53,7 @@ test = {
                     ...             over(image,(x,y+1),filler,pivot,debug)
                     ...     image[x][y]= filler
                     ...     return image
-                    >>> bound = memory_usage((over,(image,(5,2),0,1)))[0] 
-                    >>> value= memory_usage((overflow,(image,(5,2),0,1)))[0]
+                    >>> bound, value = memory_usage((overflow,(image,(5,2),0,1)))[0], memory_usage((overflow,(image,(5,2),0,1)))[0]
                     >>> value<=bound
                     True
                     """,
