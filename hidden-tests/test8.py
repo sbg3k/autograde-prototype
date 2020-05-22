@@ -55,8 +55,7 @@ test = {
                     ...     return image
                     ...
                     ...
-                    >>> bound = memory_usage((over,(image,(9,8),2,1)))[0] 
-                    >>> value= memory_usage((overflow,(image,(9,8),2,1)))[0]
+                    >>> bound, value = memory_usage((over,(image,(9,8),2,1)))[0], memory_usage((overflow,(image,(9,8),2,1)))[0]
                     >>> value<=bound
                     True
                     """,
