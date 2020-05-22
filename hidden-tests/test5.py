@@ -1,13 +1,13 @@
 test = {
     "name": "test5",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'overflow' in dir()
+                    >>> 'Node' in dir() and 'max_height' in dir() and 'insert_to_tree' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,22 +15,11 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(i,c,f,p):
-                    ...     try:
-                    ...         x=overflow(i,c,f,p)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> image = [
-                    ...     [0,1,1],
-                    ...     (1,0,0),
-                    ...     [1,0,1]
-                    ... ]
-                    >>> errorr(image,(1,1),2,1)
+                    >>> arr=[5,3,8,2,4,11,-4,10,12,11]
+                    >>> root=insert_to_tree(arr)
+                    >>> root.right.right.left.right.value==11
+                    True
+                    >>> root.left.left.right==None
                     True
                     """,
                     "hidden": False,

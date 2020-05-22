@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'overflow' in dir()
+                    >>> 'Node' in dir() and 'max_height' in dir() and 'insert_to_tree' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,28 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(i,c,f,p):
-                    ...     try:
-                    ...         x=overflow(i,c,f,p)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> imagge1 =[[0, 1, 1, 0, 1, 0, 1, 1, 0, 0],
-                    ...  [1, 0, 0, 1, 0, 0, 1, 1, 0, 0],
-                    ...  [0, 0, 1, 1, 1, 0, 0, 0, 1, 1],
-                    ...  [1, 0, 0, 0, 1, 1, 1, 1, 0, 1],
-                    ...  [1, 1, 1, 0, 0, 1, 0, 0, 0, 1],
-                    ...  [1, 1, 1, 1, 0, 0, 1, 0, 0, 0],
-                    ...  [1, 0, 0, 0, 0, 'a', 1, 1, 0, 1],
-                    ...  [1, 1, 1, 0, 1, 1, 0, 0, 1, 1],
-                    ...  [1, 1, 0, 1, 0, 1, 1, 1, 1, 0],
-                    ...  [1, 0, 0, 1, 1, 1, 0, 0, 1, 1]]
-                    >>> errorr(imagge1,(6,5),3,1)
-                    True
+                    >>> arr=[5,3,2,8,4,11,12,10,-4,9]
+                    >>> max_height(insert_to_tree(arr))
+                    5
                     """,
                     "hidden": False,
                     "locked": False,
