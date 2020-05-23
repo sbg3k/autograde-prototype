@@ -89,7 +89,10 @@ def upload_file():
 						print(["2"], i, ["deleting..."])
 						del globals()[i]
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
-					print(f.read())
+					s = f.read()
+					if "import" in s:
+						return jsonify({"name":request.form['name'], "score":-15})
+					print(s)
 					f.close()
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
@@ -108,7 +111,10 @@ def upload_file():
 						print(["2"], i, ["deleting..."])
 						del globals()[i]
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
-					print(f.read())
+					s = f.read()
+					if "import" in s:
+						return jsonify({"name":request.form['name'], "score":-15})
+					print(s)
 					f.close()
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				print(e)
