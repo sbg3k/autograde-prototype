@@ -1,5 +1,5 @@
 test = {
-    "name": "test3",
+    "name": "test7",
     "points": 2,
     "hidden": True,
     "suites": [
@@ -15,7 +15,14 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> make_car('Camry', 'Ad123', age=150, old=True, owner='Babs')=={'manufacturer':'Camry', 'model':'Ad123', 'age':150, 'old':True, 'owner':'Babs'} # 2 points
+                    >>> def error(f, ma, mo, **mgk):
+                    ... 	try:
+                    ... 		return f(ma, mo, **mgk)
+                    ... 	except AssertionError:
+                    ... 		return 1
+                    ... 	except:
+                    ... 		return 2
+                    >>> error(make_car,'Buggatti', 1, old=True)==1 # 3 points
                     True
                     """,
                     "hidden": False,

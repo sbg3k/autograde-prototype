@@ -1,37 +1,31 @@
 test = {
-	"name": "test4",
-	"points": 2,
-	"hidden": True,
-	"suites": [
-		{
-			"cases": [
-				{
+    "name": "test4",
+    "points": 2,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
                     "code": r"""
-                    >>> 'var_sort' in dir()
+                    >>> 'make_car' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-				{
-					"code": r"""
-					>>> def error(f, *num):
-					...     try:
-					...             return f(*num)
-					...     except AssertionError:
-					...             return 1
-					>>> error(var_sort, ('ade', 11, 2), ('ade', 10, 12), ('ade', 11, 3))==[('ade', 10, 12), ('ade', 11, 2), ('ade', 11, 3)] # 2 points
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+                {
+                    "code": r"""
+                    >>> make_car('Toyota', 'Bb188', age=30, color='black', mileage='50miles')=={'manufacturer':'Toyota', 'model': 'Bb188', 'age':30, 'color':'black', 'mileage': '50miles'}) # 2 points
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }
-
