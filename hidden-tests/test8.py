@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'max_height' in dir() and 'insert_to_tree' in dir()
+                    >>> 'my_exes' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,8 +15,16 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> a=[i for i in range(100)]
-                    >>> max_height(insert_to_tree(a))==100
+                    >>> def errorr(l,n):
+                    ...     try:
+                    ...         x=my_exes(l,n)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    >>> errorr([0]) and errorr([[0]])
                     True
                     """,
                     "hidden": False,

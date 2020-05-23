@@ -1,13 +1,13 @@
 test = {
     "name": "test7",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'Node' in dir() and 'max_height' in dir() and 'insert_to_tree' in dir()
+                    >>> 'my_exes' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,24 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> arr=[5,3,2,8,4,11,12,10,-4,9]
-                    >>> max_height(insert_to_tree(arr))
-                    5
+                    >>> def errorr(l,n):
+                    ...     try:
+                    ...         x=my_exes(l,n)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> matrix = [
+                    ...     [1, 1, 1], 
+					... 	[1, 1, 0], 
+					... 	[1, 0, 1]]
+                    >>> x = errorr(matrix)
+                    >>> matrix[0][2]=0
+                    >>> (errorr(matrix),x) == (1,2)
+                    True
                     """,
                     "hidden": False,
                     "locked": False,
