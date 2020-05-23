@@ -1,13 +1,13 @@
 test = {
     "name": "test3",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'make_car' in dir()
+                    >>> 'circle' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> make_car('Camry', 'Ad123', age=150, old=True, owner='Babs')=={'manufacturer':'Camry', 'model':'Ad123', 'age':150, 'old':True, 'owner':'Babs'} # 2 points
+                    >>> circle(7).__doc__!=None # 1 point
                     True
                     """,
                     "hidden": False,

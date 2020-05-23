@@ -1,13 +1,13 @@
 test = {
     "name": "test2",
-    "points": 2,
+    "points": 3,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'make_car' in dir()
+                    >>> 'circle' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> make_car('Honda', '123gdfh', new=False)=={'manufacturer': 'Honda', 'model':'123gdfh', 'new':False} # 2 points
+                    >>> circle(7).computeCircum() =='44cm'# 3 points
                     True
                     """,
                     "hidden": False,

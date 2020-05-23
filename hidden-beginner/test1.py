@@ -1,13 +1,13 @@
 test = {
     "name": "test1",
-    "points": 1,
+    "points": 3,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'make_car' in dir()
+                    >>> 'circle' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> make_car.__doc__ != None # 1 point
+                    >>> circle(7).computeArea() =='154cm2'# 3 points
                     True
                     """,
                     "hidden": False,

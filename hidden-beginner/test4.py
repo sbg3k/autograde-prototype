@@ -1,13 +1,13 @@
 test = {
     "name": "test4",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'make_car' in dir()
+                    >>> 'circle' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> make_car('Toyota', 'Bb188', age=30, color='black', mileage='50miles')=={'manufacturer':'Toyota', 'model': 'Bb188', 'age':30, 'color':'black', 'mileage': '50miles'}) # 2 points
+                    >>> circle(7.5).radius ==7.5 # 1 point
                     True
                     """,
                     "hidden": False,
