@@ -29,7 +29,7 @@ test = {
                     ...     [1, 1, 1],
                     ...     [1, 1, 0],
                     ...     [1, 0, 1]]
-                    >>> x = errorr(matrix,thresh=-1)
+                    >>> errorr(matrix,thresh=-1) == True
                     True
                     """,
                     "hidden": False,
