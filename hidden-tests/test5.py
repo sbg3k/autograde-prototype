@@ -17,7 +17,7 @@ test = {
                     "code": r"""
                     >>> def errorr(l,thresh=None):
                     ...     try:
-                    ...         x=my_exes(l,thresh)
+                    ...         x=my_exes(l,thresh=thresh)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
