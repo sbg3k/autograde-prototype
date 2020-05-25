@@ -4,7 +4,7 @@ This is an API created for handling the grading of python submissions in ECX's 3
 
 ## Usage
 
-1. Tutors head to [https://autograder30days.herokuapp.com/test-upload/](https://autograder30days.herokuapp.com/test-upload/), enter the password and upload the specially formatted test files.(more info on the mentors groupchat)
+1. Clone the repo and put your test cases in the Hidden-Beginner or hidden-tests folder
 
 * A test file with name q1.py and score 8 should contain this:
 ```
@@ -60,9 +60,7 @@ N.B: multiple code blocks are possible and can be used in cases where its all or
 ```
 
 
-2. File to be graded and user's name is sent in a form through a POST request to [https://autograder30days.herokuapp.com/](https://autograder30days.herokuapp.com/) and the grade is sent back as response ========> This can be integrated with AJAX PHP on each user dashboard, granting access to instanteneous grading.
-
-3. At 12am, the tutors head to [https://autograder30days.herokuapp.com/delete/](https://autograder30days.herokuapp.com/delete/), enter the password, and delete the test cases for the previous day.
+2. File to be graded and user's namee server is sent in a form through a POST request to th and the grade is sent back as response ========> This can be integrated with AJAX PHP on each user dashboard, granting access to instanteneous grading.
 
 
 ## Constraints
