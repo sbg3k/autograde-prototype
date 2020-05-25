@@ -1,31 +1,37 @@
 test = {
-    "name": "test6",
-    "points": 3,
-    "hidden": True,
-    "suites": [
-        {
-            "cases": [
-                {
+	"name": "test6",
+	"points": 2,
+	"hidden": True,
+	"suites": [
+		{
+			"cases": [
+				{
                     "code": r"""
-                    >>> 'circle' in dir()
+                    >>> 'Person' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-                    >>> circle(7.5).computeArea()=='177cm2' # 3 points
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-            ],
-            "scored": False,
-            "setup": "",
-            "teardown": "",
-            "type": "doctest"
-        }
-    ]
+				{
+					"code": r"""
+					>>> def error(f, num):
+					...     try:
+					...             f(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(Person('name', 12).addAge, 12)=='name will be 24 in the next 12 years'
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+			],
+			"scored": False,
+			"setup": "",
+			"teardown": "",
+			"type": "doctest"
+		}
+	]
 }
+

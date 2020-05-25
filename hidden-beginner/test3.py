@@ -1,13 +1,13 @@
 test = {
-    "name": "test3",
-    "points": 1,
-    "hidden": True,
-    "suites": [
-        {
-            "cases": [
-                {
+	"name": "test3",
+	"points": 2,
+	"hidden": True,
+	"suites": [
+		{
+			"cases": [
+				{
                     "code": r"""
-                    >>> 'circle' in dir()
+                    >>> 'Person' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> circle(7).__doc__!=None # 1 point
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-            ],
-            "scored": False,
-            "setup": "",
-            "teardown": "",
-            "type": "doctest"
-        }
-    ]
+					>>> Person('Babatunde', 20).age==20
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+			],
+			"scored": False,
+			"setup": "",
+			"teardown": "",
+			"type": "doctest"
+		}
+	]
 }

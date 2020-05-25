@@ -1,13 +1,13 @@
 test = {
-    "name": "test1",
-    "points": 3,
-    "hidden": True,
-    "suites": [
-        {
-            "cases": [
-                {
+	"name": "test1",
+	"points": 2,
+	"hidden": True,
+	"suites": [
+		{
+			"cases": [
+				{
                     "code": r"""
-                    >>> 'circle' in dir()
+                    >>> 'Person' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> circle(7).computeArea() =='154cm2'# 3 points
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-            ],
-            "scored": False,
-            "setup": "",
-            "teardown": "",
-            "type": "doctest"
-        }
-    ]
+					>>> Person('Babatunde', 20).__dict__ == {'name': 'Babatunde', 'age': 20}
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+			],
+			"scored": False,
+			"setup": "",
+			"teardown": "",
+			"type": "doctest"
+		}
+	]
 }

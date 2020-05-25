@@ -1,5 +1,5 @@
 test = {
-	"name": "test5",
+	"name": "test7",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -20,7 +20,7 @@ test = {
 					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(Person('baba', 12).addAge, 'a')==1
+					>>> error(Person('aba', 2).addAge, -1)==1
 					True
 					""",
 					"hidden": False,
