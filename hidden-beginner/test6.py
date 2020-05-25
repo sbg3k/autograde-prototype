@@ -20,7 +20,8 @@ test = {
 					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(Person('name', 12).addAge, 12)=='name will be 24 in the next 12 years'
+					>>> error(Person('name', 12).addAge, 12)
+					>>> error(Person('name', 12).addAge, 12) == 'name will be 24 in the next 12 years'
 					True
 					""",
 					"hidden": False,
