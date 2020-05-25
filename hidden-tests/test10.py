@@ -1,13 +1,29 @@
 test = {
     "name": "test10",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'my_exes' in dir()
+                    >>> import inspect
+                    >>> 'Vector' in dir()
+                    True
+                    >>> a=inspect.getsource(Vector)
+                    >>> 'magnitude(' in a
+                    True
+                    >>> 'info(' in a
+                    True
+                    >>> '__add__(' in a
+                    True
+                    >>> '__sub__(' in a
+                    True
+                    >>> '__mul__(' in a
+                    True
+                    >>> '__pow__(' in a
+                    True
+                    >>> '__eq__(' in a
                     True
                     """,
                     "hidden": False,
@@ -15,24 +31,16 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l,thresh=None):
-                    ...     try:
-                    ...         x=my_exes(l,thresh=thresh)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> matrix = [[1, 1, 1, 0, 0, 0, 0, 1],
-                    ...     [1, 1, 0, 0, 1, 0, 1, 1],
-                    ...     [1, 0, 1, 0, 0, 1, 1, 1],
-                    ...     [1, 0, 0, 2, 0, 1, 0, 1],
-                    ...     [0, 1, 1, 0, 0, 0, 1, 0],
-                    ...     [1, 1, 1, 0, 1, 1, 0, 1],
-                    ...     [1, 0, 1, 1, 1, 0, 1, 1]]
-                    >>> errorr(matrix)
+                    >>> A=Vector(2,-5,7)
+                    >>> B=Vector(1,2,3)
+                    >>> A.info()
+                    '2i-5j+7k'
+                    >>> B.info()
+                    '1i+2j+3k'
+                    >>> C=(A**B)+((A+B)*(A*B))-(B*3)
+                    >>> C==Vector(44,130,7)
+                    True
+                    >>> C.info()=='7i-44j+130k'
                     True
                     """,
                     "hidden": False,
@@ -46,5 +54,3 @@ test = {
         }
     ]
 }
-
-	

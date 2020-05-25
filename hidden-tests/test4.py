@@ -1,13 +1,29 @@
 test = {
     "name": "test4",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'my_exes' in dir()
+                    >>> import inspect
+                    >>> 'Vector' in dir()
+                    True
+                    >>> a=inspect.getsource(Vector)
+                    >>> 'magnitude(' in a
+                    True
+                    >>> 'info(' in a
+                    True
+                    >>> '__add__(' in a
+                    True
+                    >>> '__sub__(' in a
+                    True
+                    >>> '__mul__(' in a
+                    True
+                    >>> '__pow__(' in a
+                    True
+                    >>> '__eq__(' in a
                     True
                     """,
                     "hidden": False,
@@ -15,24 +31,19 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l,thresh=None):
+                    >>> def errorr(B):
                     ...     try:
-                    ...         x=my_exes(l,thresh=thresh)
+                    ...         x=Vector(1,2,3)
+                    ...         b=(x==B)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    >>> matrix = [[0, 1, 1, 0, 0, 0, 0, 1], 
-                    ...     [1, 1, 0, 0, 1, 0, 1, 1], 
-                    ...     [1, 0, 1, 0, 0, 1, 0, 1], 
-                    ...     [1, 0, 0, min(2,1), 0, 1, 0, 1], 
-                    ...     [0, 1, 1, 0, 0, 0, 1, 0], 
-                    ...     [1, 0, 1, 0, 1, 1, 0, 1], 
-                    ...     [1, 0, 1, 1, 1, 0, 1, 1]]
-                    >>> errorr(matrix)
-                    1
+                    ...
+                    >>> errorr(6)
+                    True
                     """,
                     "hidden": False,
                     "locked": False,

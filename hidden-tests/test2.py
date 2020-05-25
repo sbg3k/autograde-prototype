@@ -1,13 +1,29 @@
 test = {
     "name": "test2",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'my_exes' in dir()
+                    >>> import inspect
+                    >>> 'Vector' in dir()
+                    True
+                    >>> a=inspect.getsource(Vector)
+                    >>> 'magnitude(' in a
+                    True
+                    >>> 'info(' in a
+                    True
+                    >>> '__add__(' in a
+                    True
+                    >>> '__sub__(' in a
+                    True
+                    >>> '__mul__(' in a
+                    True
+                    >>> '__pow__(' in a
+                    True
+                    >>> '__eq__(' in a
                     True
                     """,
                     "hidden": False,
@@ -15,9 +31,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(l,thresh=None):
+                    >>> def errorr(a,b,c):
                     ...     try:
-                    ...         x=my_exes(l,thresh=thresh)
+                    ...         x=Vector(a,b,c)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,15 +41,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> matrix = [
-                    ...     [1, 1, 1, 0, 0, 0, 0, 1],
-                    ...     [1, 1, 0, 0, 1, 0, 1, 1],
-                    ...     [1, 0, 1, 0, 0, 1, 1, 1],
-                    ...     [1, 0, 0, 1, 0, 1, 0, 1],
-                    ...     [0, 1, 1, 0, 0, 0, 1, 0],
-                    ...     [1, 1, 1, 0, 1, 1, 0, 1],
-                    ...     [1, 0, 1, 1, 1, 0, 1, 1]]
-                    >>> errorr(matrix)==6
+                    >>> errorr(1.0,3.2,4.6)
                     True
                     """,
                     "hidden": False,
