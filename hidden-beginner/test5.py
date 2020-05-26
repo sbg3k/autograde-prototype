@@ -7,20 +7,15 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Person' in dir()
+                    >>> 'Point' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-				{
-					"code": r"""
-					>>> def error(f, num):
-					...     try:
-					...             f(num)
-					...     except AssertionError:
-					...             return 1
-					>>> error(Person('baba', 12).addAge, 'a')==1
+                {
+                    "code": r"""
+					>>> Point(0.5, 7).__mul__(Point(2, 5))==36.0
 					True
 					""",
 					"hidden": False,
@@ -34,4 +29,3 @@ test = {
 		}
 	]
 }
-

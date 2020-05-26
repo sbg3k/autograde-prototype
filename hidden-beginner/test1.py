@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Person' in dir()
+                    >>> 'Point' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> Person('Babatunde', 20).__dict__ == {'name': 'Babatunde', 'age': 20}
+					>>> 2 * (Point(4, 7) * Point(5, 6)) == 124 # 2 points
 					True
 					""",
 					"hidden": False,

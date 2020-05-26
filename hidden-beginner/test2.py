@@ -1,13 +1,13 @@
 test = {
 	"name": "test2",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Person' in dir()
+                    >>> 'Point' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> Person('Babatunde', 20).addAge(10) == 'Babatunde will be 30 in the next 10 years'
+					>>> round((Point(1, 4) + Point(4, 6) - Point(1, 3)).distance(Point(3, 5)), 5)==2.23607
 					True
 					""",
 					"hidden": False,

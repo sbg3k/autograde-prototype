@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Person' in dir()
+                    >>> 'Point' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> Person('Babatunde', 20).age==20
+					>>> Point(3, 6).__add__(Point(5, 7)).__mul__(Point(1, 4).__add__(Point(5, 6)))==178
 					True
 					""",
 					"hidden": False,
