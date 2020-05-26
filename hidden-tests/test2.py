@@ -7,23 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'Vector' in dir()
-                    True
-                    >>> a=inspect.getsource(Vector)
-                    >>> 'magnitude(' in a
-                    True
-                    >>> 'info(' in a
-                    True
-                    >>> '__add__(' in a
-                    True
-                    >>> '__sub__(' in a
-                    True
-                    >>> '__mul__(' in a
-                    True
-                    >>> '__pow__(' in a
-                    True
-                    >>> '__eq__(' in a
+                    >>> 'long_pal' in dir()
                     True
                     """,
                     "hidden": False,
@@ -31,17 +15,16 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(a,b,c):
+                    >>> def errorr(s):
                     ...     try:
-                    ...         x=Vector(a,b,c)
+                    ...         x=long_pal(s)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> errorr(1.0,3.2,4.6)
+                    >>> errorr('12321') and errorr(list('abcba'))
                     True
                     """,
                     "hidden": False,

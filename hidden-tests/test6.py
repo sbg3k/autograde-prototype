@@ -7,23 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'Vector' in dir()
-                    True
-                    >>> a=inspect.getsource(Vector)
-                    >>> 'magnitude(' in a
-                    True
-                    >>> 'info(' in a
-                    True
-                    >>> '__add__(' in a
-                    True
-                    >>> '__sub__(' in a
-                    True
-                    >>> '__mul__(' in a
-                    True
-                    >>> '__pow__(' in a
-                    True
-                    >>> '__eq__(' in a
+                    >>> 'probability' in dir()
                     True
                     """,
                     "hidden": False,
@@ -31,28 +15,20 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> A=Vector(2,-5,7)
-                    >>> B=Vector(1,2,3)
-                    >>> C=A+B
-                    >>> D=A-B
-                    >>> A.info()
-                    '2i-5j+7k'
-                    >>> B.info()
-                    '1i+2j+3k'
-                    >>> C.info()
-                    '3i-3j+10k'
-                    >>> D.info()
-                    '1i-7j+4k'
-                    >>> A.magnitude()
-                    8.83
-                    >>> B.magnitude()
-                    3.74
-                    >>> C.magnitude()
-                    10.86
-                    >>> D.magnitude()
-                    8.12
+                    >>> def errorr(faces,dices,number,span):
+                    ...     try:
+                    ...         x=  probability(faces,dices,number,span)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    >>> errorr(8,15,3,range(5,5)) and errorr(8,15.0,3,range(2,5))
+                    True
                     """,
-                    "hidden": False,                    "locked": False,
+                    "hidden": False,
+                    "locked": False,
                 },
             ],
             "scored": False,

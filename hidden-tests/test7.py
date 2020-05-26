@@ -7,23 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'Vector' in dir()
-                    True
-                    >>> a=inspect.getsource(Vector)
-                    >>> 'magnitude(' in a
-                    True
-                    >>> 'info(' in a
-                    True
-                    >>> '__add__(' in a
-                    True
-                    >>> '__sub__(' in a
-                    True
-                    >>> '__mul__(' in a
-                    True
-                    >>> '__pow__(' in a
-                    True
-                    >>> '__eq__(' in a
+                    >>> 'mergesort' in dir()
                     True
                     """,
                     "hidden": False,
@@ -31,16 +15,21 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> A=Vector(3,4,-2)
-                    >>> B=Vector(-1,-2,-3)
-                    >>> A.info()
-                    '3i+4j-2k'
-                    >>> B.info()
-                    '-1i-2j-3k'
-                    >>> (A+B)+(A-B)==A*2
+                    >>> def errorr(array):
+                    ...     try:
+                    ...         x=  mergesort(array)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    >>> array = [91, 4, 88, 36, 24, 59, 39, 81, 52, 71, 40, 48, 21, 43, 19, 90, 66, 24, 1, 57, 30, 18, 41, 49, 80, 52, 27, 56, 81, 66, 28, 23]
+                    >>> errorr(array) == [1, 4, 18, 19, 21, 23, 24, 24, 27, 28, 30, 36, 39, 40, 41, 43, 48, 49, 52, 52, 56, 57, 59, 66, 66, 71, 80, 81, 81, 88, 90, 91]
                     True
                     """,
-                    "hidden": False,                    "locked": False,
+                    "hidden": False,
+                    "locked": False,
                 },
             ],
             "scored": False,
