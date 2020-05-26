@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr('abcdefghijklmnopqrstuvwxyz') = errorr('a')== None
+                    >>> errorr('abcdefghijklmnopqrstuvwxyz') == errorr('a')== None
                     True
                     """,
                     "hidden": False,
