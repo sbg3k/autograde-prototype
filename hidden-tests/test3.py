@@ -1,29 +1,13 @@
 test = {
     "name": "test3",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'Vector' in dir()
-                    True
-                    >>> a=inspect.getsource(Vector)
-                    >>> 'magnitude(' in a
-                    True
-                    >>> 'info(' in a
-                    True
-                    >>> '__add__(' in a
-                    True
-                    >>> '__sub__(' in a
-                    True
-                    >>> '__mul__(' in a
-                    True
-                    >>> '__pow__(' in a
-                    True
-                    >>> '__eq__(' in a
+                    >>> 'long_pal' in dir()
                     True
                     """,
                     "hidden": False,
@@ -31,18 +15,16 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(B):
+                    >>> def errorr(s):
                     ...     try:
-                    ...         x=Vector(1,2,3)
-                    ...         b=x+B
+                    ...         x=long_pal(s)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> errorr(6)
+                    >>> errorr('abccbababc') == 'cbababc' and errorr('abcba') == 'abcba'
                     True
                     """,
                     "hidden": False,

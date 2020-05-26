@@ -1,29 +1,13 @@
 test = {
     "name": "test4",
-    "points": 1,
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'Vector' in dir()
-                    True
-                    >>> a=inspect.getsource(Vector)
-                    >>> 'magnitude(' in a
-                    True
-                    >>> 'info(' in a
-                    True
-                    >>> '__add__(' in a
-                    True
-                    >>> '__sub__(' in a
-                    True
-                    >>> '__mul__(' in a
-                    True
-                    >>> '__pow__(' in a
-                    True
-                    >>> '__eq__(' in a
+                    >>> 'probability' in dir()
                     True
                     """,
                     "hidden": False,
@@ -31,18 +15,16 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(B):
+                    >>> def errorr(faces,dices,number,span):
                     ...     try:
-                    ...         x=Vector(1,2,3)
-                    ...         b=(x==B)
+                    ...         x=  probability(faces,dices,number,span)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    ...
-                    >>> errorr(6)
+                    >>> errorr(8,15,3,range(1,9)) == 0.9669
                     True
                     """,
                     "hidden": False,

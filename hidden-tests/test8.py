@@ -1,29 +1,13 @@
 test = {
     "name": "test8",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> import inspect
-                    >>> 'Vector' in dir()
-                    True
-                    >>> a=inspect.getsource(Vector)
-                    >>> 'magnitude(' in a
-                    True
-                    >>> 'info(' in a
-                    True
-                    >>> '__add__(' in a
-                    True
-                    >>> '__sub__(' in a
-                    True
-                    >>> '__mul__(' in a
-                    True
-                    >>> '__pow__(' in a
-                    True
-                    >>> '__eq__(' in a
+                    >>> 'mergesort' in dir()
                     True
                     """,
                     "hidden": False,
@@ -31,16 +15,20 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> A=Vector(3,4,-2)
-                    >>> B=Vector(-1,-2,-3)
-                    >>> A.info()
-                    '3i+4j-2k'
-                    >>> B.info()
-                    '-1i-2j-3k'
-                    >>> A*B
-                    -5
+                    >>> def errorr(array):
+                    ...     try:
+                    ...         x=  mergesort(array)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    >>> errorr({1,2,3,4,5,6,7,65,43,21,1,23,4,5,6,7,8,8})
+                    True
                     """,
-                    "hidden": False,                    "locked": False,
+                    "hidden": False,
+                    "locked": False,
                 },
             ],
             "scored": False,
