@@ -20,7 +20,7 @@ test = {
 					...             f(num)
 					...     except AssertionError:
 					...             return 1
-					>>> error(Shape, 'a')==1 # 3 points
+					>>> error(Shape, 'a') == 1 # 3 points
 					True
 					""",
 					"hidden": False,
