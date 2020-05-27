@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'long_pal' in dir() and 'probability' in dir() and 'mergesort' in dir() 
+                    >>> 'match' in dir() and 'isBalanced' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> all([long_pal.__doc__, probability.__doc__, mergesort.__doc__]) 
+                    >>> isBalanced.__doc__!=None and match.__doc__!=None
                     True
                     """,
                     "hidden": False,

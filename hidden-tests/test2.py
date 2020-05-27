@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'long_pal' in dir()
+                    >>> 'match' in dir() and 'isBalanced' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,16 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(s):
-                    ...     try:
-                    ...         x=long_pal(s)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    >>> errorr('12321') and errorr(list('abcba'))
+                    >>> match([])==[]
                     True
                     """,
                     "hidden": False,

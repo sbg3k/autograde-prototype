@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'mergesort' in dir()
+                    >>> 'match' in dir() and 'isBalanced' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,8 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> from inspect import getsource
-                    >>> x = getsource(mergesort)
-                    >>> not any(i in x for i in ['.sort()','sorted(','.insert(','min(','max('])
+                    >>> a='(*()((()*(**(*)'
+                    >>> isBalanced(a)
                     True
                     """,
                     "hidden": False,

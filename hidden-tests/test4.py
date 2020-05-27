@@ -1,13 +1,13 @@
 test = {
     "name": "test4",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'probability' in dir()
+                    >>> 'match' in dir() and 'isBalanced' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(faces,dices,number,span):
-                    ...     try:
-                    ...         x=  probability(faces,dices,number,span)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    >>> errorr(8,15,3,range(1,9)) == 0.9669
-                    True
+                    >>> los=['code','edoc','fedoc','doc','d','ad']
+                    >>> set(match(los))
+                    {(0, 1), (4, 5), (1, 0), (0, 2), (0, 3)}
                     """,
                     "hidden": False,
                     "locked": False,

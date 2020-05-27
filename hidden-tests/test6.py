@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'probability' in dir()
+                    >>> 'match' in dir() and 'isBalanced' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,10 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(faces,dices,number,span):
-                    ...     try:
-                    ...         x=  probability(faces,dices,number,span)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    >>> errorr(8,15,3,range(5,5)) and errorr(8,15.0,3,range(2,5))
-                    True
+                    >>> a='we will soon be done with the thirty days of code hurray bonus test case'
+                    >>> a=a.split()
+                    >>> match(a)
+                    []
                     """,
                     "hidden": False,
                     "locked": False,

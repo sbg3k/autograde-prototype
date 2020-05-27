@@ -1,13 +1,13 @@
 test = {
     "name": "test3",
-    "points": 2,
+    "points": 1,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'long_pal' in dir()
+                    >>> 'match' in dir() and 'isBalanced' in dir()
                     True
                     """,
                     "hidden": False,
@@ -17,14 +17,15 @@ test = {
                     "code": r"""
                     >>> def errorr(s):
                     ...     try:
-                    ...         x=long_pal(s)
+                    ...         x=match(s)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
                     ...         return False
                     ...     else:
                     ...         return x
-                    >>> errorr('abccbababc') == 'cbababc' and errorr('abcba') == 'abcba'
+                    ...
+                    >>> errorr('()(abc')
                     True
                     """,
                     "hidden": False,
