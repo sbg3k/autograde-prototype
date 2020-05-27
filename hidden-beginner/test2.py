@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> str(Square(7).area()) + " " + Square(7).shape() == '49 I am a shape.' # 3 points
+					>>> [Square(7).area(), Square(7).shape()] == [49, 'I am a shape.'] # 3 points
 					True
 					""",
 					"hidden": False,
