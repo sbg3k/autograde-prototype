@@ -1,21 +1,26 @@
 test = {
 	"name": "test3",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Point' in dir()
+                    >>> 'Square' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> Point(3, 6).__add__(Point(5, 7)).__mul__(Point(1, 4).__add__(Point(5, 6)))==178
+				{
+					"code": r"""
+					>>> def error(f, num):
+					...     try:
+					...             f(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(Square, -1)==1 # 3 points
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+

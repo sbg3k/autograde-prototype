@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Point' in dir()
+                    >>> 'Square' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> round((Point(1, 4) + Point(4, 6) - Point(1, 3)).distance(Point(3, 5)), 5)==2.23607
+					>>> Square(7).area(), Square(7).shape()=='49 I am a shape.' # 3 points
 					True
 					""",
 					"hidden": False,

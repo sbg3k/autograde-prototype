@@ -1,21 +1,26 @@
 test = {
-	"name": "test4",
-	"points": 2,
+	"name": "test3",
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Point' in dir()
+                    >>> 'Square' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> round(Point(-1, 5).distance(Point(6, 4).__mul__(2)), 5)==13.34166
+				{
+					"code": r"""
+					>>> def error(f, num):
+					...     try:
+					...             f(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(Square, '7')==1 # 3 points
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+

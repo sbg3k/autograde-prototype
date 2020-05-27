@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'Point' in dir()
+                    >>> 'Square' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> 2 * (Point(4, 7) * Point(5, 6)) == 124 # 2 points
+					>>> Square(7).__dict__ == {'lenght': 7} # 2 points
 					True
 					""",
 					"hidden": False,
