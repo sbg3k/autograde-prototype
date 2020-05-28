@@ -1,5 +1,5 @@
 test = {
-    "name": "test1",
+    "name": "test7",
     "points": 1,
     "hidden": True,
     "suites": [
@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'biggie' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
+                    >>> def errorr(l,n):
                     ...     try:
-                    ...         x=my_money(arr)
+                    ...         x=biggie(l,n)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([-5,5,10,20])
+                    >>> errorr([10,5,3,10,3,6],3)
                     True
                     """,
                     "hidden": False,

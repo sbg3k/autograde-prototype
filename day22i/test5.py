@@ -1,13 +1,13 @@
 test = {
-    "name": "test1",
-    "points": 1,
+    "name": "test5",
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'Node' in dir() and 'max_height' in dir() and 'insert_to_tree' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,11 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
+                    >>> arr=[5,3,8,2,4,11,-4,10,12,11]
+                    >>> root=insert_to_tree(arr)
+                    >>> root.right.right.left.right.value==11
+                    True
+                    >>> root.left.left.right==None
                     True
                     """,
                     "hidden": False,

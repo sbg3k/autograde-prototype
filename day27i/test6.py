@@ -1,13 +1,13 @@
 test = {
-    "name": "test1",
-    "points": 1,
+    "name": "test6",
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'match' in dir() and 'isBalanced' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,18 +15,10 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
-                    True
+                    >>> a='we will soon be done with the thirty days of code hurray bonus test case'
+                    >>> a=a.split()
+                    >>> match(a)
+                    []
                     """,
                     "hidden": False,
                     "locked": False,

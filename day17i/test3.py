@@ -1,5 +1,5 @@
 test = {
-    "name": "test1",
+    "name": "test3",
     "points": 1,
     "hidden": True,
     "suites": [
@@ -15,9 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
+                    >>> def errorr(arr,k):
                     ...     try:
-                    ...         x=my_money(arr)
+                    ...         x=combo(arr,k)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([-5,5,10,20])
+                    >>> errorr([5.20,5,10,20],0)
                     True
                     """,
                     "hidden": False,

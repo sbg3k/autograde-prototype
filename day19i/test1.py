@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'insertion' in dir() and 'biggie' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
+                    >>> insertion.__doc__!=None and biggie.__doc__ != None
                     True
                     """,
                     "hidden": False,

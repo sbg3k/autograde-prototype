@@ -1,13 +1,13 @@
 test = {
-    "name": "test1",
-    "points": 1,
+    "name": "test4",
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'insertion' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,8 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
+                    >>> from inspect import getsource 
+                    >>> not any(i in getsource(insertion) for i in ['chr(','ord(','sorted(','.sort'])
                     True
                     """,
                     "hidden": False,

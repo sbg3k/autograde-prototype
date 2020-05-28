@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test3",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'variableParam' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> OddEven(43457)== "Oddish"
+					>>> variableParam('111', '110111', '1110011', '111111111', '111000010011')==('110111', '1110011')
 					True
 					""",
 					"hidden": False,

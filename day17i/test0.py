@@ -1,5 +1,5 @@
 test = {
-    "name": "test1",
+    "name": "test0",
     "points": 1,
     "hidden": True,
     "suites": [
@@ -15,17 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
+                    >>> combo.__doc__!=None and my_money.__doc__!=None
                     True
                     """,
                     "hidden": False,

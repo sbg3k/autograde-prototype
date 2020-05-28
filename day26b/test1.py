@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Point' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> OddEven(43457)== "Oddish"
+					>>> 2 * (Point(4, 7) * Point(5, 6)) == 124 # 2 points
 					True
 					""",
 					"hidden": False,

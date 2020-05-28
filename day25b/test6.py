@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test6",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -7,15 +7,20 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Person' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> OddEven(43457)== "Oddish"
+				{
+					"code": r"""
+					>>> def error(f, num):
+					...     try:
+					...             return f(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(Person('name', 12).addAge, 12) == 'name will be 24 in the next 12 years'
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+

@@ -1,5 +1,5 @@
 test = {
-    "name": "test1",
+    "name": "test3",
     "points": 1,
     "hidden": True,
     "suites": [
@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'Node' in dir() and 'max_height' in dir() and 'insert_to_tree' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,9 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
+                    >>> def errorr(d):
                     ...     try:
-                    ...         x=my_money(arr)
+                    ...         x=max_height(d)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([-5,5,10,20])
+                    >>> errorr(67)
                     True
                     """,
                     "hidden": False,

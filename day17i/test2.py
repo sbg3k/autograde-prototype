@@ -1,5 +1,5 @@
 test = {
-    "name": "test1",
+    "name": "test2",
     "points": 1,
     "hidden": True,
     "suites": [
@@ -25,7 +25,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([-5,5,10,20])
+                    >>> errorr([5.20,5,10,20])
                     True
                     """,
                     "hidden": False,

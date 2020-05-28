@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test2",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'create_arr' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> OddEven(43457)== "Oddish"
+					>>> create_arr(1, 3)==[[0, 0, 0]]
 					True
 					""",
 					"hidden": False,

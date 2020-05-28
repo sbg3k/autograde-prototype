@@ -1,13 +1,13 @@
 test = {
-    "name": "test1",
-    "points": 1,
+    "name": "test7",
+    "points": 2,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'loop_read' in dir() and 'rotate' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,18 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
-                    True
+                    >>> a=[['1', '2', '3', '4'], ['5', '6', '7', '8'], ['0', '0', '9', '0'], ['1', '2', '1', '2']]
+                    >>> loop_read(a)
+                    '1 2 3 4 8 0 2 1 2 1 0 5 6 7 9 0'
                     """,
                     "hidden": False,
                     "locked": False,

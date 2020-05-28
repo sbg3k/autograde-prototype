@@ -1,21 +1,21 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test6",
+	"points": 1,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'variableParam' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> OddEven(43457)== "Oddish"
+				{
+					"code": r"""
+					>>> variableParam.__doc__ != None
 					True
 					""",
 					"hidden": False,
@@ -29,3 +29,4 @@ test = {
 		}
 	]
 }
+

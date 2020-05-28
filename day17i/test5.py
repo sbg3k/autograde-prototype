@@ -1,6 +1,6 @@
 test = {
-    "name": "test1",
-    "points": 1,
+    "name": "test5",
+    "points": 2,
     "hidden": True,
     "suites": [
         {
@@ -15,18 +15,12 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
-                    True
+                    >>> arr=[1,2,3,4,5,6,7,8]
+                    >>> a=combo(arr,4)
+                    >>> len(a)
+                    70
+                    >>> a[0]
+                    [1, 2, 3, 4]
                     """,
                     "hidden": False,
                     "locked": False,

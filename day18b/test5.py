@@ -1,21 +1,26 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test5",
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Bcalculator' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> OddEven(43457)== "Oddish"
+				{
+					"code": r"""
+					>>> def error(f, num):
+					...     try:
+					...             f(num, 1)
+					...     except AssertionError:
+					...             return 1
+					>>> error(Bcalculator, 'biscuit')==1
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+

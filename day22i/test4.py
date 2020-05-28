@@ -1,5 +1,5 @@
 test = {
-    "name": "test1",
+    "name": "test4",
     "points": 1,
     "hidden": True,
     "suites": [
@@ -7,7 +7,7 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> 'Node' in dir() and 'max_height' in dir() and 'insert_to_tree' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,18 +15,12 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
-                    ...     try:
-                    ...         x=my_money(arr)
-                    ...     except AssertionError:
-                    ...         return True
-                    ...     except:
-                    ...         return False
-                    ...     else:
-                    ...         return x
-                    ...
-                    >>> errorr([-5,5,10,20])
+                    >>> arr=[10, 14, 8, 16, 13, 9, 20, 17, 19, 18]
+                    >>> root=insert_to_tree(arr)
+                    >>> root.right.right.value+3==root.right.right.right.left.right.value
                     True
+                    >>> max_height(root)
+                    7
                     """,
                     "hidden": False,
                     "locked": False,

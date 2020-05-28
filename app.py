@@ -1,6 +1,7 @@
 import otter
 import time
 import os
+import inspect
 import sys
 from flask import Flask, render_template, request, json, jsonify
 from flask_cors import CORS
@@ -9,7 +10,6 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 CORS(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
-UPLOAD_FOLDER = os.environ['UPLOAD_FOLDER']
 
 def allowed_file(filename):
 	return '.' in filename and \
@@ -36,19 +36,27 @@ def upload_file():
 			return 'No selected file'
 		
 		UPLOAD_FOLDER = "./" + request.form['task_day'].replace(" ", "") + request.form['level'].lower()[0]
+		scores = 1
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(UPLOAD_FOLDER[:2], filename))
 			try:
+				nen = {i:globals()[i] for i in globals()}
 				exec('from ' + filename[:-3] + ' import *', globals())
 				print("executing...", "[", request.form['name'], "]")
+				nan = {i:globals()[i] for i in globals()}
+				non = set(nan) - set(nen)
+				for i in non:
+					print(["importing..."], i, globals()[i])
 				score = {}
 				tests = os.listdir(UPLOAD_FOLDER)
+				print(12)
 				for i in tests:
 					if allowed_file(i):
+						print(i)
 						score[i] = str(otter.Notebook(UPLOAD_FOLDER[2:]).check(i.split('.')[0]))
 			
-			
+				print(13)
 				files = []
 				for i in score:
 					print(i)
@@ -70,13 +78,47 @@ def upload_file():
 				
 				
 
+				exec('import ' + filename[:-3] + ' as ma', globals())
+				for name, data in inspect.getmembers(ma):
+					if name.startswith('_'):
+						continue
+					if name in globals():
+						print(["2"], name, ['deleting...'])
+						del globals()[name]
+				if ma in globals(): del globals()[ma]
+				for i in globals():
+					if str(i) in non and str(i) not in nen:
+						print(["2"], i, ["deleting..."])
+						del globals()[i]
 				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
-					print(f.read())
+					s = f.read()
+					if "import" in s:
+						return jsonify({"name":request.form['name'], "score":-15})
+					print(s)
 					f.close()
 				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				if scores == 0: scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})
 			except Exception as e:
+				exec('import ' + filename[:-3] + ' as ma', globals())
+				for name, data in inspect.getmembers(ma):
+					if name.startswith('_'):
+						continue
+					if name in globals():
+						print(name, ['deleting...'])
+						del globals()[name]
+				if ma in globals(): del globals()[ma]
+				for i in globals():
+					if str(i) in non and str(i) not in nen:
+						print(["2"], i, ["deleting..."])
+						del globals()[i]
+				with open(os.path.join(UPLOAD_FOLDER[:2], filename), "r") as f:
+					s = f.read()
+					if "import" in s:
+						return jsonify({"name":request.form['name'], "score":-15})
+					print(s)
+					f.close()
+				os.remove(os.path.join(UPLOAD_FOLDER[:2], filename))
 				print(e)
 				scores = 1
 				return jsonify({"name":request.form['name'], "score":scores})

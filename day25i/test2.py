@@ -1,5 +1,5 @@
 test = {
-    "name": "test1",
+    "name": "test2",
     "points": 1,
     "hidden": True,
     "suites": [
@@ -7,7 +7,23 @@ test = {
             "cases": [
                 {
                     "code": r"""
-                    >>> 'combo' in dir() and 'my_money' in dir()
+                    >>> import inspect
+                    >>> 'Vector' in dir()
+                    True
+                    >>> a=inspect.getsource(Vector)
+                    >>> 'magnitude(' in a
+                    True
+                    >>> 'info(' in a
+                    True
+                    >>> '__add__(' in a
+                    True
+                    >>> '__sub__(' in a
+                    True
+                    >>> '__mul__(' in a
+                    True
+                    >>> '__pow__(' in a
+                    True
+                    >>> '__eq__(' in a
                     True
                     """,
                     "hidden": False,
@@ -15,9 +31,9 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> def errorr(arr):
+                    >>> def errorr(a,b,c):
                     ...     try:
-                    ...         x=my_money(arr)
+                    ...         x=Vector(a,b,c)
                     ...     except AssertionError:
                     ...         return True
                     ...     except:
@@ -25,7 +41,7 @@ test = {
                     ...     else:
                     ...         return x
                     ...
-                    >>> errorr([-5,5,10,20])
+                    >>> errorr(1.0,3.2,4.6)
                     True
                     """,
                     "hidden": False,

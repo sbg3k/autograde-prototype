@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test0",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -7,15 +7,20 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'var_sort' in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> OddEven(43457)== "Oddish"
+				{
+					"code": r"""
+					>>> def error(f, *num):
+					...     try:
+					...             return f(*num)
+					...     except AssertionError:
+					...             return 1
+					>>> var_sort.__doc__ != None # 1 point
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+

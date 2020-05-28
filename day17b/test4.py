@@ -1,6 +1,6 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test4",
+	"points": 1,
 	"hidden": True,
 	"suites": [
 		{
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> OddEven(43457)== "Oddish"
+					>>> OddEven.__doc__ != None
 					True
 					""",
 					"hidden": False,
@@ -29,3 +29,4 @@ test = {
 		}
 	]
 }
+

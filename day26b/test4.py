@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test4",
 	"points": 2,
 	"hidden": True,
 	"suites": [
@@ -7,7 +7,7 @@ test = {
 			"cases": [
 				{
                     "code": r"""
-                    >>> 'OddEven' in dir()
+                    >>> 'Point' in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> OddEven(43457)== "Oddish"
+					>>> round(Point(-1, 5).distance(Point(6, 4).__mul__(2)), 5)==13.34166
 					True
 					""",
 					"hidden": False,

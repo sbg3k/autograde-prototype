@@ -1,6 +1,6 @@
 test = {
-	"name": "test1",
-	"points": 2,
+	"name": "test6",
+	"points": 4,
 	"hidden": True,
 	"suites": [
 		{
@@ -13,9 +13,14 @@ test = {
                     "hidden": False,
                     "locked": False,
                 },
-                {
-                    "code": r"""
-					>>> OddEven(43457)== "Oddish"
+				{
+					"code": r"""
+					>>> def error(f, num):
+					...     try:
+					...             f(num)
+					...     except AssertionError:
+					...             return 1
+					>>> error(OddEven, 'biscuit')==1
 					True
 					""",
 					"hidden": False,
@@ -29,3 +34,4 @@ test = {
 		}
 	]
 }
+
