@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Complex(1, 3).mul(Complex(2, 4)).dict=={'real': -10, 'imaginary': 10} # 3 points
+                    >>> Complex(1, 3).__mul__(Complex(2, 4)).__dict__=={'real': -10, 'imaginary': 10} # 3 points
                     True
 					""",
                     "hidden": False,

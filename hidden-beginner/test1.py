@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Complex(-2, 4).add(Complex(3, 4)).dict=={'real': 1, 'imaginary': 8} # 3 points
+                    >>> Complex(-2, 4).__add__(Complex(3, 4)).__dict__=={'real': 1, 'imaginary': 8} # 3 points
                     True
 					""",
                     "hidden": False,
