@@ -1,31 +1,26 @@
 test = {
 	"name": "test5",
-	"points": 3,
+	"points":  2 ,
 	"hidden": True,
-	"suites": [
+	"suites": [ 
 		{
-			"cases": [
+			"cases": [ 
 				{
                     "code": r"""
-                    >>> 'Square' in dir()
+                    >>> "Complex" in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-				{
-					"code": r"""
-					>>> def error(f, num):
-					...     try:
-					...             f(num)
-					...     except AssertionError:
-					...             return 1
-					>>> error(Shape, 'a') == 1 # 3 points
-					True
+                {
+                    "code": r"""
+                    >>> Complex(3+1-2+6, 6+4).dict=={'real': 8, 'imaginary': 10} # 2 points
+                    True
 					""",
-					"hidden": False,
-					"locked": False,
-				},
+                    "hidden": False,
+                    "locked": False,
+                },
 			],
 			"scored": False,
 			"setup": "",
@@ -34,4 +29,3 @@ test = {
 		}
 	]
 }
-

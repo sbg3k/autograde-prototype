@@ -1,13 +1,13 @@
 test = {
 	"name": "test1",
-	"points": 2,
+	"points":  3 ,
 	"hidden": True,
-	"suites": [
+	"suites": [ 
 		{
-			"cases": [
+			"cases": [ 
 				{
                     "code": r"""
-                    >>> 'Square' in dir()
+                    >>> "Complex" in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,12 +15,12 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> Square(7).__dict__ == {'lenght': 7} # 2 points
-					True
+                    >>> Complex(-2, 4).add(Complex(3, 4)).dict=={'real': 1, 'imaginary': 8} # 3 points
+                    True
 					""",
-					"hidden": False,
-					"locked": False,
-				},
+                    "hidden": False,
+                    "locked": False,
+                },
 			],
 			"scored": False,
 			"setup": "",
