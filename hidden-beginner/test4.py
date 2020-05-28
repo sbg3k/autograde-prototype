@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Complex(1, 3).__div__(Complex(2, 4)).__dict__=={'real': -1.17, 'imaginary': -0.17} #3 points
+                    >>> Complex(1, 3).__truediv__(Complex(2, 4)).__dict__=={'real': -1.17, 'imaginary': -0.17} #3 points
                     True
 					""",
                     "hidden": False,
