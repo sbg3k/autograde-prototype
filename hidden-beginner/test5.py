@@ -1,13 +1,13 @@
 test = {
-	"name": "test5",
-	"points":  2 ,
-	"hidden": True,
-	"suites": [ 
-		{
-			"cases": [ 
-				{
+    "name": "test8",
+    "points": 2,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
                     "code": r"""
-                    >>> "Complex" in dir()
+                    >>> "Male" in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,27 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Complex(3+1-2+6, 6+4).__dict__=={'real': 8, 'imaginary': 10} # 2 points
+                    >>> def errorr(l,*n):
+                    ...     try:
+                    ...         return l(*n)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr(Male, 'Ba', -2) # 3 points
                     True
-					""",
+                    """,
                     "hidden": False,
                     "locked": False,
                 },
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }

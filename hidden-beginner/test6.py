@@ -1,6 +1,6 @@
 test = {
-    "name": "test3",
-    "points":  2 ,
+    "name": "test8",
+    "points": 2,
     "hidden": True,
     "suites": [
         {
@@ -15,7 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Female('Sayo', 30).age_n(30)==60 # 2 points
+                    >>> def errorr(l,*n):
+                    ...     try:
+                    ...         return l(*n)
+                    ...     except AssertionError:
+                    ...         return True
+                    ...     except:
+                    ...         return False
+                    ...     else:
+                    ...         return x
+                    ...
+                    >>> errorr(Female, True, 10) # 3 points
                     True
                     """,
                     "hidden": False,

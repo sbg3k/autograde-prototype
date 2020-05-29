@@ -1,13 +1,13 @@
 test = {
-	"name": "test1",
-	"points":  3 ,
-	"hidden": True,
-	"suites": [ 
-		{
-			"cases": [ 
-				{
+    "name": "test1",
+    "points":  2 ,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
                     "code": r"""
-                    >>> "Complex" in dir()
+                    >>> "Person" in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,17 +15,17 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Complex(-2, 4).__add__(Complex(3, 4)).__dict__=={'real': 1, 'imaginary': 8} # 3 points
+                    >>> Person('Babatunde', 2).getGender()=='Human' # 2 points
                     True
-					""",
+                    """,
                     "hidden": False,
                     "locked": False,
                 },
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }
