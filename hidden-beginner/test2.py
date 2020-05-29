@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Male('Babatunde', 20).age_n(30)==30 # 2 points
+                    >>> Male('Babatunde', 20).age_n(10)==30 # 2 points
                     True
                     """,
                     "hidden": False,
