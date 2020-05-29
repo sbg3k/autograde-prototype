@@ -1,6 +1,6 @@
 test = {
-    "name": "test8",
-    "points": 2,
+    "name": "test6",
+    "points": 3,
     "hidden": True,
     "suites": [
         {
