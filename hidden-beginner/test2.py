@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> ArrayOperation().twoSum([10,20,10,40,50,60,70], 50)==(2, 3) #2 points
+                    >>> ArrayOperation().twoSum([20,10,40,50,60,70], 50)==(1, 2) #2 points
                     True
                     """,
                     "hidden": False,
