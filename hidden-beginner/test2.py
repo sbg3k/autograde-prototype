@@ -1,13 +1,13 @@
 test = {
     "name": "test2",
-    "points":  2 ,
+    "points": 2 ,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> "Male" in dir()
+                    >>> "ArrayOperation" in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Male('Babatunde', 20).age_n(10)==30 # 2 points
+                    >>> ArrayOperation().twoSum([10,20,10,40,50,60,70], 50)==(2, 3) #2 points
                     True
                     """,
                     "hidden": False,

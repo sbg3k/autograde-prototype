@@ -1,13 +1,13 @@
 test = {
     "name": "test3",
-    "points":  2 ,
+    "points": 2 ,
     "hidden": True,
     "suites": [
         {
             "cases": [
                 {
                     "code": r"""
-                    >>> "Female" in dir()
+                    >>> "ArrayOperation" in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> Female('Sayo', 30).age_n(30)==60 # 2 points
+                    >>> ArrayOperation().threeSum((10,20,10,40,50,60,70))==[] #2 points
                     True
                     """,
                     "hidden": False,
