@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> make_car('Toyota', 'Bb188', age=30, color='black', mileage='50miles')=={'manufacturer':'Toyota', 'model': 'Bb188', 'age':30, 'color':'black', 'mileage': '50miles'}) # 2 points
+                    >>> make_car('Toyota', 'Bb188', age=30, color='black', mileage='50miles')=={'manufacturer':'Toyota', 'model': 'Bb188', 'age':30, 'color':'black', 'mileage': '50miles'} # 2 points
                     True
                     """,
                     "hidden": False,
