@@ -76,7 +76,7 @@ def upload_file():
 							scores += int(d)
 							print(d)
 				
-				
+				print("Total Score:", scores)
 
 				exec('import ' + filename[:-3] + ' as ma', globals())
 				for name, data in inspect.getmembers(ma):
