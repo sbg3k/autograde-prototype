@@ -6,14 +6,14 @@ test = {
 		{
 			"cases": [ 
 				{
-                    "code": r"""
-                    >>> 'wedding_chow' in dir()
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
+					"code": r"""
+					>>> 'wedding_chow' in dir()
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+				{
 					"code": r"""
 					>>> type(wedding_chow('rsfmdrsfdmdfrs')) is tuple
 					True

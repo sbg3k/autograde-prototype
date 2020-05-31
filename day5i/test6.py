@@ -23,7 +23,7 @@ test = {
                     ...     for i in food:
                     ...         ounje = ounje.replace(i, '', v)
                     ...     return v, ''.join(sorted(ounje, key=food.index))
-					>>> alpha = time.time()
+                    >>> alpha = time.time()
                     >>> y = wedding_chow('rsdmfrsdfmrsdfrsfdmmmdfrsrdfffmsdfr')
                     >>> omega = time.time()
                     >>> bound=round(omega-alpha,3)+0.0005
@@ -33,7 +33,7 @@ test = {
                     >>> diff= end-start
                     >>> diff < bound
                     True
-					""",
+                    """,
                     "hidden": False,
                     "locked": False,
                 },

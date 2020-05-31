@@ -15,9 +15,9 @@ test = {
                 },
                 {
                     "code": r"""
-					>>> wedding_chow.__doc__ != None
-					True
-					""",
+                    >>> wedding_chow.__doc__ != None
+                    True
+                    """,
                     "hidden": False,
                     "locked": False,
                 },

@@ -6,14 +6,14 @@ test = {
 		{
 			"cases": [ 
 				{
-                    "code": r"""
-                    >>> 'wedding_chow' in dir()
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
+					"code": r"""
+					>>> 'wedding_chow' in dir()
+					True
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+				{
 					"code": r"""
 					>>> wedding_chow('rsdmfrsdfmrsdfrsfsdmfrmfsdrfmsdfrdmsdsfrmddfrrmsdffdmmmdfrsrdfffmsdfr')[1][1:-3] == 'fffff'
 					True
