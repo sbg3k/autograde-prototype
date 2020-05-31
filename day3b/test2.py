@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test2",
 	"points": 4,
 	"hidden": True,
 	"suites": [ 
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> even_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 18])=='number of even numbers is 6\nnumber of odd numbers is 5' # 4 points
+					>>> even_odd(range(10, 35))=='number of even numbers is 13\nnumber of odd numbers is 12' # 4 points
 					True
 					""",
 					"hidden": False,

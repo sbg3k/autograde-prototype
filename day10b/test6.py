@@ -19,8 +19,6 @@ test = {
 					...	 a = False
 					...	 x = fibonacci('a')
 					...	 a = True
-					...	 if isinstance(x, str) or isinstance(x, bool):
-					...		 a = False
 					... except:
 					...	 a = False
 					>>> a == False

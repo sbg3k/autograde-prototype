@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test2",
 	"points": 4,
 	"hidden": True,
 	"suites": [ 
@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> 'even_odd' in dir()
+					>>> 'string_test' in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> even_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 18])=='number of even numbers is 6\nnumber of odd numbers is 5' # 4 points
+					>>> string_test('My name is Sodiq Agunbiade, I am your tutor for this cohort')=='Number of Lowercase letters is 43.\nNumber of Uppercase letters is 4.' # 4 points
 					True
 					""",
 					"hidden": False,

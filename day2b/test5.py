@@ -1,13 +1,13 @@
 test = {
-	"name": "test7",
+	"name": "test5",
 	"points": 2,
 	"hidden": True,
-	"suites": [
+	"suites": [ 
 		{
-			"cases": [
+			"cases": [ 
 				{
 					"code": r"""
-					>>> "fibonacci" in dir()
+					>>> 'missing_numbers' in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,19 +15,12 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> try:
-					...	 a = False
-					...	 x = fibonacci(-5)
-					...	 a = True
-					...	 if isinstance(x, str) or isinstance(x, bool):
-					...		 a = False
-					... except:
-					...	 a == True
-					False
+					>>> missing_numbers.__doc__ != None # 2 points
+					True
 					""",
 					"hidden": False,
 					"locked": False,
-				},
+				}, 
 			],
 			"scored": False,
 			"setup": "",

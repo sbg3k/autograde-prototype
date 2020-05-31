@@ -1,6 +1,6 @@
 test = {
 	"name": "test3",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [
 		{
@@ -17,12 +17,10 @@ test = {
 					"code": r"""
 					>>> def errorr(n):
 					...	 try:
-					...		 x=fibSum(n)
-					...	 except:
+					...		 return fibSum(n)
+					...	 except AssertionError:
 					...		 return True
-					...	 else:
-					...		 return type(x) == str or x == 0
-					>>> errorr('a')
+					>>> errorr('a') == True
 					True
 					""",
 					"hidden": False,

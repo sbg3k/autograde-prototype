@@ -1,5 +1,5 @@
 test = {
-	"name": "test1",
+	"name": "test3",
 	"points": 4,
 	"hidden": True,
 	"suites": [ 
@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
 					"code": r"""
-					>>> 'even_odd' in dir()
+					>>> 'unique' in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> even_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 18])=='number of even numbers is 6\nnumber of odd numbers is 5' # 4 points
+					>>> unique([1,2,3,3,3,3,4,5,5,3,3,3,3,4,5,6,6,110,20,19,34])=='Sample List: [1, 2, 3, 3, 3, 3, 4, 5, 5, 3, 3, 3, 3, 4, 5, 6, 6, 110, 20, 19, 34]\nUnique List: [1, 2, 3, 4, 5, 6, 19, 20, 34, 110]' # 4 points
 					True
 					""",
 					"hidden": False,

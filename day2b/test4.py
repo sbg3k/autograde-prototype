@@ -1,13 +1,13 @@
 test = {
-	"name": "test1",
-	"points": 4,
+	"name": "test4",
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> 'even_odd' in dir()
+					>>> 'missing_numbers' in dir()
 					True
 					""",
 					"hidden": False,
@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> even_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 18])=='number of even numbers is 6\nnumber of odd numbers is 5' # 4 points
+					>>> missing_numbers([2, 6, 10, 4, 11, 15, 19]) == [3, 5, 7, 8, 9, 12, 13, 14, 16, 17, 18] # 3 points
 					True
 					""",
 					"hidden": False,

@@ -1,26 +1,26 @@
 test = {
 	"name": "test2",
-	"points": 2,
+	"points":  3 ,
 	"hidden": True,
-	"suites": [
+	"suites": [ 
 		{
-			"cases": [
+			"cases": [ 
 				{
-					"code": r"""
-					>>> callable(k_largest)
-					True
+                    "code": r"""
+                    >>> "k_largest" in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> k_largest([3, 555, 2, 11, 444, 12, 24, 42, 244], 5)==24 # 3 points
+                    True
 					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> k_largest([10, 4, 56, 66, 55, 44, 21, 20], 4) == 44 # 2 pointd
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
+                    "hidden": False,
+                    "locked": False,
+                },
 			],
 			"scored": False,
 			"setup": "",

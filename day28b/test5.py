@@ -1,13 +1,13 @@
 test = {
-	"name": "test1",
-	"points":  3 ,
+	"name": "test5",
+	"points":  2 ,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
                     "code": r"""
-                    >>> "k_largest" in dir()
+                    >>> "Complex" in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> k_largest([1, 4, 7, 2, 22, 34, 21, 44, 5, 3], 3)==22 # 3 points
+                    >>> Complex(3+1-2+6, 6+4).__dict__=={'real': 8, 'imaginary': 10} # 2 points
                     True
 					""",
                     "hidden": False,

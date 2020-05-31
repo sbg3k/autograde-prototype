@@ -18,7 +18,6 @@ test = {
                     >>> try:
                     ...	 x = squareSum(-19)
                     ...	 res = isinstance(x, str) or isinstance(x, bool)
-                    ...	 assert res
                     ... except:
                     ...	 res = True
                     >>> res == True

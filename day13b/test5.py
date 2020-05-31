@@ -1,26 +1,26 @@
 test = {
 	"name": "test5",
-	"points": 1,
+	"points":  1 point,
 	"hidden": True,
-	"suites": [
+	"suites": [ 
 		{
-			"cases": [
+			"cases": [ 
 				{
-					"code": r"""
-					>>> callable(k_largest)
-					True
+                    "code": r"""
+                    >>> "k_largest.doc != None # 1 point" in dir()
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+                {
+                    "code": r"""
+                    >>> k_largest.doc != None # 1 point
+                    True
 					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> k_largest.__doc__ != None 
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
+                    "hidden": False,
+                    "locked": False,
+                },
 			],
 			"scored": False,
 			"setup": "",

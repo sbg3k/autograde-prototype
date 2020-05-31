@@ -7,7 +7,7 @@ test = {
 			"cases": [ 
 				{
                     "code": r"""
-                    >>> "k_largest" in dir()
+                    >>> "Complex" in dir()
                     True
                     """,
                     "hidden": False,
@@ -15,7 +15,7 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> k_largest([1, 4, 7, 2, 22, 34, 21, 44, 5, 3], 3)==22 # 3 points
+                    >>> Complex(-2, 4).__add__(Complex(3, 4)).__dict__=={'real': 1, 'imaginary': 8} # 3 points
                     True
 					""",
                     "hidden": False,

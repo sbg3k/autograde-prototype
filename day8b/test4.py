@@ -1,6 +1,6 @@
 test = {
 	"name": "test4",
-	"points": 2,
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
@@ -9,7 +9,13 @@ test = {
 					"code": r"""
 					>>> "fastSum" in dir()
 					True
-					>>> len(fastSum.__doc__) > 15
+					""",
+					"hidden": False,
+					"locked": False,
+				},
+				{
+                    "code": r"""
+					>>> fastSum(10000000)==50000005000000 # 3 points
 					True
 					""",
 					"hidden": False,

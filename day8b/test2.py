@@ -1,21 +1,21 @@
 test = {
-	"name": "test1",
-	"points": 4,
+	"name": "test2",
+	"points": 3,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> 'even_odd' in dir()
+					>>> "fastSum" in dir()
 					True
 					""",
 					"hidden": False,
 					"locked": False,
 				},
 				{
-					"code": r"""
-					>>> even_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 18])=='number of even numbers is 6\nnumber of odd numbers is 5' # 4 points
+                    "code": r"""
+					>>>  fastSum(12330900)==76025553570450 # 3 points
 					True
 					""",
 					"hidden": False,

@@ -15,14 +15,6 @@ test = {
                 },
                 {
                     "code": r"""
-                    >>> squareSum.__doc__ != None
-                    True
-                    """,
-                    "hidden": False,
-                    "locked": False,
-                },
-                {
-                    "code": r"""
                     >>> len(squareSum.__doc__) > 15
                     True
                     """,

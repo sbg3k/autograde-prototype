@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> len(averageMultiple.__doc__) > 30
+					>>> len(averageMultiple.__doc__) > 15
 					True
 					""",
 					"hidden": False,

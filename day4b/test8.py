@@ -1,21 +1,13 @@
 test = {
-	"name": "test3",
-	"points": 2,
+	"name": "test8",
+	"points": 1,
 	"hidden": True,
 	"suites": [ 
 		{
 			"cases": [ 
 				{
 					"code": r"""
-					>>> "averageMultiple" in dir()
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-				{
-					"code": r"""
-					>>> round(averageMultiple(100), 5) == 50.3913
+					>>> 1 == 1
 					True
 					""",
 					"hidden": False,
