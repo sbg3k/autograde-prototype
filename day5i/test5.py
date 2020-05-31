@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> wedding_chow('rsmdffdmrsdmrsf')) == (3, '')
+					>>> wedding_chow('rsmdffdmrsdmrsf') == (3, '')
 					True
 					""",
 					"hidden": False,
