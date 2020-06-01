@@ -1,37 +1,31 @@
 test = {
-	"name": "test5",
-	"points": 3,
-	"hidden": True,
-	"suites": [
-		{
-			"cases": [
-				{
+    "name": "test5",
+    "points": 5 ,
+    "hidden": True,
+    "suites": [
+        {
+            "cases": [
+                {
                     "code": r"""
-                    >>> 'Square' in dir()
+                    >>> "ArrayOperation" in dir()
                     True
                     """,
                     "hidden": False,
                     "locked": False,
                 },
-				{
-					"code": r"""
-					>>> def error(f, num):
-					...     try:
-					...             f(num)
-					...     except AssertionError:
-					...             return 1
-					>>> error(Shape, 'a') == 1 # 3 points
-					True
-					""",
-					"hidden": False,
-					"locked": False,
-				},
-			],
-			"scored": False,
-			"setup": "",
-			"teardown": "",
-			"type": "doctest"
-		}
-	]
+                {
+                    "code": r"""
+                    >>> ArrayOperation().threeSum([-25, -10, -7, -3, 2, 4, 8, 10, 6, -9, 4, -10, 7, 65, -55])==[[-55, -10, 65], [-10, 2, 8], [-10, 4, 6], [-9, 2, 7], [-7, -3, 10]] #5 points
+                    True
+                    """,
+                    "hidden": False,
+                    "locked": False,
+                },
+            ],
+            "scored": False,
+            "setup": "",
+            "teardown": "",
+            "type": "doctest"
+        }
+    ]
 }
-
