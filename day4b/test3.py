@@ -15,7 +15,7 @@ test = {
 				},
 				{
 					"code": r"""
-					>>> string_test('You are a Student of 30daysofcode'=='Number of Lowercase letters is 24.\nNumber of Uppercase letters is 2.' # 4 points
+					>>> string_test('You are a Student of 30daysofcode')=='Number of Lowercase letters is 24.\nNumber of Uppercase letters is 2.' # 4 points
 					True
 					""",
 					"hidden": False,
