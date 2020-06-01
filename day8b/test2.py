@@ -15,7 +15,7 @@ test = {
 				},
 				{
                     "code": r"""
-					>>>  fastSum(12330900)==76025553570450 # 3 points
+					>>> fastSum(12330900)==76025553570450 # 3 points
 					True
 					""",
 					"hidden": False,
